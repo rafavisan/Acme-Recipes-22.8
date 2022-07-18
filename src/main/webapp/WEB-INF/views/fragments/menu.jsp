@@ -20,6 +20,7 @@
 	<acme:menu-left>
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link.antquiher1" action="https://forum.paradoxplaza.com/forum/forums/europa-universalis-iv.731/"/>
+			<acme:menu-suboption code="master.menu.anonymous.favourite-link.rafavisan" action="https://www.youtube.com/watch?v=6vNwmrh0EbU&ab_channel=Pepe%3AVizio"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
