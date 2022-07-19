@@ -23,6 +23,7 @@
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link.rafavisan" action="https://www.youtube.com/watch?v=6vNwmrh0EbU&ab_channel=Pepe%3AVizio"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link.alefrarod" action="https://phantom-elmundo.unidadeditorial.es/20d0b5a6868e91051b727999b94a454f/f/jpg/assets/multimedia/imagenes/2019/06/04/15596380566683.jpg"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link.diecrequi" action="https://magic.wizards.com/es"/>
+			<acme:menu-suboption code="master.menu.anonymous.favourite-link.pedolirod" action="https://ev.us.es/"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
