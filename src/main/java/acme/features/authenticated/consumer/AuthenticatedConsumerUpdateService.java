@@ -24,10 +24,10 @@ import acme.framework.entities.Principal;
 import acme.framework.helpers.PrincipalHelper;
 import acme.framework.roles.Authenticated;
 import acme.framework.services.AbstractUpdateService;
-import acme.roles.Consumer;
+import acme.roles.Chef;
 
 @Service
-public class AuthenticatedConsumerUpdateService implements AbstractUpdateService<Authenticated, Consumer> {
+public class AuthenticatedConsumerUpdateService implements AbstractUpdateService<Authenticated, Chef> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -38,21 +38,21 @@ public class AuthenticatedConsumerUpdateService implements AbstractUpdateService
 
 
 	@Override
-	public boolean authorise(final Request<Consumer> request) {
+	public boolean authorise(final Request<Chef> request) {
 		assert request != null;
 
 		return true;
 	}
 
 	@Override
-	public void validate(final Request<Consumer> request, final Consumer entity, final Errors errors) {
+	public void validate(final Request<Chef> request, final Chef entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
 	}
 
 	@Override
-	public void bind(final Request<Consumer> request, final Consumer entity, final Errors errors) {
+	public void bind(final Request<Chef> request, final Chef entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
@@ -61,7 +61,7 @@ public class AuthenticatedConsumerUpdateService implements AbstractUpdateService
 	}
 
 	@Override
-	public void unbind(final Request<Consumer> request, final Consumer entity, final Model model) {
+	public void unbind(final Request<Chef> request, final Chef entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
@@ -70,10 +70,10 @@ public class AuthenticatedConsumerUpdateService implements AbstractUpdateService
 	}
 
 	@Override
-	public Consumer findOne(final Request<Consumer> request) {
+	public Chef findOne(final Request<Chef> request) {
 		assert request != null;
 
-		Consumer result;
+		Chef result;
 		Principal principal;
 		int userAccountId;
 
@@ -86,7 +86,7 @@ public class AuthenticatedConsumerUpdateService implements AbstractUpdateService
 	}
 
 	@Override
-	public void update(final Request<Consumer> request, final Consumer entity) {
+	public void update(final Request<Chef> request, final Chef entity) {
 		assert request != null;
 		assert entity != null;
 
@@ -94,7 +94,7 @@ public class AuthenticatedConsumerUpdateService implements AbstractUpdateService
 	}
 
 	@Override
-	public void onSuccess(final Request<Consumer> request, final Response<Consumer> response) {
+	public void onSuccess(final Request<Chef> request, final Response<Chef> response) {
 		assert request != null;
 		assert response != null;
 

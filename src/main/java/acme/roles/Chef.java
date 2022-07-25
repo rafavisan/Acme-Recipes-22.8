@@ -22,7 +22,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Consumer extends UserRole {
+public class Chef extends UserRole {
 
 	// Serialisation identifier -----------------------------------------------
 

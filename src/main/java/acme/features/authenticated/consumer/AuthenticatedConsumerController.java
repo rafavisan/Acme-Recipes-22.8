@@ -19,10 +19,10 @@ import org.springframework.stereotype.Controller;
 
 import acme.framework.controllers.AbstractController;
 import acme.framework.roles.Authenticated;
-import acme.roles.Consumer;
+import acme.roles.Chef;
 
 @Controller
-public class AuthenticatedConsumerController extends AbstractController<Authenticated, Consumer> {
+public class AuthenticatedConsumerController extends AbstractController<Authenticated, Chef> {
 
 	// Internal state ---------------------------------------------------------
 
