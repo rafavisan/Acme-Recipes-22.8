@@ -15,6 +15,9 @@ package acme.roles;
 import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
 
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.URL;
+
 import acme.framework.roles.UserRole;
 import lombok.Getter;
 import lombok.Setter;
@@ -22,7 +25,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Provider extends UserRole {
+public class Epicure extends UserRole {
 
 	// Serialisation identifier -----------------------------------------------
 
@@ -31,10 +34,15 @@ public class Provider extends UserRole {
 	// Attributes -------------------------------------------------------------
 
 	@NotBlank
-	protected String			company;
+	@Length(min=1, max=101)
+	protected String			organisation;
 
 	@NotBlank
-	protected String			sector;
+	@Length(min=1, max=256)
+	protected String			assertion;
+	
+	@URL
+	protected String			url;
 
 	// Derived attributes -----------------------------------------------------
 
