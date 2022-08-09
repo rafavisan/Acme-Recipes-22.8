@@ -673,7 +673,7 @@ bg=green</panel_attributes>
 must be a string formed
 by the accepted currencies
 separated by commas
-"EUR,USD,GBP"
+"EUR,USD,GBP" 
 
 bg=green</panel_attributes>
     <additional_attributes/>
