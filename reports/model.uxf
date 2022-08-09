@@ -704,7 +704,7 @@ by the tuples separated
 by semicolons. The tuple must
 be the term and the weight
 separated by commas
-"sex,0.10;viagra,0.10"
+"sex,0.10;viagra,0.10" 
 
 bg=green</panel_attributes>
     <additional_attributes/>
