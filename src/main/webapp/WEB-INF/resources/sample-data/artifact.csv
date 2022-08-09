@@ -1,0 +1,5 @@
+key,name,code,description,retailPrice,link,type,key:chef
+artifact-01,Pollo,PO:KFC-123,para chuparse los dedos,EUR 0.01,https://es.wikipedia.org/wiki/Artefacto,INGREDIENT,chef-01
+artifact-02,Esta cadena tiene 101 caracteres aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,SI:LLA-555,Esta cadena tiene 256 caracteres aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa,EUR 201854.01,null,UTENSIL,chef-01
+artifact-03,C,III-111,G,EUR 0.01,https://github.com/antquiher/Acme-Recipes-22.8.git,INGREDIENT,chef-01
+artifact-04,Pollito,PO:KFC-124,para chuparse los dedos,EUR 0.01,https://www.kfc.es/,UTENSIL,chef-02
