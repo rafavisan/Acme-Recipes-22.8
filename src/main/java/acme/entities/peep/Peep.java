@@ -12,7 +12,6 @@ import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.Length;
 
-import acme.framework.datatypes.Money;
 import acme.framework.entities.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
