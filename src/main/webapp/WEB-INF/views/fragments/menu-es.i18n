@@ -25,6 +25,8 @@ master.menu.anonymous.favourite-link.diecrequi = 30260025Y: Crespo Quinta, Diego
 master.menu.anonymous.favourite-link.pedolirod = 20231423W: Oliva Rodríguez, Pedro
 master.menu.anonymous.favourite-link.alfcadmor = 49134556R: Cadenas Morales, Alfonso
 
+
+master.menu.anonymous.peep = Peeps
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador

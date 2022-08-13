@@ -25,6 +25,8 @@
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link.diecrequi" action="https://magic.wizards.com/es"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link.pedolirod" action="https://ev.us.es/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link.alfcadmor" action="https://www.filmin.es/"/>
+		
+		<acme:menu-suboption code="master.menu.anonymous.peep" action="/any/peep/list"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
