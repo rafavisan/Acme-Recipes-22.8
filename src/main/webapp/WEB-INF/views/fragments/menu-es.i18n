@@ -25,8 +25,12 @@ master.menu.anonymous.favourite-link.diecrequi = 30260025Y: Crespo Quinta, Diego
 master.menu.anonymous.favourite-link.pedolirod = 20231423W: Oliva Rodríguez, Pedro
 master.menu.anonymous.favourite-link.alfcadmor = 49134556R: Cadenas Morales, Alfonso
 
-master.menu.anonymous.artifact.ingredient = Ingrediente
-master.menu.anonymous.artifact.utensil = Utensilio de cocina
+master.menu.anonymous.artifact.ingredient = Ingredientes
+master.menu.anonymous.artifact.utensil = Utensilios de cocina
+
+# master.menu.authenticated ########################################################
+
+master.menu.authenticated = Autenticado
 
 # master.menu.administrator ###################################################
 
