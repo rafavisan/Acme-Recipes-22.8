@@ -28,6 +28,8 @@ master.menu.anonymous.favourite-link.alfcadmor = 49134556R: Cadenas Morales, Alf
 master.menu.anonymous.artifact.ingredient = Ingredientes
 master.menu.anonymous.artifact.utensil = Utensilios de cocina
 
+master.menu.anonymous.recipe = Recetas
+
 # master.menu.authenticated ########################################################
 
 master.menu.authenticated = Autenticado

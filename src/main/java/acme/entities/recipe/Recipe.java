@@ -43,6 +43,9 @@ public class Recipe extends AbstractEntity {
 	protected String link;
 	
 	@NotNull
+	protected boolean isPublished;
+	
+	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
 	protected Chef chef;
