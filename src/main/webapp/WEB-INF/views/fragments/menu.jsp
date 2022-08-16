@@ -29,6 +29,10 @@
 		<acme:menu-suboption code="master.menu.anonymous.peep" action="/any/peep/list"/>
 		</acme:menu-option>
 
+		<acme:menu-option code="master.menu.any" access="isAuthenticated()">
+		<acme:menu-suboption code="master.menu.anonymous.peep" action="/any/peep/list"/>
+		</acme:menu-option>
+
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
 			<acme:menu-separator/>
