@@ -16,8 +16,11 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:list>
+	<acme:list-column code="any.peep.list.label.instantiationMoment" path="instantiationMoment" width="20%"/>
 	<acme:list-column code="any.peep.list.label.heading" path="heading" width="20%"/>
 	<acme:list-column code="any.peep.list.label.writer" path="writer" width="20%"/>
+	<acme:list-column code="any.peep.list.label.text" path="text" width="20%"/>
+	<acme:list-column code="any.peep.list.label.email" path="email" width="20%"/>
 </acme:list>
 
 

@@ -8,11 +8,9 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-any.peep.form.label.instantiationMoment = Fecha
-any.peep.form.label.heading = Cabecera
-any.peep.form.label.writer = Escritor
-any.peep.form.label.text = Texto
-any.peep.form.label.email = Email
-
+any.peep.list.label.instantiationMoment = Fecha
 any.peep.list.label.heading = Cabecera
 any.peep.list.label.writer = Escritor
+any.peep.list.label.text = Texto
+any.peep.list.label.email = Email
+

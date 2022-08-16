@@ -17,14 +17,11 @@ public class PeepController extends AbstractController<Any, Peep>{
 	@Autowired
 	protected PeepListService	listService;
 
-	@Autowired
-	protected PeepShowService	showService;
 	
 	
 	@PostConstruct
 	protected void initialise() {
 		super.addCommand("list", this.listService);
-		super.addCommand("show", this.showService);
 	}
 
 }

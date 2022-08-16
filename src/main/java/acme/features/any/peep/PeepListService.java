@@ -1,7 +1,9 @@
 package acme.features.any.peep;
 
 
+import java.util.Calendar;
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,8 +37,13 @@ public class PeepListService implements AbstractListService<Any, Peep>{
 				assert request != null;
 
 				Collection<Peep> result;
+				Calendar calendar;
+				Date deadline;
 
-				result = this.repository.findManyPeep();
+				calendar = Calendar.getInstance();
+				calendar.add(Calendar.MONTH, -1);
+				deadline = calendar.getTime();
+				result = this.repository.findManyPeepOneMonth(deadline);
 
 				return result;
 			}
@@ -47,7 +54,7 @@ public class PeepListService implements AbstractListService<Any, Peep>{
 				assert entity != null;
 				assert model != null;
 
-				request.unbind(entity, model, "heading", "writer");
+				request.unbind(entity, model, "instantiationMoment", "heading", "writer", "text", "email");
 			}
 
 }
