@@ -16,5 +16,8 @@ public interface FineDishRepository extends AbstractRepository{
 
 	@Query("select a from FineDish a")
 	Collection<FineDish> findManyFineDish();
+	
+	@Query("select a from FineDish a where a.chef.id = :i")
+	Collection<FineDish> findManyFineDishByChef(Integer i);
 
 }

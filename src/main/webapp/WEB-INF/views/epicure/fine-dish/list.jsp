@@ -16,9 +16,9 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:list>
-	<acme:list-column code="chef.fine-dish.list.label.code" path="code" width="20%"/>
-	<acme:list-column code="chef.fine-dish.list.label.budget" path="budget" width="20%"/>
-	<acme:list-column code="chef.fine-dish.list.label.request" path="request" width="100%"/>
+	<acme:list-column code="epicure.fine-dish.list.label.code" path="code" width="20%"/>
+	<acme:list-column code="epicure.fine-dish.list.label.budget" path="budget" width="20%"/>
+	<acme:list-column code="epicure.fine-dish.list.label.request" path="request" width="100%"/>
 </acme:list>
 
 

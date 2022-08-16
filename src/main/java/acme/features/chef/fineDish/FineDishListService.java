@@ -35,7 +35,7 @@ public class FineDishListService implements AbstractListService<Chef, FineDish>{
 
 				Collection<FineDish> result;
 
-				result = this.repository.findManyFineDish();
+				result = this.repository.findManyFineDishByChef(request.getPrincipal().getActiveRoleId());
 
 				return result;
 			}

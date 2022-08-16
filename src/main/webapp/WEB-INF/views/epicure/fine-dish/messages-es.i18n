@@ -8,15 +8,15 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-chef.fine-dish.form.label.status = Estado
-chef.fine-dish.form.label.code = Codigo
-chef.fine-dish.form.label.request = Peticion
-chef.fine-dish.form.label.budget = Presupuesto
-chef.fine-dish.form.label.initialDate = Fecha inicial
-chef.fine-dish.form.label.finishDate = Fecha final
-chef.fine-dish.form.label.url = Url
-chef.fine-dish.form.label.chef = Chef
+epicure.fine-dish.form.label.status = Estado
+epicure.fine-dish.form.label.code = Codigo
+epicure.fine-dish.form.label.request = Peticion
+epicure.fine-dish.form.label.budget = Presupuesto
+epicure.fine-dish.form.label.initialDate = Fecha inicial
+epicure.fine-dish.form.label.finishDate = Fecha final
+epicure.fine-dish.form.label.url = Url
+epicure.fine-dish.form.label.chef = Chef
 
-chef.fine-dish.list.label.code = Codigo
-chef.fine-dish.list.label.request = Peticion
-chef.fine-dish.list.label.budget = Presupuesto
+epicure.fine-dish.list.label.code = Codigo
+epicure.fine-dish.list.label.request = Peticion
+epicure.fine-dish.list.label.budget = Presupuesto

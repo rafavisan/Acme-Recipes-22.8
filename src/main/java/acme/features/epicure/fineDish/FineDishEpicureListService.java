@@ -34,8 +34,7 @@ public class FineDishEpicureListService implements AbstractListService<Epicure, 
 				assert request != null;
 
 				Collection<FineDish> result;
-
-				result = this.repository.findManyFineDish();
+				result = this.repository.findManyFineDishByEpi(request.getPrincipal().getActiveRoleId());
 
 				return result;
 			}

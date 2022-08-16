@@ -29,6 +29,10 @@ master.menu.authenticated.user-account = Cuentas de usuarios
 master.menu.anonymous.artifact.ingredient = Ingredientes
 master.menu.anonymous.artifact.utensil = Utensilios de cocina
 
+
+master.menu.chef = Chef
+master.menu.epicure = Epicure
+
 # master.menu.authenticated ########################################################
 
 master.menu.authenticated = Autenticado
