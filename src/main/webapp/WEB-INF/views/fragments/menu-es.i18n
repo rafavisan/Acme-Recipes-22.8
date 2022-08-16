@@ -26,6 +26,13 @@ master.menu.anonymous.favourite-link.pedolirod = 20231423W: Oliva Rodríguez, Pe
 master.menu.anonymous.favourite-link.alfcadmor = 49134556R: Cadenas Morales, Alfonso
 master.menu.authenticated.user-account = Cuentas de usuarios
 
+master.menu.anonymous.artifact.ingredient = Ingredientes
+master.menu.anonymous.artifact.utensil = Utensilios de cocina
+
+# master.menu.authenticated ########################################################
+
+master.menu.authenticated = Autenticado
+
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador

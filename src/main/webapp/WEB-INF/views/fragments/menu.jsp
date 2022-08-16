@@ -26,8 +26,18 @@
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link.pedolirod" action="https://ev.us.es/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link.alfcadmor" action="https://www.filmin.es/"/>
 			<acme:menu-separator/>
+
 			<acme:menu-suboption code="master.menu.authenticated.user-account" action="/any/user-account/list"/>
 			<acme:menu-separator/>
+
+			<acme:menu-suboption code="master.menu.anonymous.artifact.ingredient" action="/any/artifact/list-ingredient"/>
+			<acme:menu-suboption code="master.menu.anonymous.artifact.utensil" action="/any/artifact/list-utensil"/>
+		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
+			<acme:menu-suboption code="master.menu.anonymous.artifact.ingredient" action="/any/artifact/list-ingredient"/>
+			<acme:menu-suboption code="master.menu.anonymous.artifact.utensil" action="/any/artifact/list-utensil"/>
+
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
