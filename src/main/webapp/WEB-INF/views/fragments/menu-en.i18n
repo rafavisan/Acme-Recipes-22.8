@@ -24,6 +24,14 @@ master.menu.anonymous.favourite-link.alefrarod = 53772321T: Fraile Rodríguez, A
 master.menu.anonymous.favourite-link.diecrequi = 30260025Y: Crespo Quinta, Diego
 master.menu.anonymous.favourite-link.pedolirod = 20231423W: Oliva Rodríguez, Pedro
 master.menu.anonymous.favourite-link.alfcadmor = 49134556R: Cadenas Morales, Alfonso
+master.menu.authenticated.user-account = User Accounts
+
+master.menu.anonymous.artifact.ingredient = Ingredients
+master.menu.anonymous.artifact.utensil = Kitchen utensils
+
+# master.menu.authenticated ########################################################
+
+master.menu.authenticated = Authenticated
 
 # master.menu.administrator ###################################################
 
