@@ -25,8 +25,8 @@ public class FavouriteLinkTest extends TestHarness {
 	@Order(10)
 	public void favouriteLink() {
 		super.navigateHome();
-		super.clickOnMenu("Anonymous", "Favourite link");
-		super.checkCurrentUrl("http://www.example.com");
+		super.clickOnMenu("Anonymous", "54185066X: Quijano Herrera, Antonio");
+		super.checkCurrentUrl("https://forum.paradoxplaza.com/forum/forums/europa-universalis-iv.731");
 	}
 
 	// Ancillary methods ------------------------------------------------------
