@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 
 import acme.entities.fineDish.FineDish;
 import acme.framework.repositories.AbstractRepository;
-import acme.roles.Epicure;
 
 @Repository
 public interface FineDishEpicureRepository extends AbstractRepository{
