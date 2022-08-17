@@ -48,6 +48,11 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/shut-down"/>
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.chef" access="hasRole('Chef')">
+			<acme:menu-suboption code="master.menu.anonymous.artifact.ingredient" action="/chef/artifact/list-ingredient"/>
+			<acme:menu-suboption code="master.menu.anonymous.artifact.utensil" action="/chef/artifact/list-utensil"/>
+		</acme:menu-option>
 
 	</acme:menu-left>
 
