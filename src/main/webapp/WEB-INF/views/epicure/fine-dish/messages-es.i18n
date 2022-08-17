@@ -9,14 +9,14 @@
 # they accept any liabilities with respect to them.
 
 epicure.fine-dish.form.label.status = Estado
-epicure.fine-dish.form.label.code = Codigo
-epicure.fine-dish.form.label.request = Peticion
+epicure.fine-dish.form.label.code = Código
+epicure.fine-dish.form.label.request = Petición
 epicure.fine-dish.form.label.budget = Presupuesto
 epicure.fine-dish.form.label.initialDate = Fecha inicial
 epicure.fine-dish.form.label.finishDate = Fecha final
 epicure.fine-dish.form.label.url = Url
 epicure.fine-dish.form.label.chef = Chef
 
-epicure.fine-dish.list.label.code = Codigo
-epicure.fine-dish.list.label.request = Peticion
+epicure.fine-dish.list.label.code = Código
+epicure.fine-dish.list.label.request = Petición
 epicure.fine-dish.list.label.budget = Presupuesto
