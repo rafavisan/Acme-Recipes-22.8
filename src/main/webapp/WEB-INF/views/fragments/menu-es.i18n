@@ -29,10 +29,17 @@ master.menu.authenticated.user-account = Cuentas de usuarios
 master.menu.anonymous.artifact.ingredient = Ingredientes
 master.menu.anonymous.artifact.utensil = Utensilios de cocina
 
+
+master.menu.chef = Chef
+master.menu.epicure = Epicure
+
 # master.menu.authenticated ########################################################
 
 master.menu.authenticated = Autenticado
 
+
+master.menu.anonymous.peep = Peeps
+master.menu.any = Anonimo
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador
@@ -45,6 +52,11 @@ master.menu.administrator.shut-down = Parar el sistema
 # master.menu.chef ########################################################
 
 master.menu.chef = Chef
+master.menu.chef.fine-dish = Fine Dish
+
+# master.menu.epicure ########################################################
+
+master.menu.epicure.fine-dish = Fine Dish
 
 # master.menu.provider ########################################################
 
