@@ -37,6 +37,9 @@ master.menu.epicure = Epicure
 
 master.menu.authenticated = Authenticated
 
+
+master.menu.anonymous.peep = Peeps
+master.menu.any = Anonymous
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator
