@@ -48,6 +48,11 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/shut-down"/>
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.epicure" access="hasRole('Epicure')">
+			<acme:menu-suboption code="master.menu.epicure.memorandum" action="/epicure/memorandum/list"/>
+			<acme:menu-separator/>
+		</acme:menu-option>
 
 	</acme:menu-left>
 
