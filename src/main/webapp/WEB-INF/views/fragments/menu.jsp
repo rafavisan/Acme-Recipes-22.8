@@ -39,6 +39,14 @@
 			<acme:menu-suboption code="master.menu.anonymous.artifact.utensil" action="/any/artifact/list-utensil"/>
 
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.chef" access="hasRole('Chef')">
+		<acme:menu-suboption code="master.menu.chef.fine-dish" action="/chef/fine-dish/list"/>
+		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.epicure" access="hasRole('Epicure')">
+		<acme:menu-suboption code="master.menu.epicure.fine-dish" action="/epicure/fine-dish/list"/>
+		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>

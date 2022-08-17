@@ -29,6 +29,10 @@ master.menu.authenticated.user-account = User Accounts
 master.menu.anonymous.artifact.ingredient = Ingredients
 master.menu.anonymous.artifact.utensil = Kitchen utensils
 
+
+master.menu.chef = Chef
+master.menu.epicure = Epicure
+
 # master.menu.authenticated ########################################################
 
 master.menu.authenticated = Authenticated
@@ -42,6 +46,9 @@ master.menu.administrator.populate-initial = Populate DB (initial)
 master.menu.administrator.populate-sample = Populate DB (samples)
 master.menu.administrator.shut-down = Shut down
 
+master.menu.chef.fine-dish = Fine Dish
+
+master.menu.epicure.fine-dish = Fine Dish
 # master.menu.provider ########################################################
 
 master.menu.provider = Provider
