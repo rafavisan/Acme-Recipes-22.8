@@ -15,7 +15,7 @@ import acme.framework.roles.Authenticated;
 import acme.framework.services.AbstractShowService;
 
 @Service
-public class AuthenticatedSystemConfigurationShowService extends AbstractShowService{Authenticated, SystemSettings} {
+public class AuthenticatedSystemConfigurationShowService implements AbstractShowService{Authenticated, SystemSettings} {
 	// Internal state ---------------------------------------------------------
 
 		@Autowired
