@@ -13,7 +13,7 @@ import acme.framework.roles.Administrator;
 import acme.framework.services.AbstractShowService;
 
 @Service
-public class AdministratorSystemSettingsService extends AbstractShowService<Administrator, SystemSettings> {
+public class AdministratorSystemSettingsService implements AbstractShowService<Administrator, SystemSettings> {
 
 
 		@Autowired
