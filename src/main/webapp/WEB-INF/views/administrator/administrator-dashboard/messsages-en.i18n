@@ -1,4 +1,4 @@
-# messages-es.i18n
+# messages-en.i18n
 #
 # Copyright (C) 2012-2022 Rafael Corchuelo.
 #
@@ -8,8 +8,7 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-authenticated.consumer.form.label.compañía = Compañía
-authenticated.consumer.form.label.sector = Sector
+administrator.dashboard.title.ingredient = Ingredients
+administrator.dashboard.title.utensil =  Kitchen utensils
 
-authenticated.consumer.form.button.create = Registrar
-authenticated.consumer.form.button.update = Actualizar
+administrator.dashboard.averageRetailPriceByCurrency = Average retail price

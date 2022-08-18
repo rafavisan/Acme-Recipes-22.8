@@ -19,15 +19,15 @@ public class AdministratorDashboard {
 
 	// Attributes -------------------------------------------------------------
 
-	protected Map<ArtifactType,Integer>					totalIngredient;
+	protected Map<ArtifactType,Integer>					totalArtifact;
 	
-	protected Map<Pair<ArtifactType, String>, Double>	averageIngredientRetailPrice;
+	protected Map<Pair<ArtifactType, String>, Double>	averageArtifactRetailPrice;
 	
-	protected Map<Pair<ArtifactType, String>, Double>	deviationIngredientRetailPrice;
+	protected Map<Pair<ArtifactType, String>, Double>	deviationArtifactRetailPrice;
 	
-	protected Map<Pair<ArtifactType, String>, Double>	minimumIngredientRetailPrice;
+	protected Map<Pair<ArtifactType, String>, Double>	minimumArtifactRetailPrice;
 
-	protected Map<Pair<ArtifactType, String>, Double>	maximumIngredientRetailPrice;
+	protected Map<Pair<ArtifactType, String>, Double>	maximumArtifactRetailPrice;
 	
 	protected Map<StatusType, Integer> 					totalFineDish;
 	
