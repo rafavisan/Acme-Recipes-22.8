@@ -21,6 +21,4 @@
 	<acme:input-textbox code="any.artifact.form.label.description" path="description"/>
 	<acme:input-textbox code="any.artifact.form.label.retail-price" path="retailPrice"/>
 	<acme:input-textbox code="any.artifact.form.label.link" path="link"/>
-	
-	<acme:button code="any.artifact.form.button.partOf" action="/any/part-of/list-recipes?masterId=${id}"/>
 </acme:form>
