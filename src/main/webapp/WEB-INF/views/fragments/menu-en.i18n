@@ -82,10 +82,11 @@ master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
 
+# master.menu.chef ###############################################################
+master.menu.chef = Chef
+master.menu.chef.memorandum = Memorandum
+master.menu.chef.recipes = Recipes
+
 # master.menu.epicure ###############################################################
 master.menu.epicure = Epicure
 master.menu.epicure.memorandum = Memorandum
-
-# master.menu.chef ####################################################
-master.menu.chef = Chef
-master.menu.chef.recipes = Recipes
