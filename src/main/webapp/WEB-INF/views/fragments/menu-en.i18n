@@ -38,6 +38,11 @@ master.menu.epicure = Epicure
 
 
 
+# master.menu.bulletin ####################################################
+master.menu.bulletin = Bulletin
+master.menu.authenticated.bulletin = Bulletin
+
+
 # master.menu.authenticated ########################################################
 
 master.menu.authenticated = Authenticated

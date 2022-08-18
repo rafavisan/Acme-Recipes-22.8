@@ -40,6 +40,9 @@ master.menu.anonymous.recipe = Recetas
 master.menu.chef = Chef
 master.menu.epicure = Epicure
 
+# master.menu.bulletin ####################################################
+master.menu.bulletin = Boletín
+master.menu.authenticated.bulletin = Boletín
 
 
 # master.menu.authenticated ########################################################

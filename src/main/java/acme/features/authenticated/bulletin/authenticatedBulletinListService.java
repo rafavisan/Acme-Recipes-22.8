@@ -1,6 +1,8 @@
 package acme.features.authenticated.bulletin;
 
+import java.util.Calendar;
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,11 +35,17 @@ public class authenticatedBulletinListService implements AbstractListService<Aut
 	public Collection<Bulletin> findMany(final Request<Bulletin> request) {
 		assert request != null;
 
-		Collection<Bulletin> result;
+        Collection<Bulletin> result;
+        Calendar calendar;
+        Date deadline;
 
-		result = this.repository.findManyBulletin();
+        calendar = Calendar.getInstance();
+        calendar.add(Calendar.MONTH, -1);
+        deadline = calendar.getTime();
 
-		return result;
+        result= this.repository.findManyBulletinOneMonth(deadline);
+
+        return result;
 	}
 	
 	@Override
