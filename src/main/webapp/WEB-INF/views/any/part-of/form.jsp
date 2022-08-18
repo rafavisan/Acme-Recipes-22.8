@@ -16,11 +16,8 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:form readonly="true">
-	<acme:input-textbox code="any.artifact.form.label.name" path="name"/>	
-	<acme:input-textbox code="any.artifact.form.label.code" path="code"/>
-	<acme:input-textbox code="any.artifact.form.label.description" path="description"/>
-	<acme:input-textbox code="any.artifact.form.label.retail-price" path="retailPrice"/>
-	<acme:input-textbox code="any.artifact.form.label.link" path="link"/>
-	
-	<acme:button code="any.artifact.form.button.partOf" action="/any/part-of/list-recipes?masterId=${id}"/>
+	<acme:input-double code="any.partOf.form.label.quantity" path="quantity"/>	
+	<acme:input-textbox code="any.partOf.form.label.unit" path="unit"/>
+	<acme:input-textbox code="any.partOf.form.label.recipe.heading" path="recipe.heading"/>
+	<acme:input-textbox code="any.partOf.form.label.artifact.name" path="artifact.name"/>
 </acme:form>

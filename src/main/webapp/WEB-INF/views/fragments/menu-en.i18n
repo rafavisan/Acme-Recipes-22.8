@@ -29,9 +29,14 @@ master.menu.authenticated.user-account = User Accounts
 master.menu.anonymous.artifact.ingredient = Ingredients
 master.menu.anonymous.artifact.utensil = Kitchen utensils
 
+master.menu.anonymous.recipe = Recipes
+
+
 
 master.menu.chef = Chef
 master.menu.epicure = Epicure
+
+
 
 # master.menu.authenticated ########################################################
 
@@ -76,3 +81,7 @@ master.menu.user-account.provider = Provider data
 master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
+
+# master.menu.chef ####################################################
+master.menu.chef = Chef
+master.menu.chef.recipes = Recipes
