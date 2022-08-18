@@ -23,15 +23,13 @@ public class authenticatedBulletinShowService implements AbstractShowService<Aut
 	public boolean authorise(final Request<Bulletin> request) {
 		assert request != null;
 
-		boolean result;
 		int id;
-		Bulletin Bulletin;
+		Bulletin bulletin;
 
 		id = request.getModel().getInteger("id");
-		Bulletin = this.repository.findOneBulletinById(id);
-		result = Bulletin.isFlag();
+		bulletin = this.repository.findOneBulletinById(id);
 
-		return result;
+		return bulletin != null;
 	}
 
 	@Override
