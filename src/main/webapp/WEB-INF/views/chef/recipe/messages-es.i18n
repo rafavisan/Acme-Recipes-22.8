@@ -1,0 +1,19 @@
+# messages-es.i18n
+#
+# Copyright (C) 2012-2022 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+chef.recipe.list.label.heading = Cabecera
+chef.recipe.list.label.code = Código
+
+chef.recipe.form.label.heading = Cabecera
+chef.recipe.form.label.code = Código
+chef.recipe.form.label.description = Descrición
+chef.recipe.form.label.preparation-notes = Notas de preparación
+chef.recipe.form.label.link = Enlace
+chef.recipe.form.button.partOf = Encuentra los artefactos usados por esta receta

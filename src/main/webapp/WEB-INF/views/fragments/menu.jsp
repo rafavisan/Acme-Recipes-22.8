@@ -40,6 +40,7 @@
       <acme:menu-suboption code="master.menu.anonymous.peep" action="/any/peep/list"/>
 			<acme:menu-suboption code="master.menu.anonymous.artifact.ingredient" action="/any/artifact/list-ingredient"/>
 			<acme:menu-suboption code="master.menu.anonymous.artifact.utensil" action="/any/artifact/list-utensil"/>
+			<acme:menu-suboption code="master.menu.anonymous.recipe" action="/any/recipe/list"/>
 
 			<acme:menu-suboption code="master.menu.anonymous.recipe" action="/any/recipe/list"/>
 
@@ -62,6 +63,10 @@
 			<acme:menu-suboption code="master.menu.administrator.populate-sample" action="/administrator/populate-sample"/>			
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/shut-down"/>
+		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.chef" access="hasRole('Chef')">
+			<acme:menu-suboption code="master.menu.chef.recipes" action="/chef/recipe/list"/>
 		</acme:menu-option>
 
 	</acme:menu-left>
