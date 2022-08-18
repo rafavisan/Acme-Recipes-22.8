@@ -1,7 +1,6 @@
 
 package acme.features.administrator.administratorDashboard;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -12,13 +11,10 @@ import org.springframework.data.util.Pair;
 import org.springframework.stereotype.Service;
 
 import acme.entities.administratorDashboard.AdministratorDashboard;
-import acme.entities.artifact.Artifact;
 import acme.entities.artifact.ArtifactType;
-import acme.features.any.artifact.AnyArtifactRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.roles.Administrator;
-import acme.framework.roles.Any;
 import acme.framework.services.AbstractShowService;
 
 @Service

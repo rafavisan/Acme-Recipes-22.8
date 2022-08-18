@@ -14,6 +14,11 @@
 
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
+<%@ page import="org.springframework.data.util.Pair" %>
+
+<jstl:forEach var="entry" items="${averageArtifactRetailPrice.entrySet()}">
+			<p>${entry}</p>
+			</jstl:forEach>
 
 <jstl:forEach var="type" items="${artifactTypes}">
 	<h2><acme:message code="administrator.dashboard.title.${type.name().toLowerCase()}" /></h2>
