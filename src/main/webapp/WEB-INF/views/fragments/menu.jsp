@@ -66,6 +66,8 @@
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.chef" access="hasRole('Chef')">
+			<acme:menu-suboption code="master.menu.anonymous.artifact.ingredient" action="/chef/artifact/list-ingredient"/>
+			<acme:menu-suboption code="master.menu.anonymous.artifact.utensil" action="/chef/artifact/list-utensil"/>
 			<acme:menu-suboption code="master.menu.chef.recipes" action="/chef/recipe/list"/>
 		</acme:menu-option>
 
