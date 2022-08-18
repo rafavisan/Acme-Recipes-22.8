@@ -24,16 +24,26 @@ master.menu.anonymous.favourite-link.alefrarod = 53772321T: Fraile Rodríguez, A
 master.menu.anonymous.favourite-link.diecrequi = 30260025Y: Crespo Quinta, Diego
 master.menu.anonymous.favourite-link.pedolirod = 20231423W: Oliva Rodríguez, Pedro
 master.menu.anonymous.favourite-link.alfcadmor = 49134556R: Cadenas Morales, Alfonso
+master.menu.authenticated.user-account = Cuentas de usuarios
 
 master.menu.anonymous.artifact.ingredient = Ingredientes
 master.menu.anonymous.artifact.utensil = Utensilios de cocina
 
+
 master.menu.anonymous.recipe = Recetas
+
+
+master.menu.chef = Chef
+master.menu.epicure = Epicure
+
 
 # master.menu.authenticated ########################################################
 
 master.menu.authenticated = Autenticado
 
+
+master.menu.anonymous.peep = Peeps
+master.menu.any = Anonimo
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador
@@ -43,6 +53,9 @@ master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-down = Parar el sistema
 
+master.menu.chef.fine-dish = Fine Dish
+
+master.menu.epicure.fine-dish = Fine Dish
 # master.menu.provider ########################################################
 
 master.menu.provider = Proveedor
