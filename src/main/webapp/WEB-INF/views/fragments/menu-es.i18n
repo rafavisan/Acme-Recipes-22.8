@@ -30,8 +30,12 @@ master.menu.anonymous.artifact.ingredient = Ingredientes
 master.menu.anonymous.artifact.utensil = Utensilios de cocina
 
 
+master.menu.anonymous.recipe = Recetas
+
+
 master.menu.chef = Chef
 master.menu.epicure = Epicure
+
 
 # master.menu.authenticated ########################################################
 
