@@ -25,6 +25,7 @@
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link.diecrequi" action="https://magic.wizards.com/es"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link.pedolirod" action="https://ev.us.es/"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link.alfcadmor" action="https://www.filmin.es/"/>
+
 			<acme:menu-separator/>
 
 			<acme:menu-suboption code="master.menu.authenticated.user-account" action="/any/user-account/list"/>
@@ -32,11 +33,26 @@
 
 			<acme:menu-suboption code="master.menu.anonymous.artifact.ingredient" action="/any/artifact/list-ingredient"/>
 			<acme:menu-suboption code="master.menu.anonymous.artifact.utensil" action="/any/artifact/list-utensil"/>
+			<acme:menu-suboption code="master.menu.anonymous.recipe" action="/any/recipe/list"/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
+      <acme:menu-suboption code="master.menu.anonymous.peep" action="/any/peep/list"/>
 			<acme:menu-suboption code="master.menu.anonymous.artifact.ingredient" action="/any/artifact/list-ingredient"/>
 			<acme:menu-suboption code="master.menu.anonymous.artifact.utensil" action="/any/artifact/list-utensil"/>
+			<acme:menu-suboption code="master.menu.anonymous.recipe" action="/any/recipe/list"/>
+
+			<acme:menu-suboption code="master.menu.anonymous.recipe" action="/any/recipe/list"/>
+
+
+		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.chef" access="hasRole('Chef')">
+		<acme:menu-suboption code="master.menu.chef.fine-dish" action="/chef/fine-dish/list"/>
+		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.epicure" access="hasRole('Epicure')">
+		<acme:menu-suboption code="master.menu.epicure.fine-dish" action="/epicure/fine-dish/list"/>
 
 		</acme:menu-option>
 
@@ -48,10 +64,16 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/shut-down"/>
 		</acme:menu-option>
-		
-		<acme:menu-option code="master.menu.chef" access="hasRole('Chef')">
-			<acme:menu-suboption code="master.menu.chef.memorandum" action="/chef/memorandum/list"/>
+
+		<acme:menu-option code="master.menu.epicure" access="hasRole('Epicure')">
+			<acme:menu-suboption code="master.menu.epicure.memorandum" action="/epicure/memorandum/list"/>
 			<acme:menu-separator/>
+		<acme:menu-option code="master.menu.chef" access="hasRole('Chef')">
+			<acme:menu-suboption code="master.menu.anonymous.artifact.ingredient" action="/chef/artifact/list-ingredient"/>
+			<acme:menu-suboption code="master.menu.anonymous.artifact.utensil" action="/chef/artifact/list-utensil"/>
+			<acme:menu-suboption code="master.menu.chef.recipes" action="/chef/recipe/list"/>
+      <acme:menu-separator/>
+      <acme:menu-suboption code="master.menu.chef.memorandum" action="/chef/memorandum/list"/>
 		</acme:menu-option>
 
 	</acme:menu-left>
@@ -62,6 +84,7 @@
 
 		<acme:menu-option code="master.menu.user-account" access="isAuthenticated()">
 			<acme:menu-suboption code="master.menu.user-account.general-data" action="/authenticated/user-account/update"/>
+			<acme:menu-suboption code="master.menu.authenticated.bulletin" action="/authenticated/bulletin/list"/>
 			<acme:menu-suboption code="master.menu.user-account.become-provider" action="/authenticated/provider/create" access="!hasRole('Chef')"/>
 			<acme:menu-suboption code="master.menu.user-account.provider" action="/authenticated/provider/update" access="hasRole('Chef')"/>
 			<acme:menu-suboption code="master.menu.user-account.become-consumer" action="/authenticated/consumer/create" access="!hasRole('Epicure')"/>
