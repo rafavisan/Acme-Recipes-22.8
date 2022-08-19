@@ -29,9 +29,19 @@ master.menu.authenticated.user-account = User Accounts
 master.menu.anonymous.artifact.ingredient = Ingredients
 master.menu.anonymous.artifact.utensil = Kitchen utensils
 
+master.menu.anonymous.recipe = Recipes
+
+
 
 master.menu.chef = Chef
 master.menu.epicure = Epicure
+
+
+
+# master.menu.bulletin ####################################################
+master.menu.bulletin = Bulletin
+master.menu.authenticated.bulletin = Bulletin
+
 
 # master.menu.authenticated ########################################################
 
@@ -50,7 +60,13 @@ master.menu.administrator.populate-initial = Populate DB (initial)
 master.menu.administrator.populate-sample = Populate DB (samples)
 master.menu.administrator.shut-down = Shut down
 
+# master.menu.chef ########################################################
+
+master.menu.chef = Chef
 master.menu.chef.fine-dish = Fine Dish
+
+# master.menu.epicure ########################################################
+
 master.menu.epicure.fine-dish = Fine Dish
 
 # master.menu.provider ########################################################
@@ -71,3 +87,12 @@ master.menu.user-account.provider = Provider data
 master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
+
+# master.menu.chef ###############################################################
+master.menu.chef = Chef
+master.menu.chef.memorandum = Memorandum
+master.menu.chef.recipes = Recipes
+
+# master.menu.epicure ###############################################################
+master.menu.epicure = Epicure
+master.menu.epicure.memorandum = Memorandum

@@ -33,21 +33,15 @@
 
 			<acme:menu-suboption code="master.menu.anonymous.artifact.ingredient" action="/any/artifact/list-ingredient"/>
 			<acme:menu-suboption code="master.menu.anonymous.artifact.utensil" action="/any/artifact/list-utensil"/>
+			<acme:menu-suboption code="master.menu.anonymous.recipe" action="/any/recipe/list"/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
-      <acme:menu-suboption code="master.menu.anonymous.peep" action="/any/peep/list"/>
+     		<acme:menu-suboption code="master.menu.anonymous.peep" action="/any/peep/list"/>
+     		<acme:menu-suboption code="master.menu.authenticated.bulletin" action="/authenticated/bulletin/list"/>
 			<acme:menu-suboption code="master.menu.anonymous.artifact.ingredient" action="/any/artifact/list-ingredient"/>
 			<acme:menu-suboption code="master.menu.anonymous.artifact.utensil" action="/any/artifact/list-utensil"/>
-
-		</acme:menu-option>
-		
-		<acme:menu-option code="master.menu.chef" access="hasRole('Chef')">
-		<acme:menu-suboption code="master.menu.chef.fine-dish" action="/chef/fine-dish/list"/>
-		</acme:menu-option>
-		
-		<acme:menu-option code="master.menu.epicure" access="hasRole('Epicure')">
-		<acme:menu-suboption code="master.menu.epicure.fine-dish" action="/epicure/fine-dish/list"/>
+			<acme:menu-suboption code="master.menu.anonymous.recipe" action="/any/recipe/list"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
@@ -58,6 +52,19 @@
 			<acme:menu-suboption code="master.menu.administrator.populate-sample" action="/administrator/populate-sample"/>			
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/shut-down"/>
+		</acme:menu-option>
+
+		<acme:menu-option code="master.menu.epicure" access="hasRole('Epicure')">
+		<acme:menu-suboption code="master.menu.epicure.fine-dish" action="/epicure/fine-dish/list"/>
+			<acme:menu-suboption code="master.menu.epicure.memorandum" action="/epicure/memorandum/list"/>
+		</acme:menu-option>	
+		<acme:menu-option code="master.menu.chef" access="hasRole('Chef')">
+			<acme:menu-suboption code="master.menu.anonymous.artifact.ingredient" action="/chef/artifact/list-ingredient"/>
+			<acme:menu-suboption code="master.menu.anonymous.artifact.utensil" action="/chef/artifact/list-utensil"/>
+			<acme:menu-suboption code="master.menu.chef.recipes" action="/chef/recipe/list"/>
+      <acme:menu-separator/>
+      <acme:menu-suboption code="master.menu.chef.fine-dish" action="/chef/fine-dish/list"/>
+      <acme:menu-suboption code="master.menu.chef.memorandum" action="/chef/memorandum/list"/>
 		</acme:menu-option>
 
 	</acme:menu-left>
