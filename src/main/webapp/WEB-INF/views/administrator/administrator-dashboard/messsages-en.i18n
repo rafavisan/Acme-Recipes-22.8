@@ -12,3 +12,13 @@ administrator.dashboard.title.ingredient = Ingredients
 administrator.dashboard.title.utensil =  Kitchen utensils
 
 administrator.dashboard.averageRetailPriceByCurrency = Average retail price
+administrator.dashboard.DeviationRetailPriceByCurrency = Deviation retail price
+administrator.dashboard.MinimumRetailPriceByCurrency = Minimum retail price
+administrator.dashboard.MaximumRetailPriceByCurrency = Maximum retail price
+
+administrator.dashboard.title.FineDish = Fine Dishes
+administrator.dashboard.total = Total
+administrator.dashboard.averageFineDishBudget = Average budget
+administrator.dashboard.deviationFineDishBudget = Deviation budget
+administrator.dashboard.maximumFineDishBudget = Maximum budget
+administrator.dashboard.minimumFineDishBudget = Minimum budget

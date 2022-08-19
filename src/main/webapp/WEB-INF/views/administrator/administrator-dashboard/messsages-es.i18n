@@ -12,3 +12,13 @@ administrator.dashboard.title.ingredient = Ingredientes
 administrator.dashboard.title.utensil =  Utensilios de cocina
 
 administrator.dashboard.averageRetailPriceByCurrency = Precio de venta medio
+administrator.dashboard.DeviationRetailPriceByCurrency = Desviación del precio de venta
+administrator.dashboard.MinimumRetailPriceByCurrency = Precio de venta máximo
+administrator.dashboard.MaximumRetailPriceByCurrency = Precio de venta mínimo
+
+administrator.dashboard.title.FineDish = Platos sofisticados
+administrator.dashboard.total = Total
+administrator.dashboard.averageFineDishBudget = Presupuesto medio
+administrator.dashboard.deviationFineDishBudget = Desvación del presupuesto
+administrator.dashboard.maximumFineDishBudget = Presupuesto máximo
+administrator.dashboard.minimumFineDishBudget = Presupuesto mínimo

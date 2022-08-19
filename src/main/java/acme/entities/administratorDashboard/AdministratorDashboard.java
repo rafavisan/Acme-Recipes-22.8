@@ -31,13 +31,13 @@ public class AdministratorDashboard {
 	
 	protected Map<StatusType, Integer> 					totalFineDish;
 	
-	protected Map<StatusType, Double>					averageFineDishRetailPrice;
+	protected Map<StatusType, Double>					averageFineDishBudget;
 	
-	protected Map<StatusType, Double>					deviationFineDishRetailPrice;
+	protected Map<StatusType, Double>					deviationFineDishBudget;
 	
-	protected Map<StatusType, Integer>					maximumFineDishRetailPrice;
+	protected Map<StatusType, Double>					maximumFineDishBudget;
 	
-	protected Map<StatusType, Integer>					minimumUtensilRetailPrice;
+	protected Map<StatusType, Double>					minimumFineDishBudget;
 	
 	// Derived attributes -----------------------------------------------------
 	
