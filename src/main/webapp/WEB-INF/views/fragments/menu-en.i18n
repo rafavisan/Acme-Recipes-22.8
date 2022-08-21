@@ -46,8 +46,7 @@ master.menu.authenticated.bulletin = Bulletin
 # master.menu.authenticated ########################################################
 
 master.menu.authenticated = Authenticated
-
-
+master.menu.authenticated.bulletin= Bulletin
 master.menu.anonymous.peep = Peeps
 master.menu.any = Anonymous
 # master.menu.administrator ###################################################

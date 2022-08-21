@@ -48,8 +48,7 @@ master.menu.authenticated.bulletin = Boletín
 # master.menu.authenticated ########################################################
 
 master.menu.authenticated = Autenticado
-
-
+master.menu.authenticated.bulletin= Boletín
 master.menu.anonymous.peep = Peeps
 master.menu.any = Anonimo
 # master.menu.administrator ###################################################
