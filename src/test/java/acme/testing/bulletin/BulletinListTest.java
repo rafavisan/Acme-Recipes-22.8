@@ -25,30 +25,65 @@ public class BulletinListTest extends TestHarness {
 	// Test cases -------------------------------------------------------------
 
 	@ParameterizedTest
-	@CsvFileSource(resources = "/chef/recipe/positive.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/bulletin/positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void positive(final int recordIndex, final String code, final String heading, final String description,
-		final String preparationNotes, final String link, final boolean isPublished) {
+	public void positive(final int recordIndex, final String instantiationMoment, final String heading, final String text,
+		final boolean flag, final String link) {
 		super.signIn("chef1", "chef1");
-		super.clickOnMenu("Chef", "Recipes");
+		super.clickOnMenu("Authenticated", "Bulletin");
 		super.checkListingExists();
 		
 		super.sortListing(0, "asc");
 		super.checkColumnHasValue(recordIndex, 0, heading);
-		super.checkColumnHasValue(recordIndex, 1, code);
+		super.checkColumnHasValue(recordIndex, 1, text);
+		super.checkColumnHasValue(recordIndex, 2, link);
 		
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
 		
 		super.checkInputBoxHasValue("heading", heading);
-		super.checkInputBoxHasValue("code", code);
-		super.checkInputBoxHasValue("description", description);
-		super.checkInputBoxHasValue("preparationNotes", preparationNotes);
+		super.checkInputBoxHasValue("instantiationMoment", instantiationMoment);
+		super.checkInputBoxHasValue("text", text);
 		super.checkInputBoxHasValue("link", link);
+				
+		super.signOut();
 		
-		super.clickOnButton("Find the Artifact used by this recipe");
+		super.signIn("epicure1", "epicure1");
+		super.clickOnMenu("Authenticated", "Bulletin");
 		super.checkListingExists();
 		
+		super.sortListing(0, "asc");
+		super.checkColumnHasValue(recordIndex, 0, heading);
+		super.checkColumnHasValue(recordIndex, 1, text);
+		super.checkColumnHasValue(recordIndex, 2, link);
+		
+		super.clickOnListingRecord(recordIndex);
+		super.checkFormExists();
+		
+		super.checkInputBoxHasValue("heading", heading);
+		super.checkInputBoxHasValue("instantiationMoment", instantiationMoment);
+		super.checkInputBoxHasValue("text", text);
+		super.checkInputBoxHasValue("link", link);
+				
+		super.signOut();
+		
+		super.signIn("administrator", "administrator");
+		super.clickOnMenu("Authenticated", "Bulletin");
+		super.checkListingExists();
+		
+		super.sortListing(0, "asc");
+		super.checkColumnHasValue(recordIndex, 0, heading);
+		super.checkColumnHasValue(recordIndex, 1, text);
+		super.checkColumnHasValue(recordIndex, 2, link);
+		
+		super.clickOnListingRecord(recordIndex);
+		super.checkFormExists();
+		
+		super.checkInputBoxHasValue("heading", heading);
+		super.checkInputBoxHasValue("instantiationMoment", instantiationMoment);
+		super.checkInputBoxHasValue("text", text);
+		super.checkInputBoxHasValue("link", link);
+				
 		super.signOut();
 	}
 
