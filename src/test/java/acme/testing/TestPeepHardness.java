@@ -22,7 +22,7 @@ public class TestPeepHardness extends AbstractTest{
 		super.fillInputBoxIn("password", password);
 		super.clickOnSubmit("Sign in");
 		super.checkCurrentPath("/master/welcome");
-		super.clickOnMenu("Anonymous", "Peeps");
+		super.clickOnMenu("Authenticated", "Peeps");
 	
 	}
 
