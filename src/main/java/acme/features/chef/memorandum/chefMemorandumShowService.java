@@ -1,11 +1,15 @@
 package acme.features.chef.memorandum;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.memorandum.Memorandum;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
+import acme.framework.entities.AbstractEntity;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 import acme.roles.Chef;
 
@@ -23,15 +27,11 @@ public class chefMemorandumShowService implements AbstractShowService<Chef, Memo
 	public boolean authorise(final Request<Memorandum> request) {
 		assert request != null;
 
-		boolean result;
-		int id;
-		Memorandum memorandum;
-
-		id = request.getModel().getInteger("id");
-		memorandum = this.repository.findOneMemorandumById(id);
-		result = true;
-
-		return result;
+		Integer id = request.getModel().getInteger("id");
+		Optional<AbstractEntity> result = this.repository.findById(id);
+		Principal principal = request.getPrincipal();
+		
+		return result.isPresent() && ((Memorandum)result.get()).getFineDish().getChef().getId() == principal.getActiveRoleId();
 	}
 
 	@Override

@@ -1,4 +1,4 @@
-package acme.features.any.partOf;
+package acme.features.chef.partOf;
 
 import java.util.Collection;
 
@@ -9,7 +9,7 @@ import acme.entities.partOf.PartOf;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface AnyPartOfRepository extends AbstractRepository {
+public interface ChefPartOfRepository extends AbstractRepository {
 
 	@Query("select p from PartOf p where p.recipe.isPublished = true and p.artifact.id=:id")
 	Collection<PartOf> findManyRecipesByPublisedAndArtifactId(int id);

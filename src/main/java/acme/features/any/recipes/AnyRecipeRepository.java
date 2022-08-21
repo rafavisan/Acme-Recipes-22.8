@@ -13,4 +13,6 @@ public interface AnyRecipeRepository extends AbstractRepository {
 
 	@Query("select r from Recipe r where r.isPublished = true")
 	Collection<Recipe> findManyByPublised();
+	
+
 }

@@ -9,6 +9,7 @@ import acme.entities.recipe.Recipe;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.entities.AbstractEntity;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 import acme.roles.Chef;
 
@@ -27,9 +28,10 @@ public class ChefRecipeShowService implements AbstractShowService<Chef, Recipe> 
 		assert request != null;
 		
 		Integer id = request.getModel().getInteger("id");
-		Optional<AbstractEntity> result =  this.repository.findById(id);
-
-		return result.isPresent();
+		Optional<AbstractEntity> result = this.repository.findById(id);
+		Principal principal = request.getPrincipal();
+		
+		return result.isPresent() && ((Recipe)result.get()).getChef().getId() == principal.getActiveRoleId();
 	}
 
 	@Override

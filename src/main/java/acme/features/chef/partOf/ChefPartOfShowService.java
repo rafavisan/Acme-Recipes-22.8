@@ -1,4 +1,4 @@
-package acme.features.any.partOf;
+package acme.features.chef.partOf;
 
 import java.util.Optional;
 
@@ -9,16 +9,16 @@ import acme.entities.partOf.PartOf;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.entities.AbstractEntity;
-import acme.framework.roles.Any;
 import acme.framework.services.AbstractShowService;
+import acme.roles.Chef;
 
 @Service
-public class AnyPartOfShowService implements AbstractShowService<Any, PartOf> {
+public class ChefPartOfShowService implements AbstractShowService<Chef, PartOf> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AnyPartOfRepository repository;
+	protected ChefPartOfRepository repository;
 
 	// AbstractShowService<Anonymous, PartOf> interface --------------------------
 

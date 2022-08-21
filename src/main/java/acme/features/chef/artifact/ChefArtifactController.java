@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 
 import acme.entities.artifact.Artifact;
 import acme.framework.controllers.AbstractController;
-import acme.framework.roles.Any;
 import acme.roles.Chef;
 
 @Controller

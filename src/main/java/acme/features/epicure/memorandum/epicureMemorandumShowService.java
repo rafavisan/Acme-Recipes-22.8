@@ -1,11 +1,15 @@
 package acme.features.epicure.memorandum;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.memorandum.Memorandum;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
+import acme.framework.entities.AbstractEntity;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 import acme.roles.Epicure;
 
@@ -23,9 +27,11 @@ public class epicureMemorandumShowService implements AbstractShowService<Epicure
 	public boolean authorise(final Request<Memorandum> request) {
 		assert request != null;
 
-		final boolean result= request.getPrincipal().hasRole(Epicure.class);
+		Integer id = request.getModel().getInteger("id");
+		Optional<AbstractEntity> result = this.repository.findById(id);
+		Principal principal = request.getPrincipal();
 		
-		return result;
+		return result.isPresent() && ((Memorandum)result.get()).getFineDish().getEpicure().getId() == principal.getActiveRoleId();
 	}
 
 	@Override

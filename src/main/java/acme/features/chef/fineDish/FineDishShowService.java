@@ -1,11 +1,15 @@
 package acme.features.chef.fineDish;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.fineDish.FineDish;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
+import acme.framework.entities.AbstractEntity;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 import acme.roles.Chef;
 
@@ -23,7 +27,11 @@ public class FineDishShowService implements AbstractShowService<Chef, FineDish>{
 			public boolean authorise(final Request<FineDish> request) {
 				assert request != null;
 
-				return true;
+				Integer id = request.getModel().getInteger("id");
+				Optional<AbstractEntity> result = this.repository.findById(id);
+				Principal principal = request.getPrincipal();
+				
+				return result.isPresent() && ((FineDish)result.get()).getChef().getId() == principal.getActiveRoleId();
 			}
 
 			@Override

@@ -1,11 +1,15 @@
 package acme.features.epicure.fineDish;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.fineDish.FineDish;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
+import acme.framework.entities.AbstractEntity;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 import acme.roles.Epicure;
 
@@ -23,7 +27,11 @@ public class FineDishEpicureShowService implements AbstractShowService<Epicure, 
 			public boolean authorise(final Request<FineDish> request) {
 				assert request != null;
 
-				return true;
+				Integer id = request.getModel().getInteger("id");
+				Optional<AbstractEntity> result = this.repository.findById(id);
+				Principal principal = request.getPrincipal();
+				
+				return result.isPresent() && ((FineDish)result.get()).getEpicure().getId() == principal.getActiveRoleId();
 			}
 
 			@Override

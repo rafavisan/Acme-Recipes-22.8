@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository;
 import acme.entities.artifact.Artifact;
 import acme.entities.artifact.ArtifactType;
 import acme.framework.repositories.AbstractRepository;
-import acme.roles.Chef;
 
 @Repository
 public interface ChefArtifactRepository extends AbstractRepository {
