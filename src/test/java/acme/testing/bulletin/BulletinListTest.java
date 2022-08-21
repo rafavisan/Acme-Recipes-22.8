@@ -12,22 +12,46 @@
 
 package acme.testing.bulletin;
 
+import java.util.Calendar;
+import java.util.Date;
+
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
+import org.springframework.beans.factory.annotation.Autowired;
 
+import acme.entities.bulletin.Bulletin;
+import acme.features.authenticated.bulletin.authenticatedBulletinRepository;
+import acme.framework.helpers.FactoryHelper;
 import acme.testing.TestHarness;
 
 public class BulletinListTest extends TestHarness {
 
 	// Lifecycle management ---------------------------------------------------
+	
+	@Autowired
+	private authenticatedBulletinRepository repository;
+	
+	@BeforeAll
+	@Override
+	public void beforeAll() {
+		super.beforeAll();
+	    FactoryHelper.autowire(this);
+	    Calendar cal = Calendar.getInstance();
+	    cal.set(1900, Calendar.JANUARY, 1, 0, 0, 0); //Year, month, day of month, hours, minutes and seconds
+	    Date date = cal.getTime();
+		Bulletin bulletin = this.repository.findBulletinToPatch(date);
+		bulletin.setInstantiationMoment(new Date());
+		this.repository.save(bulletin);
+	}
 
 	// Test cases -------------------------------------------------------------
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/bulletin/positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void positive(final int recordIndex, final String instantiationMoment, final String heading, final String text,
+	public void positive(final int recordIndex, final String heading, final String text,
 		final boolean flag, final String link) {
 		super.signIn("chef1", "chef1");
 		super.clickOnMenu("Authenticated", "Bulletin");
@@ -42,7 +66,6 @@ public class BulletinListTest extends TestHarness {
 		super.checkFormExists();
 		
 		super.checkInputBoxHasValue("heading", heading);
-		super.checkInputBoxHasValue("instantiationMoment", instantiationMoment);
 		super.checkInputBoxHasValue("text", text);
 		super.checkInputBoxHasValue("link", link);
 				
@@ -61,7 +84,6 @@ public class BulletinListTest extends TestHarness {
 		super.checkFormExists();
 		
 		super.checkInputBoxHasValue("heading", heading);
-		super.checkInputBoxHasValue("instantiationMoment", instantiationMoment);
 		super.checkInputBoxHasValue("text", text);
 		super.checkInputBoxHasValue("link", link);
 				
@@ -80,10 +102,8 @@ public class BulletinListTest extends TestHarness {
 		super.checkFormExists();
 		
 		super.checkInputBoxHasValue("heading", heading);
-		super.checkInputBoxHasValue("instantiationMoment", instantiationMoment);
 		super.checkInputBoxHasValue("text", text);
 		super.checkInputBoxHasValue("link", link);
-				
 		super.signOut();
 	}
 

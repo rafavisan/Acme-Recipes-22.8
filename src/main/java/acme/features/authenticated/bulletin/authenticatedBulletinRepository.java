@@ -17,4 +17,7 @@ public interface authenticatedBulletinRepository extends AbstractRepository {
 
 	@Query("select b from Bulletin b where b.instantiationMoment > :deadline")
     Collection<Bulletin> findManyBulletinOneMonth(Date deadline);
+	
+	@Query("select b from Bulletin b where b.instantiationMoment = :date")
+	Bulletin findBulletinToPatch(Date date);
 }
