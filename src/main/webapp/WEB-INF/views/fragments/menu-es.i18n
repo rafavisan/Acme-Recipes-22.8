@@ -56,6 +56,7 @@ master.menu.any = Anonimo
 
 master.menu.administrator = Administrador
 master.menu.administrator.dashboard = Panel de indicadores
+master.menu.administrator.admin-dashboard = Panel de administrador
 master.menu.administrator.user-accounts = Cuentas de usuario
 master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)
@@ -64,11 +65,11 @@ master.menu.administrator.shut-down = Parar el sistema
 # master.menu.chef ########################################################
 
 master.menu.chef = Chef
-master.menu.chef.fine-dish = Fine Dish
+master.menu.chef.fine-dish = Platos sofisticados
 
 # master.menu.epicure ########################################################
 
-master.menu.epicure.fine-dish = Fine Dish
+master.menu.epicure.fine-dish = Platos sofisticados
 
 # master.menu.provider ########################################################
 
