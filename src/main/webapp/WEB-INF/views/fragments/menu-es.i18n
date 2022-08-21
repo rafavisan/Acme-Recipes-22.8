@@ -32,7 +32,7 @@ master.menu.anonymous.artifact.utensil = Utensilios de cocina
 
 master.menu.anonymous.recipe = Recetas
 
-
+master.menu.authenticated.system-setting= Configuración del sistema
 
 master.menu.anonymous.recipe = Recetas
 
@@ -60,7 +60,7 @@ master.menu.administrator.user-accounts = Cuentas de usuario
 master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-down = Parar el sistema
-
+master.menu.administrator.system-setting = Configuraciones del sistema
 # master.menu.chef ########################################################
 
 master.menu.chef = Chef

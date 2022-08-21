@@ -1,12 +1,9 @@
 package acme.features.administrator.systemSetting;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.systemSetting.SystemSettings;
-import acme.framework.entities.AbstractEntity;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.roles.Administrator;
@@ -24,9 +21,9 @@ public class AdministratorSystemSettingsService implements AbstractShowService<A
 		public boolean authorise(final Request<SystemSettings> request) {
 			assert request != null;
 			
-			Optional<AbstractEntity> result =  this.repository.findOne();
+		
 
-			return result.isPresent();
+			return true;
 		}
 
 		@Override
@@ -44,7 +41,7 @@ public class AdministratorSystemSettingsService implements AbstractShowService<A
 			
 			SystemSettings result;
 
-			result = (SystemSettings) this.repository.findOne().get();
+			result = this.repository.findOne().get();
 
 			assert result != null;
 			
@@ -52,4 +49,3 @@ public class AdministratorSystemSettingsService implements AbstractShowService<A
 		}
 	}
 
-}

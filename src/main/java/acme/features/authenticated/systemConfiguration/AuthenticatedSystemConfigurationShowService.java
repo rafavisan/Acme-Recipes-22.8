@@ -1,14 +1,9 @@
 package acme.features.authenticated.systemConfiguration;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.artifact.Artifact;
 import acme.entities.systemSetting.SystemSettings;
-import acme.features.any.artifact.AnyArtifactRepository;
-import acme.framework.entities.AbstractEntity;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.roles.Authenticated;
@@ -27,9 +22,9 @@ public class AuthenticatedSystemConfigurationShowService implements AbstractShow
 		public boolean authorise(final Request<SystemSettings> request) {
 			assert request != null;
 			
-			Optional<AbstractEntity> result =  this.repository.findOne();
+			
 
-			return result.isPresent();
+			return true;
 		}
 
 		@Override
@@ -47,7 +42,7 @@ public class AuthenticatedSystemConfigurationShowService implements AbstractShow
 			
 			SystemSettings result;
 
-			result = (SystemSettings) this.repository.findOne().get();
+			result = this.repository.findOne().get();
 
 			assert result != null;
 			
@@ -55,4 +50,4 @@ public class AuthenticatedSystemConfigurationShowService implements AbstractShow
 		}
 	}
 
-}
+

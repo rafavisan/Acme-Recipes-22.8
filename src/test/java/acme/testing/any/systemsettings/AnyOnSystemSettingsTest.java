@@ -13,9 +13,7 @@ public class AnyOnSystemSettingsTest extends TestHarness {
 	@Order(10)
 	public void positiveAdministratorTest() {
 		super.signIn("administrator", "administrator");
-		super.clickOnMenu("Administrator", "SystemSettings");
-		super.checkListingExists();
-		super.clickOnListingRecord(0);
+		super.clickOnMenu("Administrator", "System settings");
 		super.checkFormExists();
 	}
 	
@@ -24,9 +22,7 @@ public class AnyOnSystemSettingsTest extends TestHarness {
 	@Order(20)
 	public void positiveAuthenticatedTest(final String username, final String password) {
 		super.signIn(username, password);
-		super.clickOnMenu("Authenticated", "SystemSettings");
-		super.checkListingExists();
-		super.clickOnListingRecord(0);
+		super.clickOnMenu("Authenticated", "System Configuration");
 		super.checkFormExists();
 	}
 

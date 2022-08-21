@@ -4,15 +4,12 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import acme.framework.services.AbstractShowService;
-
-import acme.roles.Epicure;
-import acme.entities.artifact.Artifact;
 import acme.entities.epicureDashboard.EpicureDashboard;
-import acme.framework.entities.AbstractEntity;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.features.epicure.epicureDashboard.EpicureEpicureDashBoardRepository;
+import acme.framework.entities.AbstractEntity;
+import acme.framework.services.AbstractShowService;
+import acme.roles.Epicure;
 
 @Service
 public class EpicureEpicureDashboardShowService implements AbstractShowService<Epicure, EpicureDashboard>{
@@ -23,8 +20,8 @@ public class EpicureEpicureDashboardShowService implements AbstractShowService<E
 	public boolean authorise(final Request<EpicureDashboard> request) {
 		assert request != null;
 		
-		Integer id = request.getModel().getInteger("id");
-		Optional<AbstractEntity> result =  this.repository.findById(id);
+		final Integer id = request.getModel().getInteger("id");
+		final Optional<AbstractEntity> result =  this.repository.findById(id);
 
 		return result.isPresent();
 	}
@@ -42,15 +39,15 @@ public class EpicureEpicureDashboardShowService implements AbstractShowService<E
 	public EpicureDashboard findOne(final Request<EpicureDashboard> request) {
 		assert request != null;
 		
-		EpicureDashboard result;
+		final EpicureDashboard result;
 		int id;
 
 		id = request.getModel().getInteger("id");
-		result = (EpicureDashboard) this.repository.findById(id).get();
+		//result = (EpicureDashboard) this.repository.findById(id).get();
 
-		assert result != null;
+		//assert result != null;
 		
-		return result;
+		return null;
 	}
 
 }

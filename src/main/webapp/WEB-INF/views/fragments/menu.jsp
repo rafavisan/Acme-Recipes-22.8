@@ -46,6 +46,7 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.authenticated.user-account" action="/any/user-account/list"/>
 			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.authenticated.system-setting" action="/authenticated/system-settings/show"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
@@ -56,6 +57,8 @@
 			<acme:menu-suboption code="master.menu.administrator.populate-sample" action="/administrator/populate-sample"/>			
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/shut-down"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.administrator.system-setting" action="/administrator/system-settings/show"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.epicure" access="hasRole('Epicure')">
