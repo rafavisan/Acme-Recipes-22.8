@@ -2,7 +2,6 @@ package acme.features.epicure.epicureDashboard;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -10,7 +9,6 @@ import acme.entities.epicureDashboard.EpicureDashboard;
 import acme.entities.fineDish.StatusType;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.entities.AbstractEntity;
 import acme.framework.services.AbstractShowService;
 import acme.roles.Epicure;
 
@@ -39,30 +37,30 @@ public class EpicureEpicureDashboardShowService implements AbstractShowService<E
 	public EpicureDashboard findOne(final Request<EpicureDashboard> request) {
 		assert request != null;
 		
-		EpicureDashboard result;
+		EpicureDashboard result = new EpicureDashboard();
 		
-		Map<StatusType, Integer> totalFineDish = new HashMap<StatusType, Integer>();
-		for(StatusType status: StatusType.values()) {
+		final Map<StatusType, Integer> totalFineDish = new HashMap<StatusType, Integer>();
+		for(final StatusType status: StatusType.values()) {
 			totalFineDish.put(status, this.repository.countFineDishByStatus(status));
 		}
 		
-		Map<StatusType, Double> averageFineDishRetailPrice = new HashMap<StatusType, Double>();
-		for(StatusType status: StatusType.values()) {
+		final Map<StatusType, Double> averageFineDishRetailPrice = new HashMap<StatusType, Double>();
+		for(final StatusType status: StatusType.values()) {
 			averageFineDishRetailPrice.put(status, this.repository.calcAverageFineDishRetailPriceByStatus(status));
 		}
 		
-		Map<StatusType, Double> deviationFineDishRetailPrice = new HashMap<StatusType, Double>();
-		for(StatusType status: StatusType.values()) {
+		final Map<StatusType, Double> deviationFineDishRetailPrice = new HashMap<StatusType, Double>();
+		for(final StatusType status: StatusType.values()) {
 			deviationFineDishRetailPrice.put(status, this.repository.calcDeviationFineDishRetailPriceByStatus(status));
 		}
 		
-		Map<StatusType, Double> maximumFineDishRetailPrice = new HashMap<StatusType, Double>();
-		for(StatusType status: StatusType.values()) {
+		final Map<StatusType, Double> maximumFineDishRetailPrice = new HashMap<StatusType, Double>();
+		for(final StatusType status: StatusType.values()) {
 			maximumFineDishRetailPrice.put(status, this.repository.calcMaximumFineDishRetailPriceByStatus(status));
 		}
 		
-		Map<StatusType, Double> minimumUtensilRetailPrice = new HashMap<StatusType, Double>();
-		for(StatusType status: StatusType.values()) {
+		final Map<StatusType, Double> minimumUtensilRetailPrice = new HashMap<StatusType, Double>();
+		for(final StatusType status: StatusType.values()) {
 			minimumUtensilRetailPrice.put(status, this.repository.calcMinimumUtensilRetailPrice());
 		}
 		
@@ -70,7 +68,7 @@ public class EpicureEpicureDashboardShowService implements AbstractShowService<E
 		result.setAverageFineDishRetailPrice(averageFineDishRetailPrice);
 		result.setDeviationFineDishRetailPrice(deviationFineDishRetailPrice);
 		result.setMaximumFineDishRetailPrice(maximumFineDishRetailPrice);
-		result.setMinimumUtensilRetailPrice.put(minimumUtensilRetailPrice);
+		result.setMinimumUtensilRetailPrice(minimumUtensilRetailPrice);
 		
 		return result;
 	}
