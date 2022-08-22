@@ -1,10 +1,13 @@
 package acme.features.epicure.epicureDashboard;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
 import acme.entities.epicureDashboard.EpicureDashboard;
+import acme.entities.fineDish.StatusType;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.entities.AbstractEntity;
@@ -19,11 +22,7 @@ public class EpicureEpicureDashboardShowService implements AbstractShowService<E
 	@Override
 	public boolean authorise(final Request<EpicureDashboard> request) {
 		assert request != null;
-		
-		final Integer id = request.getModel().getInteger("id");
-		final Optional<AbstractEntity> result =  this.repository.findById(id);
-
-		return result.isPresent();
+		return true;
 	}
 
 	@Override
@@ -33,21 +32,47 @@ public class EpicureEpicureDashboardShowService implements AbstractShowService<E
 		assert model != null;
 
 		request.unbind(entity, model, "totalFineDish", "averageFineDishRetailPrice", "deviationFineDishRetailPrice", "maximumFineDishRetailPrice", "minimumUtensilRetailPrice");
+		
 	}
 
 	@Override
 	public EpicureDashboard findOne(final Request<EpicureDashboard> request) {
 		assert request != null;
 		
-		final EpicureDashboard result;
-		int id;
-
-		id = request.getModel().getInteger("id");
-		//result = (EpicureDashboard) this.repository.findById(id).get();
-
-		//assert result != null;
+		EpicureDashboard result;
 		
-		return null;
+		Map<StatusType, Integer> totalFineDish = new HashMap<StatusType, Integer>();
+		for(StatusType status: StatusType.values()) {
+			totalFineDish.put(status, this.repository.countFineDishByStatus(status));
+		}
+		
+		Map<StatusType, Double> averageFineDishRetailPrice = new HashMap<StatusType, Double>();
+		for(StatusType status: StatusType.values()) {
+			averageFineDishRetailPrice.put(status, this.repository.calcAverageFineDishRetailPriceByStatus(status));
+		}
+		
+		Map<StatusType, Double> deviationFineDishRetailPrice = new HashMap<StatusType, Double>();
+		for(StatusType status: StatusType.values()) {
+			deviationFineDishRetailPrice.put(status, this.repository.calcDeviationFineDishRetailPriceByStatus(status));
+		}
+		
+		Map<StatusType, Double> maximumFineDishRetailPrice = new HashMap<StatusType, Double>();
+		for(StatusType status: StatusType.values()) {
+			maximumFineDishRetailPrice.put(status, this.repository.calcMaximumFineDishRetailPriceByStatus(status));
+		}
+		
+		Map<StatusType, Double> minimumUtensilRetailPrice = new HashMap<StatusType, Double>();
+		for(StatusType status: StatusType.values()) {
+			minimumUtensilRetailPrice.put(status, this.repository.calcMinimumUtensilRetailPrice());
+		}
+		
+		result.setTotalFineDish(totalFineDish);
+		result.setAverageFineDishRetailPrice(averageFineDishRetailPrice);
+		result.setDeviationFineDishRetailPrice(deviationFineDishRetailPrice);
+		result.setMaximumFineDishRetailPrice(maximumFineDishRetailPrice);
+		result.setMinimumUtensilRetailPrice.put(minimumUtensilRetailPrice);
+		
+		return result;
 	}
 
 }
