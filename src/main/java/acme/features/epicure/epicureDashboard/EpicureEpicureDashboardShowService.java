@@ -5,6 +5,7 @@ import java.math.RoundingMode;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.epicureDashboard.EpicureDashboard;
@@ -17,6 +18,7 @@ import acme.roles.Epicure;
 @Service
 public class EpicureEpicureDashboardShowService implements AbstractShowService<Epicure, EpicureDashboard>{
 	
+	@Autowired
 	protected EpicureEpicureDashBoardRepository repository;
 	
 	@Override
@@ -26,7 +28,7 @@ public class EpicureEpicureDashboardShowService implements AbstractShowService<E
 	}
 
 	@Override
-	public void unbind( Request<EpicureDashboard> request,  EpicureDashboard entity,  Model model) {
+	public void unbind( final Request<EpicureDashboard> request,  final EpicureDashboard entity,  final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
@@ -37,42 +39,42 @@ public class EpicureEpicureDashboardShowService implements AbstractShowService<E
 	}
 
 	@Override
-	public EpicureDashboard findOne( Request<EpicureDashboard> request) {
+	public EpicureDashboard findOne( final Request<EpicureDashboard> request) {
 		assert request != null;
 		
-		 EpicureDashboard result = new EpicureDashboard();
+		 final EpicureDashboard result = new EpicureDashboard();
 		
-//		Map<StatusType, Integer> totalFineDish = new HashMap<StatusType, Integer>();
-//		for(StatusType status: StatusType.values()) {
-//			Integer total = this.repository.countFineDishByStatus(status);
-//			totalFineDish.put(status, total != null ? total : 0);
-//		}
+		final Map<StatusType, Integer> totalFineDish = new HashMap<StatusType, Integer>();
+		for(final StatusType status: StatusType.values()) {
+			final Integer total = this.repository.countFineDishByStatus(status);
+			totalFineDish.put(status, total != null ? total : 0);
+		}
 		
-		 Map<StatusType, Double> averageFineDishBudget = new HashMap<StatusType, Double>();
-		for( StatusType status: StatusType.values()) {
-			 Double averageBudget = this.repository.calcAverageFineDishBudgetByStatus(status);
-			 Double averageBudgetFormat = this.formatDouble(averageBudget);
+		 final Map<StatusType, Double> averageFineDishBudget = new HashMap<StatusType, Double>();
+		for( final StatusType status: StatusType.values()) {
+			 final Double averageBudget = this.repository.calcAverageFineDishBudgetByStatus(status);
+			 final Double averageBudgetFormat = this.formatDouble(averageBudget);
 			averageFineDishBudget.put(status, averageBudgetFormat != null ? averageBudgetFormat : 0);
 		}
 		
-		 Map<StatusType, Double> deviationFineDishBudget = new HashMap<StatusType, Double>();
-		for( StatusType status: StatusType.values()) {
-			 Double deviationBudget = this.repository.calcDeviationFineDishBudgetByStatus(status);
-			 Double deviationBudgetFormat = this.formatDouble(deviationBudget);
+		 final Map<StatusType, Double> deviationFineDishBudget = new HashMap<StatusType, Double>();
+		for( final StatusType status: StatusType.values()) {
+			 final Double deviationBudget = this.repository.calcDeviationFineDishBudgetByStatus(status);
+			 final Double deviationBudgetFormat = this.formatDouble(deviationBudget);
 			deviationFineDishBudget.put(status, deviationBudgetFormat != null ? deviationBudgetFormat : 0);
 		}
 		
-		 Map<StatusType, Double> maximumFineDishBudget = new HashMap<StatusType, Double>();
-		for( StatusType status: StatusType.values()) {
-			 Double maximumBudget = this.repository.calcMaximumFineDishBudgetByStatus(status);
-			 Double maximumBudgetFormat = this.formatDouble(maximumBudget);
+		 final Map<StatusType, Double> maximumFineDishBudget = new HashMap<StatusType, Double>();
+		for( final StatusType status: StatusType.values()) {
+			 final Double maximumBudget = this.repository.calcMaximumFineDishBudgetByStatus(status);
+			 final Double maximumBudgetFormat = this.formatDouble(maximumBudget);
 			maximumFineDishBudget.put(status, maximumBudgetFormat != null ? maximumBudgetFormat : 0);
 		}
 		
-		 Map<StatusType, Double> minimumFineDishBudget = new HashMap<StatusType, Double>();
-		for( StatusType status: StatusType.values()) {
-			 Double minimumBudget = this.repository.calcMinimumFineDishBudgetByStatus(status);
-			 Double minimumBudgetFormat = this.formatDouble(minimumBudget);
+		 final Map<StatusType, Double> minimumFineDishBudget = new HashMap<StatusType, Double>();
+		for( final StatusType status: StatusType.values()) {
+			 final Double minimumBudget = this.repository.calcMinimumFineDishBudgetByStatus(status);
+			 final Double minimumBudgetFormat = this.formatDouble(minimumBudget);
 			minimumFineDishBudget.put(status, minimumBudgetFormat != null ? minimumBudgetFormat : 0);
 		}
 		
@@ -85,7 +87,7 @@ public class EpicureEpicureDashboardShowService implements AbstractShowService<E
 		return result; 
 	}
 	
-	protected Double formatDouble( Double number) {
+	protected Double formatDouble( final Double number) {
 		return number != null ? new BigDecimal(number).setScale(2, RoundingMode.HALF_UP).doubleValue() : 0;
 	}
 	

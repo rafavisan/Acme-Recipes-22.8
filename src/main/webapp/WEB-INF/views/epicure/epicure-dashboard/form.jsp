@@ -1,4 +1,4 @@
-<%--
+0<%--
 - form.jsp
 -
 - Copyright (C) 2012-2022 Rafael Corchuelo.
@@ -27,7 +27,6 @@
 			<th>${status}</th>
 		</jstl:forEach>
 	</tr>
-<!--  
 	<tr>
 		<td><acme:message
 				code="epicure.dashboard.total" /></td>
@@ -35,8 +34,6 @@
 			<td>${totalFineDish.get(status)}</td>
 		</jstl:forEach>
 	</tr>
-	
- -->	
 	<tr>
 		<td><acme:message
 				code="epicure.dashboard.averageFineDishBudget" /></td>

@@ -96,3 +96,4 @@ master.menu.chef.recipes = Recipes
 # master.menu.epicure ###############################################################
 master.menu.epicure = Epicure
 master.menu.epicure.memorandum = Memorandum
+master.menu.epicure.epicure-dashboard = Epicure dashboard
