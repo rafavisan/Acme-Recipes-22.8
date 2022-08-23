@@ -63,7 +63,8 @@
 
 		<acme:menu-option code="master.menu.epicure" access="hasRole('Epicure')">
 		<acme:menu-suboption code="master.menu.epicure.fine-dish" action="/epicure/fine-dish/list"/>
-			<acme:menu-suboption code="master.menu.epicure.memorandum" action="/epicure/memorandum/list"/>
+		<acme:menu-suboption code="master.menu.epicure.memorandum" action="/epicure/memorandum/list"/>
+		<acme:menu-suboption code="master.menu.epicure.epicure-dashboard" action="/epicure/epicure-dashboard/show"/>
 		</acme:menu-option>	
 		<acme:menu-option code="master.menu.chef" access="hasRole('Chef')">
 			<acme:menu-suboption code="master.menu.anonymous.artifact.ingredient" action="/chef/artifact/list-ingredient"/>

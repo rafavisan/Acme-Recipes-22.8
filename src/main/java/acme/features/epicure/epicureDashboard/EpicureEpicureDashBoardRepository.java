@@ -3,7 +3,6 @@ package acme.features.epicure.epicureDashboard;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import acme.entities.artifact.ArtifactType;
 import acme.entities.fineDish.StatusType;
 import acme.framework.repositories.AbstractRepository;
 
@@ -14,15 +13,19 @@ public interface EpicureEpicureDashBoardRepository extends AbstractRepository {
 	Integer countFineDishByStatus(StatusType status);
 	
 	@Query("select avg(f.budget.amount) from FineDish f where f.status = :status")
-	Double calcAverageFineDishRetailPriceByStatus(StatusType status);
+	Double calcAverageFineDishBudgetByStatus(StatusType status);
 	
 	@Query("select stddev(f.budget.amount) from FineDish f where f.status = :status")
-	Double calcDeviationFineDishRetailPriceByStatus(StatusType status);
+	Double calcDeviationFineDishBudgetByStatus(StatusType status);
 	
 	@Query("select max(f.budget.amount) from FineDish f where f.status = :status")
-	Double calcMaximumFineDishRetailPriceByStatus(StatusType status);
+	Double calcMaximumFineDishBudgetByStatus(StatusType status);
 	
-	@Query("select min(a.retailPrice.amount) from Artifact a where a.type == UTENSIL")
-	Double calcMinimumUtensilRetailPrice();
+	@Query("select min(f.budget.amount) from FineDish f where f.status =:status")
+	Double calcMinimumFineDishBudgetByStatus(StatusType status);
+	
+	
+	
+	
 
 }
