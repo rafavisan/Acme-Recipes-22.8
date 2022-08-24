@@ -1,4 +1,4 @@
-0<%--
+<%--
 - form.jsp
 -
 - Copyright (C) 2012-2022 Rafael Corchuelo.
@@ -16,6 +16,20 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 <%@ page import="org.springframework.data.util.Pair"%>
 
+<style>
+ th, td {
+ 	padding: 10px 40px;
+ 	border-bottom: 1px solid #333;
+ }
+ 
+ h2 {
+ 	margin-bottom: 10px;
+ }
+ 
+table {
+ 	margin-bottom: 40px;
+ }
+</style>
 
 <h2>
 	<acme:message code="epicure.dashboard.title.FineDish" />
