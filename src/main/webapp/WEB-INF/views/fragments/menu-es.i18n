@@ -98,3 +98,4 @@ master.menu.chef.recipes = Recetas
 # master.menu.epicure ###############################################################
 master.menu.epicure = Sivarita
 master.menu.epicure.memorandum = Memoria
+master.menu.epicure.epicure-dashboard = Panel del sivarita

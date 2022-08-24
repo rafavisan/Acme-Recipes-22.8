@@ -1,53 +1,96 @@
 package acme.features.epicure.epicureDashboard;
 
-import java.util.Optional;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.HashMap;
+import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.epicureDashboard.EpicureDashboard;
+import acme.entities.fineDish.StatusType;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.entities.AbstractEntity;
 import acme.framework.services.AbstractShowService;
 import acme.roles.Epicure;
 
 @Service
 public class EpicureEpicureDashboardShowService implements AbstractShowService<Epicure, EpicureDashboard>{
 	
+	@Autowired
 	protected EpicureEpicureDashBoardRepository repository;
 	
 	@Override
 	public boolean authorise(final Request<EpicureDashboard> request) {
 		assert request != null;
-		
-		final Integer id = request.getModel().getInteger("id");
-		final Optional<AbstractEntity> result =  this.repository.findById(id);
-
-		return result.isPresent();
+		return true;
 	}
 
 	@Override
-	public void unbind(final Request<EpicureDashboard> request, final EpicureDashboard entity, final Model model) {
+	public void unbind( final Request<EpicureDashboard> request,  final EpicureDashboard entity,  final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "totalFineDish", "averageFineDishRetailPrice", "deviationFineDishRetailPrice", "maximumFineDishRetailPrice", "minimumUtensilRetailPrice");
+		request.unbind(entity, model, "totalFineDish", "averageFineDishBudget", "deviationFineDishBudget", "maximumFineDishBudget", "minimumFineDishBudget");
+		model.setAttribute("fineDishStatuses", StatusType.values());
+
 	}
 
 	@Override
-	public EpicureDashboard findOne(final Request<EpicureDashboard> request) {
+	public EpicureDashboard findOne( final Request<EpicureDashboard> request) {
 		assert request != null;
 		
-		final EpicureDashboard result;
-		int id;
-
-		id = request.getModel().getInteger("id");
-		//result = (EpicureDashboard) this.repository.findById(id).get();
-
-		//assert result != null;
+		 final EpicureDashboard result = new EpicureDashboard();
 		
-		return null;
+		final Map<StatusType, Integer> totalFineDish = new HashMap<StatusType, Integer>();
+		for(final StatusType status: StatusType.values()) {
+			final Integer total = this.repository.countFineDishByStatus(status);
+			totalFineDish.put(status, total != null ? total : 0);
+		}
+		
+		 final Map<StatusType, Double> averageFineDishBudget = new HashMap<StatusType, Double>();
+		for( final StatusType status: StatusType.values()) {
+			 final Double averageBudget = this.repository.calcAverageFineDishBudgetByStatus(status);
+			 final Double averageBudgetFormat = this.formatDouble(averageBudget);
+			averageFineDishBudget.put(status, averageBudgetFormat != null ? averageBudgetFormat : 0);
+		}
+		
+		 final Map<StatusType, Double> deviationFineDishBudget = new HashMap<StatusType, Double>();
+		for( final StatusType status: StatusType.values()) {
+			 final Double deviationBudget = this.repository.calcDeviationFineDishBudgetByStatus(status);
+			 final Double deviationBudgetFormat = this.formatDouble(deviationBudget);
+			deviationFineDishBudget.put(status, deviationBudgetFormat != null ? deviationBudgetFormat : 0);
+		}
+		
+		 final Map<StatusType, Double> maximumFineDishBudget = new HashMap<StatusType, Double>();
+		for( final StatusType status: StatusType.values()) {
+			 final Double maximumBudget = this.repository.calcMaximumFineDishBudgetByStatus(status);
+			 final Double maximumBudgetFormat = this.formatDouble(maximumBudget);
+			maximumFineDishBudget.put(status, maximumBudgetFormat != null ? maximumBudgetFormat : 0);
+		}
+		
+		 final Map<StatusType, Double> minimumFineDishBudget = new HashMap<StatusType, Double>();
+		for( final StatusType status: StatusType.values()) {
+			 final Double minimumBudget = this.repository.calcMinimumFineDishBudgetByStatus(status);
+			 final Double minimumBudgetFormat = this.formatDouble(minimumBudget);
+			minimumFineDishBudget.put(status, minimumBudgetFormat != null ? minimumBudgetFormat : 0);
+		}
+		
+		result.setTotalFineDish(totalFineDish);
+		result.setAverageFineDishBudget(averageFineDishBudget);
+		result.setDeviationFineDishBudget(deviationFineDishBudget);
+		result.setMaximumFineDishBudget(maximumFineDishBudget);
+		result.setMinimumFineDishBudget(minimumFineDishBudget);
+		
+		return result; 
 	}
+	
+	protected Double formatDouble( final Double number) {
+		return number != null ? new BigDecimal(number).setScale(2, RoundingMode.HALF_UP).doubleValue() : 0;
+	}
+	
+	
 
 }

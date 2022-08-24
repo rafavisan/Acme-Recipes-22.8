@@ -15,10 +15,10 @@ public class EpicureDashboard implements Serializable{
 	
 	
 	protected Map<StatusType,Integer> totalFineDish;
-	protected Map<StatusType,Double> averageFineDishRetailPrice;
-	protected Map<StatusType,Double> deviationFineDishRetailPrice;
-	protected Map<StatusType,Integer> maximumFineDishRetailPrice;
-	protected Map<StatusType,Integer> minimumUtensilRetailPrice;
+	protected Map<StatusType,Double> averageFineDishBudget;
+	protected Map<StatusType,Double> deviationFineDishBudget;
+	protected Map<StatusType,Double> maximumFineDishBudget;
+	protected Map<StatusType,Double> minimumFineDishBudget;
 	
 	
 	
