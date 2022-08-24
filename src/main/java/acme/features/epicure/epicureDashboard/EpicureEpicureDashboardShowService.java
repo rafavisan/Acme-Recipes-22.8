@@ -78,7 +78,7 @@ public class EpicureEpicureDashboardShowService implements AbstractShowService<E
 			minimumFineDishBudget.put(status, minimumBudgetFormat != null ? minimumBudgetFormat : 0);
 		}
 		
-		//result.setTotalFineDish(totalFineDish);
+		result.setTotalFineDish(totalFineDish);
 		result.setAverageFineDishBudget(averageFineDishBudget);
 		result.setDeviationFineDishBudget(deviationFineDishBudget);
 		result.setMaximumFineDishBudget(maximumFineDishBudget);

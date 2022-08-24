@@ -9,7 +9,7 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface EpicureEpicureDashBoardRepository extends AbstractRepository {
 	
-	@Query("select count(f) from FineDish f where f.status =: status")
+	@Query("select count(f) from FineDish f where f.status = :status")
 	Integer countFineDishByStatus(StatusType status);
 	
 	@Query("select avg(f.budget.amount) from FineDish f where f.status = :status")
@@ -21,7 +21,7 @@ public interface EpicureEpicureDashBoardRepository extends AbstractRepository {
 	@Query("select max(f.budget.amount) from FineDish f where f.status = :status")
 	Double calcMaximumFineDishBudgetByStatus(StatusType status);
 	
-	@Query("select min(f.budget.amount) from FineDish f where f.status =:status")
+	@Query("select min(f.budget.amount) from FineDish f where f.status = :status")
 	Double calcMinimumFineDishBudgetByStatus(StatusType status);
 	
 	
