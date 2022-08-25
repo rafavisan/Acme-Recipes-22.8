@@ -14,7 +14,7 @@ import acme.framework.services.AbstractShowService;
 import acme.roles.Epicure;
 
 @Service
-public class epicureMemorandumShowService implements AbstractShowService<Epicure, Memorandum> {
+public class EpicureMemorandumShowService implements AbstractShowService<Epicure, Memorandum> {
 
 	// Internal state ---------------------------------------------------------
 
