@@ -3,7 +3,6 @@ package acme.features.epicure.epicureDashboard;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.EnumMap;
-import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,7 +47,7 @@ public class EpicureEpicureDashboardShowService implements AbstractShowService<E
 		final Principal principal = request.getPrincipal();
 		final Integer epicureId = principal.getActiveRoleId();
 		
-		final Map<StatusType, Integer> totalFineDish = new HashMap<StatusType, Integer>();
+		final Map<StatusType, Integer> totalFineDish = new EnumMap<>(StatusType.class);
 		for(final StatusType status: StatusType.values()) {
 			final Integer total = this.repository.countFineDishByStatus(status, epicureId);
 			totalFineDish.put(status, total != null ? total : 0);
@@ -75,7 +74,7 @@ public class EpicureEpicureDashboardShowService implements AbstractShowService<E
 			maximumFineDishBudget.put(status, maximumBudgetFormat != null ? maximumBudgetFormat : 0);
 		}
 		
-		 final Map<StatusType, Double> minimumFineDishBudget = new HashMap<StatusType, Double>();
+		 final Map<StatusType, Double> minimumFineDishBudget = new EnumMap<>(StatusType.class);
 		for( final StatusType status: StatusType.values()) {
 			 final Double minimumBudget = this.repository.calcMinimumFineDishBudgetByStatus(status, epicureId);
 			 final Double minimumBudgetFormat = this.formatDouble(minimumBudget);
