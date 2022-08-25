@@ -15,10 +15,10 @@ public class AuthenticatedBulletinController extends AbstractController<Authenti
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected authenticatedBulletinListService	listService;
+	protected AuthenticatedBulletinListService	listService;
 
 	@Autowired
-	protected authenticatedBulletinShowService	showService;
+	protected AuthenticatedBulletinShowService	showService;
 
 	// Constructors -----------------------------------------------------------
 
