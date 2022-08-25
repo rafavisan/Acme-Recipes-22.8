@@ -10,7 +10,7 @@ import acme.entities.bulletin.Bulletin;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface authenticatedBulletinRepository extends AbstractRepository {
+public interface AuthenticatedBulletinRepository extends AbstractRepository {
 
 	@Query("select b from Bulletin b where b.id = :id")
 	Bulletin findOneBulletinById(int id);
