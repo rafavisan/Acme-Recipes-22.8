@@ -31,7 +31,7 @@ public class BulletinListTest extends TestHarness {
 	// Lifecycle management ---------------------------------------------------
 	
 	@Autowired
-	private authenticatedBulletinRepository repository;
+	private AuthenticatedBulletinRepository repository;
 	
 	@BeforeAll
 	@Override
