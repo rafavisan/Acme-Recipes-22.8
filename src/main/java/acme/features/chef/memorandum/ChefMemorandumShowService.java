@@ -14,7 +14,7 @@ import acme.framework.services.AbstractShowService;
 import acme.roles.Chef;
 
 @Service
-public class chefMemorandumShowService implements AbstractShowService<Chef, Memorandum> {
+public class ChefMemorandumShowService implements AbstractShowService<Chef, Memorandum> {
 
 	// Internal state ---------------------------------------------------------
 
