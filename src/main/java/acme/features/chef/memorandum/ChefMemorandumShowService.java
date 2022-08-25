@@ -19,7 +19,7 @@ public class ChefMemorandumShowService implements AbstractShowService<Chef, Memo
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected chefMemorandumRepository repository;
+	protected ChefMemorandumRepository repository;
 
 	// AbstractShowService<Anonymous, Memorandum> interface --------------------------
 
