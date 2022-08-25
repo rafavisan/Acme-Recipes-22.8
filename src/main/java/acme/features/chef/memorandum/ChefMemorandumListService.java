@@ -17,7 +17,7 @@ public class ChefMemorandumListService implements AbstractListService<Chef, Memo
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected chefMemorandumRepository repository;
+	protected ChefMemorandumRepository repository;
 
 	// AbstractListService<Anonymous, Memorandum>  interface -------------------------
 
