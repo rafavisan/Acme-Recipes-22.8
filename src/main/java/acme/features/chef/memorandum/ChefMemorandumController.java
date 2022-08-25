@@ -10,7 +10,7 @@ import acme.framework.controllers.AbstractController;
 import acme.roles.Chef;
 
 @Controller
-public class chefMemorandumController extends AbstractController<Chef, Memorandum> {
+public class ChefMemorandumController extends AbstractController<Chef, Memorandum> {
 
 	// Internal state ---------------------------------------------------------
 
