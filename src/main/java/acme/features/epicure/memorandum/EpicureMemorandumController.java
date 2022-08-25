@@ -15,10 +15,10 @@ public class EpicureMemorandumController extends AbstractController<Epicure, Mem
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected epicureMemorandumListService	listService;
+	protected EpicureMemorandumListService	listService;
 
 	@Autowired
-	protected epicureMemorandumShowService	showService;
+	protected EpicureMemorandumShowService	showService;
 
 	// Constructors -----------------------------------------------------------
 
