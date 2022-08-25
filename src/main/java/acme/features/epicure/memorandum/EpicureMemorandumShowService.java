@@ -19,7 +19,7 @@ public class EpicureMemorandumShowService implements AbstractShowService<Epicure
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected epicureMemorandumRepository repository;
+	protected EpicureMemorandumRepository repository;
 
 	// AbstractShowService<Anonymous, Memorandum> interface --------------------------
 
