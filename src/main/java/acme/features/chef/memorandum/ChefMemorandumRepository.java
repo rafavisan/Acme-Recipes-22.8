@@ -9,7 +9,7 @@ import acme.entities.memorandum.Memorandum;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface chefMemorandumRepository extends AbstractRepository {
+public interface ChefMemorandumRepository extends AbstractRepository {
 
 	@Query("select m from Memorandum m where m.id = :id")
 	Memorandum findOneMemorandumById(int id);
