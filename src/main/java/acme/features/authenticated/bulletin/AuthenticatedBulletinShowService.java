@@ -15,7 +15,7 @@ public class AuthenticatedBulletinShowService implements AbstractShowService<Aut
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected authenticatedBulletinRepository repository;
+	protected AuthenticatedBulletinRepository repository;
 
 	// AbstractShowService<Anonymous, Bulletin> interface --------------------------
 
