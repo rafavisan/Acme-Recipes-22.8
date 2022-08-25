@@ -26,9 +26,7 @@ public class ChefMemorandumListService implements AbstractListService<Chef, Memo
 	public boolean authorise(final Request<Memorandum> request) {
 		assert request != null;
 
-		final boolean result= request.getPrincipal().hasRole(Chef.class);
-		
-		return result;
+		return request.getPrincipal().hasRole(Chef.class);
 	}
 	
 	@Override
