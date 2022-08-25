@@ -15,10 +15,10 @@ public class ChefMemorandumController extends AbstractController<Chef, Memorandu
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected chefMemorandumListService	listService;
+	protected ChefMemorandumListService	listService;
 
 	@Autowired
-	protected chefMemorandumShowService	showService;
+	protected ChefMemorandumShowService	showService;
 
 	// Constructors -----------------------------------------------------------
 
