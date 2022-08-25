@@ -19,7 +19,7 @@ public class AuthenticatedBulletinListService implements AbstractListService<Aut
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected authenticatedBulletinRepository repository;
+	protected AuthenticatedBulletinRepository repository;
 
 	// AbstractListService<Anonymous, Bulletin>  interface -------------------------
 
