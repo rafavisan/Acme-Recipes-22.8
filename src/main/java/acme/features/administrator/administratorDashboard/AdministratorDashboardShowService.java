@@ -4,6 +4,7 @@ package acme.features.administrator.administratorDashboard;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Arrays;
+import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -31,89 +32,89 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 	// AbstractShowService<Administrator, AdministratorDashboard> interface --------------------------
 	
 	@Override
-	public boolean authorise(Request<AdministratorDashboard> request) {
+	public boolean authorise(final Request<AdministratorDashboard> request) {
 		assert request != null;
 		return true;
 	}
 
 	@Override
-	public AdministratorDashboard findOne(Request<AdministratorDashboard> request) {
-		AdministratorDashboard result = new AdministratorDashboard();
-		String[] arrayCurrencies = this.repository.findAcceptedCurrencies().split(",");
-		List<String> acceptedCurrencies = Arrays.asList(arrayCurrencies);
+	public AdministratorDashboard findOne(final Request<AdministratorDashboard> request) {
+		final AdministratorDashboard result = new AdministratorDashboard();
+		final String[] arrayCurrencies = this.repository.findAcceptedCurrencies().split(",");
+		final List<String> acceptedCurrencies = Arrays.asList(arrayCurrencies);
 		
-		Map<ArtifactType,Integer> totalArtifact = new HashMap<>();
-		for(ArtifactType type : ArtifactType.values()) {
+		final Map<ArtifactType,Integer> totalArtifact = new EnumMap<>(ArtifactType.class);
+		for(final ArtifactType type : ArtifactType.values()) {
 			totalArtifact.put(type, this.repository.countArtifactByType(type));
 		}
 		
-		Map<Pair<ArtifactType, String>, Double>	averageArtifactRetailPrice = new HashMap<>();
-		for(ArtifactType type : ArtifactType.values()) {
-			for(String currency : acceptedCurrencies) {
-				Double averagePrice = this.repository.calcAverageArtifactRetailPriceByTypeAndCurrency(type, currency);
-				Double averagePriceFormat = formatDouble(averagePrice);
+		final Map<Pair<ArtifactType, String>, Double>	averageArtifactRetailPrice = new HashMap<>();
+		for(final ArtifactType type : ArtifactType.values()) {
+			for(final String currency : acceptedCurrencies) {
+				final Double averagePrice = this.repository.calcAverageArtifactRetailPriceByTypeAndCurrency(type, currency);
+				final Double averagePriceFormat = this.formatDouble(averagePrice);
 				averageArtifactRetailPrice.put(Pair.of(type, currency),  averagePriceFormat);
 			}
 		}
 		
-		Map<Pair<ArtifactType, String>, Double>	deviationArtifactRetailPrice = new HashMap<>();
-		for(ArtifactType type : ArtifactType.values()) {
-			for(String currency : acceptedCurrencies) {
-				Double deviationPrice = this.repository.calcDeviationArtifactRetailPriceByTypeAndCurrency(type, currency);
-				Double deviationPriceFormat = formatDouble(deviationPrice);
+		final Map<Pair<ArtifactType, String>, Double>	deviationArtifactRetailPrice = new HashMap<>();
+		for(final ArtifactType type : ArtifactType.values()) {
+			for(final String currency : acceptedCurrencies) {
+				final Double deviationPrice = this.repository.calcDeviationArtifactRetailPriceByTypeAndCurrency(type, currency);
+				final Double deviationPriceFormat = this.formatDouble(deviationPrice);
 				deviationArtifactRetailPrice.put(Pair.of(type, currency),  deviationPriceFormat);
 			}
 		}
 		
-		Map<Pair<ArtifactType, String>, Double>	minimumArtifactRetailPrice = new HashMap<>();
-		for(ArtifactType type : ArtifactType.values()) {
-			for(String currency : acceptedCurrencies) {
-				Double minimumPrice = this.repository.calcMinimumArtifactRetailPriceByTypeAndCurrency(type, currency);
-				Double minimumPriceFormat = formatDouble(minimumPrice);
+		final Map<Pair<ArtifactType, String>, Double>	minimumArtifactRetailPrice = new HashMap<>();
+		for(final ArtifactType type : ArtifactType.values()) {
+			for(final String currency : acceptedCurrencies) {
+				final Double minimumPrice = this.repository.calcMinimumArtifactRetailPriceByTypeAndCurrency(type, currency);
+				final Double minimumPriceFormat = this.formatDouble(minimumPrice);
 				minimumArtifactRetailPrice.put(Pair.of(type, currency),  minimumPriceFormat);
 			}
 		}
 		
-		Map<Pair<ArtifactType, String>, Double>	maximumArtifactRetailPrice = new HashMap<>();
-		for(ArtifactType type : ArtifactType.values()) {
-			for(String currency : acceptedCurrencies) {
-				Double maximumPrice = this.repository.calcMaximumArtifactRetailPriceByTypeAndCurrency(type, currency);
-				Double maximumPriceFormat = formatDouble(maximumPrice);
+		final Map<Pair<ArtifactType, String>, Double>	maximumArtifactRetailPrice = new HashMap<>();
+		for(final ArtifactType type : ArtifactType.values()) {
+			for(final String currency : acceptedCurrencies) {
+				final Double maximumPrice = this.repository.calcMaximumArtifactRetailPriceByTypeAndCurrency(type, currency);
+				final Double maximumPriceFormat = this.formatDouble(maximumPrice);
 				maximumArtifactRetailPrice.put(Pair.of(type, currency),  maximumPriceFormat);
 			}
 		}
 		
-		Map<StatusType,Integer> totalFineDish = new HashMap<>();
-		for(StatusType status : StatusType.values()) {
-			Integer total = this.repository.countFineDishByStatus(status);
+		final Map<StatusType,Integer> totalFineDish = new EnumMap<>(StatusType.class);
+		for(final StatusType status : StatusType.values()) {
+			final Integer total = this.repository.countFineDishByStatus(status);
 			totalFineDish.put(status, total != null ? total : 0);
 		}
 		
-		Map<StatusType,Double> averageFineDishBudget = new HashMap<>();
-		for(StatusType status : StatusType.values()) {
-			Double averageBudget = this.repository.calcAverageFineDishBudgetByStatus(status);
-			Double averageBudgetFormat = formatDouble(averageBudget);
+		final Map<StatusType,Double> averageFineDishBudget = new EnumMap<>(StatusType.class);
+		for(final StatusType status : StatusType.values()) {
+			final Double averageBudget = this.repository.calcAverageFineDishBudgetByStatus(status);
+			final Double averageBudgetFormat = this.formatDouble(averageBudget);
 			averageFineDishBudget.put(status, averageBudgetFormat != null ? averageBudgetFormat : 0);
 		}
 		
-		Map<StatusType,Double> deviationFineDishBudget = new HashMap<>();
-		for(StatusType status : StatusType.values()) {
-			Double deviationBudget = this.repository.calcDeviationFineDishBudgetByStatus(status);
-			Double deviationBudgetFormat = formatDouble(deviationBudget);
+		final Map<StatusType,Double> deviationFineDishBudget = new EnumMap<>(StatusType.class);
+		for(final StatusType status : StatusType.values()) {
+			final Double deviationBudget = this.repository.calcDeviationFineDishBudgetByStatus(status);
+			final Double deviationBudgetFormat = this.formatDouble(deviationBudget);
 			deviationFineDishBudget.put(status, deviationBudgetFormat != null ? deviationBudgetFormat : 0);
 		}
 		
-		Map<StatusType,Double> maximumFineDishBudget = new HashMap<>();
-		for(StatusType status : StatusType.values()) {
-			Double maximumBudget = this.repository.calcMaximumFineDishBudgetByStatus(status);
-			Double maximumBudgetFormat = formatDouble(maximumBudget);
+		final Map<StatusType,Double> maximumFineDishBudget = new EnumMap<>(StatusType.class);
+		for(final StatusType status : StatusType.values()) {
+			final Double maximumBudget = this.repository.calcMaximumFineDishBudgetByStatus(status);
+			final Double maximumBudgetFormat = this.formatDouble(maximumBudget);
 			maximumFineDishBudget.put(status, maximumBudgetFormat != null ? maximumBudgetFormat : 0);
 		}
 		
-		Map<StatusType,Double> minimumFineDishBudget = new HashMap<>();
-		for(StatusType status : StatusType.values()) {
-			Double minimumBudget = this.repository.calcMinimumFineDishBudgetByStatus(status);
-			Double minimumBudgetFormat = formatDouble(minimumBudget);
+		final Map<StatusType,Double> minimumFineDishBudget = new EnumMap<>(StatusType.class);
+		for(final StatusType status : StatusType.values()) {
+			final Double minimumBudget = this.repository.calcMinimumFineDishBudgetByStatus(status);
+			final Double minimumBudgetFormat = this.formatDouble(minimumBudget);
 			minimumFineDishBudget.put(status, minimumBudgetFormat != null ? minimumBudgetFormat : 0);
 		}
 		
@@ -130,12 +131,12 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		return result;
 	}
 	
-	protected Double formatDouble(Double number) {
+	protected Double formatDouble(final Double number) {
 		return number != null ? new BigDecimal(number).setScale(2, RoundingMode.HALF_UP).doubleValue() : 0;
 	}
 
 	@Override
-	public void unbind(Request<AdministratorDashboard> request, AdministratorDashboard entity, Model model) {
+	public void unbind(final Request<AdministratorDashboard> request, final AdministratorDashboard entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
