@@ -12,7 +12,7 @@ import acme.framework.services.AbstractListService;
 import acme.roles.Epicure;
 
 @Service
-public class epicureMemorandumListService implements AbstractListService<Epicure, Memorandum> {
+public class EpicureMemorandumListService implements AbstractListService<Epicure, Memorandum> {
 
 	// Internal state ---------------------------------------------------------
 
