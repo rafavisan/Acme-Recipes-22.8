@@ -17,7 +17,7 @@ public class EpicureMemorandumListService implements AbstractListService<Epicure
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected epicureMemorandumRepository repository;
+	protected EpicureMemorandumRepository repository;
 
 	// AbstractListService<Anonymous, Memorandum>  interface -------------------------
 
@@ -26,9 +26,8 @@ public class EpicureMemorandumListService implements AbstractListService<Epicure
 	public boolean authorise(final Request<Memorandum> request) {
 		assert request != null;
 
-		final boolean result= request.getPrincipal().hasRole(Epicure.class);
 		
-		return result;
+		return request.getPrincipal().hasRole(Epicure.class);
 	}
 	
 	@Override
