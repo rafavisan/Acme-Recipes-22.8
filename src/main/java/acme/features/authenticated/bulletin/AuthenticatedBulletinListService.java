@@ -14,7 +14,7 @@ import acme.framework.roles.Authenticated;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class authenticatedBulletinListService implements AbstractListService<Authenticated, Bulletin> {
+public class AuthenticatedBulletinListService implements AbstractListService<Authenticated, Bulletin> {
 
 	// Internal state ---------------------------------------------------------
 
