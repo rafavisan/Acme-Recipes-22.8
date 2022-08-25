@@ -12,7 +12,7 @@ import acme.framework.services.AbstractListService;
 import acme.roles.Chef;
 
 @Service
-public class chefMemorandumListService implements AbstractListService<Chef, Memorandum> {
+public class ChefMemorandumListService implements AbstractListService<Chef, Memorandum> {
 
 	// Internal state ---------------------------------------------------------
 
