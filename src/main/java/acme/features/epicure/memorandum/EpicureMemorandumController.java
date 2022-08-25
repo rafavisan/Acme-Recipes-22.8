@@ -10,7 +10,7 @@ import acme.framework.controllers.AbstractController;
 import acme.roles.Epicure;
 
 @Controller
-public class epicureMemorandumController extends AbstractController<Epicure, Memorandum> {
+public class EpicureMemorandumController extends AbstractController<Epicure, Memorandum> {
 
 	// Internal state ---------------------------------------------------------
 
