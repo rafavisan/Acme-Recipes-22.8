@@ -26,8 +26,8 @@ public class ChefPartOfShowService implements AbstractShowService<Chef, PartOf> 
 	public boolean authorise(final Request<PartOf> request) {
 		assert request != null;
 		
-		Integer id = request.getModel().getInteger("id");
-		Optional<AbstractEntity> result =  this.repository.findById(id);
+		final Integer id = request.getModel().getInteger("id");
+		final Optional<AbstractEntity> result =  this.repository.findById(id);
 
 		return result.isPresent();
 	}
@@ -46,11 +46,14 @@ public class ChefPartOfShowService implements AbstractShowService<Chef, PartOf> 
 	public PartOf findOne(final Request<PartOf> request) {
 		assert request != null;
 		
-		PartOf result;
+		PartOf result=null;
 		int id;
 
 		id = request.getModel().getInteger("id");
-		result = (PartOf) this.repository.findById(id).get();
+		final Optional<AbstractEntity> optResult = this.repository.findById(id);
+		if (optResult.isPresent()) {
+			result = (PartOf) optResult.get();
+		}
 
 		assert result != null;
 		
