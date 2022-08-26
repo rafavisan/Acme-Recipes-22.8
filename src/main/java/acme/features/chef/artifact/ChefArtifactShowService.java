@@ -27,9 +27,9 @@ public class ChefArtifactShowService implements AbstractShowService<Chef, Artifa
 	public boolean authorise(final Request<Artifact> request) {
 		assert request != null;
 		
-		Integer id = request.getModel().getInteger("id");
-		Optional<AbstractEntity> result = this.repository.findById(id);
-		Principal principal = request.getPrincipal();
+		final Integer id = request.getModel().getInteger("id");
+		final Optional<AbstractEntity> result = this.repository.findById(id);
+		final Principal principal = request.getPrincipal();
 		
 		return result.isPresent() && ((Artifact)result.get()).getChef().getId() == principal.getActiveRoleId();
 	}
@@ -47,11 +47,14 @@ public class ChefArtifactShowService implements AbstractShowService<Chef, Artifa
 	public Artifact findOne(final Request<Artifact> request) {
 		assert request != null;
 		
-		Artifact result;
+		Artifact result=null;
 		int id;
 
 		id = request.getModel().getInteger("id");
-		result = (Artifact) this.repository.findById(id).get();
+		final Optional<AbstractEntity> optResult = this.repository.findById(id);
+		if (optResult.isPresent()) {
+			result = (Artifact) optResult.get();
+		}
 
 		assert result != null;
 		
