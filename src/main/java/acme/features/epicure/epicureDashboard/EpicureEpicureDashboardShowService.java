@@ -30,7 +30,7 @@ public class EpicureEpicureDashboardShowService implements AbstractShowService<E
 
 	@Override
 	public void unbind( final Request<EpicureDashboard> request,  final EpicureDashboard entity,  final Model model) {
-		assert request != null;
+		assert request != null;	
 		assert entity != null;
 		assert model != null;
 
@@ -91,7 +91,7 @@ public class EpicureEpicureDashboardShowService implements AbstractShowService<E
 	}
 	
 	protected Double formatDouble( final Double number) {
-		return number != null ? new BigDecimal(number).setScale(2, RoundingMode.HALF_UP).doubleValue() : 0;
+		return number != null ? BigDecimal.valueOf(number).setScale(2, RoundingMode.HALF_UP).doubleValue() : 0;
 	}
 	
 	
