@@ -132,7 +132,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 	}
 	
 	protected Double formatDouble(final Double number) {
-		return number != null ? new BigDecimal(number).setScale(2, RoundingMode.HALF_UP).doubleValue() : 0;
+		return number != null ? BigDecimal.valueOf(number).setScale(2, RoundingMode.HALF_UP).doubleValue() : 0;
 	}
 
 	@Override
