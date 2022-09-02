@@ -45,9 +45,7 @@ public class AdministratorSystemSettingsUpdateService implements AbstractUpdateS
 		assert errors != null;
 		
 		if(!errors.hasErrors("defaultCurrency")) {
-			final String defaultCurrency = entity.getDefaultCurrency();
-			final String acceptedCurrencies = entity.getAcceptedCurrencies();
-			errors.state(request, !acceptedCurrencies.contains(defaultCurrency), defaultCurrency, acceptedCurrencies, "administrator.system-settings.error.default-currency-not-accepted");
+			errors.state(request, entity.getAcceptedCurrencies().contains(entity.getDefaultCurrency()), "defaultCurrency", "administrator.system-settings.error.default-currency-not-accepted");
 		}
 		
 	}
@@ -56,11 +54,6 @@ public class AdministratorSystemSettingsUpdateService implements AbstractUpdateS
 	public void update(final Request<SystemSettings> request, final SystemSettings entity) {
 		assert request != null;
 		assert entity != null;
-		
-		entity.setAcceptedCurrencies(request.getModel().getAttribute("acceptedCurrencies", String.class));
-		entity.setDefaultCurrency(request.getModel().getAttribute("defaultCurrency", String.class));
-		entity.setSpamThreshold(request.getModel().getAttribute("spamThreshold", Double.class));
-		entity.setSpamTuples(request.getModel().getAttribute("spamTuples", String.class));
 		
 		this.repository.save(entity);
 		

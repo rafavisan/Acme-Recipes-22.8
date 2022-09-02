@@ -21,6 +21,6 @@
 	<acme:input-textbox code="administrator.systemSettings.form.label.acceptedCurrencies" path="acceptedCurrencies" />
 	<acme:input-textbox code="administrator.systemSettings.form.label.spamTuples" path="spamTuples"/>
 
-	<acme:button code="administrator.systemSettings.form.button.update" action="/administrator/system-settings/update"/>
+	<acme:submit code="administrator.systemSettings.form.button.update" action="/administrator/system-settings/update"/>
 	
 </acme:form>
