@@ -13,4 +13,15 @@ any.peep.list.label.heading = Cabecera
 any.peep.list.label.writer = Escritor
 any.peep.list.label.text = Texto
 any.peep.list.label.email = Email
+any.peep.list.button.create = Crear
+
+
+
+any.peep.form.label.heading = Cabecera
+any.peep.form.label.writer = Escritor
+any.peep.form.label.text = Texto
+any.peep.form.label.email = Email
+any.peep.form.label.confirm = Confirmar
+any.peep.form.error.must-confirm = Debe confirmar
+any.peep.form.button.create = Crear
 
