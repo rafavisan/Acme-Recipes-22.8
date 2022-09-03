@@ -26,8 +26,8 @@ public class AnyRecipeShowService implements AbstractShowService<Any, Recipe> {
 	public boolean authorise(final Request<Recipe> request) {
 		assert request != null;
 		
-		Integer id = request.getModel().getInteger("id");
-		Optional<AbstractEntity> result =  this.repository.findById(id);
+		final Integer id = request.getModel().getInteger("id");
+		final Optional<AbstractEntity> result =  this.repository.findById(id);
 
 		return result.isPresent();
 	}
@@ -45,11 +45,14 @@ public class AnyRecipeShowService implements AbstractShowService<Any, Recipe> {
 	public Recipe findOne(final Request<Recipe> request) {
 		assert request != null;
 		
-		Recipe result;
+		Recipe result=null;
 		int id;
 
 		id = request.getModel().getInteger("id");
-		result = (Recipe) this.repository.findById(id).get();
+		final Optional<AbstractEntity> optResult = this.repository.findById(id);
+		if (optResult.isPresent()) {
+			result = (Recipe) optResult.get();
+		}
 
 		assert result != null;
 		

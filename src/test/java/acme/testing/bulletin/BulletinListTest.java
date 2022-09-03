@@ -22,7 +22,7 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.entities.bulletin.Bulletin;
-import acme.features.authenticated.bulletin.authenticatedBulletinRepository;
+import acme.features.authenticated.bulletin.AuthenticatedBulletinRepository;
 import acme.framework.helpers.FactoryHelper;
 import acme.testing.TestHarness;
 
@@ -31,7 +31,7 @@ public class BulletinListTest extends TestHarness {
 	// Lifecycle management ---------------------------------------------------
 	
 	@Autowired
-	private authenticatedBulletinRepository repository;
+	private AuthenticatedBulletinRepository repository;
 	
 	@BeforeAll
 	@Override

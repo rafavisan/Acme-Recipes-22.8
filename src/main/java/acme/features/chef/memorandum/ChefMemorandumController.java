@@ -1,4 +1,4 @@
-package acme.features.epicure.memorandum;
+package acme.features.chef.memorandum;
 
 import javax.annotation.PostConstruct;
 
@@ -7,18 +7,18 @@ import org.springframework.stereotype.Controller;
 
 import acme.entities.memorandum.Memorandum;
 import acme.framework.controllers.AbstractController;
-import acme.roles.Epicure;
+import acme.roles.Chef;
 
 @Controller
-public class epicureMemorandumController extends AbstractController<Epicure, Memorandum> {
+public class ChefMemorandumController extends AbstractController<Chef, Memorandum> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected epicureMemorandumListService	listService;
+	protected ChefMemorandumListService	listService;
 
 	@Autowired
-	protected epicureMemorandumShowService	showService;
+	protected ChefMemorandumShowService	showService;
 
 	// Constructors -----------------------------------------------------------
 

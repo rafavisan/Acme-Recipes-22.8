@@ -1,4 +1,4 @@
-package acme.features.epicure.memorandum;
+package acme.features.chef.memorandum;
 
 import java.util.Collection;
 
@@ -9,12 +9,12 @@ import acme.entities.memorandum.Memorandum;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface epicureMemorandumRepository extends AbstractRepository {
+public interface ChefMemorandumRepository extends AbstractRepository {
 
 	@Query("select m from Memorandum m where m.id = :id")
 	Memorandum findOneMemorandumById(int id);
 
-	@Query("select m from Memorandum m where m.fineDish.epicure.id = :epicure")
-	Collection<Memorandum> findManyMemoranda(int epicure);
+	@Query("select m from Memorandum m where m.fineDish.chef.id = :chef")
+	Collection<Memorandum> findManyMemoranda(int chef);
 
 }

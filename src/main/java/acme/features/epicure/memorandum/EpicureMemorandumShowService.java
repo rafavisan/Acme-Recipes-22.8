@@ -1,4 +1,4 @@
-package acme.features.chef.memorandum;
+package acme.features.epicure.memorandum;
 
 import java.util.Optional;
 
@@ -11,15 +11,15 @@ import acme.framework.controllers.Request;
 import acme.framework.entities.AbstractEntity;
 import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
-import acme.roles.Chef;
+import acme.roles.Epicure;
 
 @Service
-public class chefMemorandumShowService implements AbstractShowService<Chef, Memorandum> {
+public class EpicureMemorandumShowService implements AbstractShowService<Epicure, Memorandum> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected chefMemorandumRepository repository;
+	protected EpicureMemorandumRepository repository;
 
 	// AbstractShowService<Anonymous, Memorandum> interface --------------------------
 
@@ -31,7 +31,7 @@ public class chefMemorandumShowService implements AbstractShowService<Chef, Memo
 		Optional<AbstractEntity> result = this.repository.findById(id);
 		Principal principal = request.getPrincipal();
 		
-		return result.isPresent() && ((Memorandum)result.get()).getFineDish().getChef().getId() == principal.getActiveRoleId();
+		return result.isPresent() && ((Memorandum)result.get()).getFineDish().getEpicure().getId() == principal.getActiveRoleId();
 	}
 
 	@Override

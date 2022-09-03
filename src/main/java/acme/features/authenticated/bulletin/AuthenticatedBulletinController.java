@@ -10,15 +10,15 @@ import acme.framework.controllers.AbstractController;
 import acme.framework.roles.Authenticated;
 
 @Controller
-public class authenticatedBulletinController extends AbstractController<Authenticated, Bulletin> {
+public class AuthenticatedBulletinController extends AbstractController<Authenticated, Bulletin> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected authenticatedBulletinListService	listService;
+	protected AuthenticatedBulletinListService	listService;
 
 	@Autowired
-	protected authenticatedBulletinShowService	showService;
+	protected AuthenticatedBulletinShowService	showService;
 
 	// Constructors -----------------------------------------------------------
 

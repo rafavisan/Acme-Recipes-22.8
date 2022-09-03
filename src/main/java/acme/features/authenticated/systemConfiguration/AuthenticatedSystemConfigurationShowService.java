@@ -1,5 +1,7 @@
 package acme.features.authenticated.systemConfiguration;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -40,10 +42,13 @@ public class AuthenticatedSystemConfigurationShowService implements AbstractShow
 		public SystemSettings findOne(final Request<SystemSettings> request) {
 			assert request != null;
 			
-			SystemSettings result;
+			SystemSettings result=null;
 
-			result = this.repository.findOne().get();
-
+			final Optional<SystemSettings> optResult = this.repository.findOne();
+			if (optResult.isPresent()) {
+				result = optResult.get();
+			}
+			
 			assert result != null;
 			
 			return result;

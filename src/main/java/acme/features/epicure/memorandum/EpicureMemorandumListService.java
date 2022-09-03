@@ -12,12 +12,12 @@ import acme.framework.services.AbstractListService;
 import acme.roles.Epicure;
 
 @Service
-public class epicureMemorandumListService implements AbstractListService<Epicure, Memorandum> {
+public class EpicureMemorandumListService implements AbstractListService<Epicure, Memorandum> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected epicureMemorandumRepository repository;
+	protected EpicureMemorandumRepository repository;
 
 	// AbstractListService<Anonymous, Memorandum>  interface -------------------------
 
@@ -26,9 +26,8 @@ public class epicureMemorandumListService implements AbstractListService<Epicure
 	public boolean authorise(final Request<Memorandum> request) {
 		assert request != null;
 
-		final boolean result= request.getPrincipal().hasRole(Epicure.class);
 		
-		return result;
+		return request.getPrincipal().hasRole(Epicure.class);
 	}
 	
 	@Override
