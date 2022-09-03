@@ -7,29 +7,51 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.partOf.PartOf;
 import acme.framework.components.models.Model;
+import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
 import acme.framework.entities.AbstractEntity;
-import acme.framework.services.AbstractShowService;
+import acme.framework.entities.Principal;
+import acme.framework.services.AbstractDeleteService;
 import acme.roles.Chef;
 
 @Service
-public class ChefPartOfShowService implements AbstractShowService<Chef, PartOf> {
+public class ChefPartOfDeleteService implements AbstractDeleteService<Chef, PartOf> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
 	protected ChefPartOfRepository repository;
 
-	// AbstractShowService<Anonymous, PartOf> interface --------------------------
 
 	@Override
 	public boolean authorise(final Request<PartOf> request) {
 		assert request != null;
 		
 		final Integer id = request.getModel().getInteger("id");
-		final Optional<AbstractEntity> result =  this.repository.findById(id);
+		final Optional<AbstractEntity> result = this.repository.findById(id);
+		final Principal principal = request.getPrincipal();
+		
+		return result.isPresent() && ((PartOf)result.get()).getRecipe().getChef().getId() == principal.getActiveRoleId()
+			&& !((PartOf)result.get()).getRecipe().isPublished();
+	}
 
-		return result.isPresent();
+	@Override
+	public void validate(final Request<PartOf> request, final PartOf entity, final Errors errors) {
+		assert request != null;
+		assert entity != null;
+		assert errors != null;
+		
+	}
+
+	@Override
+	public void bind(final Request<PartOf> request, final PartOf entity, final Errors errors) {
+		assert request != null;
+		assert entity != null;
+		assert errors != null;
+
+		request.bind(entity, errors, "quantity", "unit", "artifact.name", "artifact.code","artifact.description","artifact.retailPrice",
+			"artifact.link","artifact.type");
+		
 	}
 
 	@Override
@@ -55,9 +77,20 @@ public class ChefPartOfShowService implements AbstractShowService<Chef, PartOf> 
 		if (optResult.isPresent()) {
 			result = (PartOf) optResult.get();
 		}
-
-		assert result != null;
 		
 		return result;
 	}
+
+	@Override
+	public void delete(Request<PartOf> request, PartOf entity) {
+		assert request != null;
+		assert entity != null;
+		
+		
+		this.repository.delete(entity);
+		
+	}
+
+	
+
 }

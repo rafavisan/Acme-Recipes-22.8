@@ -23,6 +23,15 @@ public class ChefPartOfController extends AbstractController<Chef, PartOf> {
 	@Autowired
 	protected ChefPartOfShowService showPartOfService;
 	
+	@Autowired
+	protected ChefPartOfAddIngredientService addIngredientService;
+	
+	@Autowired
+	protected ChefPartOfAddUtensilService addUtensilService;
+	
+	@Autowired
+	protected ChefPartOfDeleteService deletePartOfService;
+	
 	// Constructors -----------------------------------------------------------
 
 
@@ -31,6 +40,9 @@ public class ChefPartOfController extends AbstractController<Chef, PartOf> {
 		super.addCommand("list-recipes", "list", this.listRecipesService);
 		super.addCommand("list-artifacts", "list", this.listArtifactService);
 		super.addCommand("show", this.showPartOfService);
+		super.addCommand("add-ingredient","create", this.addIngredientService);
+		super.addCommand("add-utensil","create", this.addUtensilService);
+		super.addCommand("delete", this.deletePartOfService);
 	}
 
 }

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.partOf.PartOf;
+import acme.entities.recipe.Recipe;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractListService;
@@ -53,5 +54,8 @@ public class ChefPartOfRecipeListService implements AbstractListService<Chef, Pa
 	@Override
 	public void unbind(Request<PartOf> request, Collection<PartOf> list, Model model) {
 		model.setAttribute("cameFromArtifact", true);
+		final int masterId = request.getModel().getInteger("masterId");
+		Recipe r = repository.findOnePartOfByRecipe(masterId);
+		model.setAttribute("publish", r.isPublished());
 	}
 }
