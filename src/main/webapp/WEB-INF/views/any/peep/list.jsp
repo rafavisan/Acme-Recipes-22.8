@@ -21,7 +21,10 @@
 	<acme:list-column code="any.peep.list.label.writer" path="writer" width="20%"/>
 	<acme:list-column code="any.peep.list.label.text" path="text" width="20%"/>
 	<acme:list-column code="any.peep.list.label.email" path="email" width="20%"/>
+
 </acme:list>
+
+	<acme:button code="any.peep.list.button.create" action="/any/peep/create"/>
 
 
 

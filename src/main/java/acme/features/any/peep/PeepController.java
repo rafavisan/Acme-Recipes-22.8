@@ -18,10 +18,14 @@ public class PeepController extends AbstractController<Any, Peep>{
 	protected PeepListService	listService;
 
 	
+	@Autowired
+	protected PeepCreateService		createService;
+	
 	
 	@PostConstruct
 	protected void initialise() {
 		super.addCommand("list", this.listService);
+		super.addCommand("create", this.createService);
 	}
 
 }
