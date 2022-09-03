@@ -12,3 +12,5 @@ authenticated.bulletin.list.label.heading = Encabezado
 authenticated.bulletin.list.label.instantiationMoment = Momento de instanciación
 authenticated.bulletin.list.label.text = Texto
 authenticated.bulletin.list.label.link = Enlace
+
+administrator.bulletin.label.create = Crear Boletín

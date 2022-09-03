@@ -21,3 +21,5 @@
 	<acme:list-column code="authenticated.bulletin.list.label.link" path="link" width="20%"/>
 	
 </acme:list>
+
+<acme:button code="administrator.bulletin.label.create"  action="/administrator/bulletin/create"/>

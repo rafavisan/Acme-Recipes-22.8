@@ -12,3 +12,5 @@ authenticated.bulletin.list.label.heading = Heading
 authenticated.bulletin.list.label.instantiationMoment = Instantiation Moment
 authenticated.bulletin.list.label.text = Text
 authenticated.bulletin.list.label.link = Link
+
+administrator.bulletin.label.create = Create Bulletin
