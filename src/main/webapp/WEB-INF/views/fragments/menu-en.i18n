@@ -97,3 +97,10 @@ master.menu.chef.recipes = Recipes
 master.menu.epicure = Epicure
 master.menu.epicure.memorandum = Memorandum
 master.menu.epicure.epicure-dashboard = Epicure dashboard
+
+
+
+master.menu.user-account.become-chef = Become Chef
+master.menu.user-account.chef = Chef
+master.menu.user-account.become-epicure = Become Epicure
+master.menu.user-account.epicure = Epicure
