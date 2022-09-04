@@ -15,3 +15,6 @@ administrator.bulletin.form.label.link = Enlace
 administrator.bulletin.form.label.confirmation = Confirmar
 administrator.bulletin.form.label.confirmation= Debe confirmar
 administrator.bulletin.form.button.create = Crear Boletín
+
+chef.bulletin.error.heading.spam-threshold = Encabezado por encima del umbral de spam
+chef.bulletin.error.text.spam-threshold = Texto por encima del umbral de spam
