@@ -13,6 +13,9 @@ any.partOf.list.label.unit = Unit
 any.partOf.list.label.recipe.heading = Recipe heading
 any.partOf.list.label.artifact.name = Name of artifact
 
+chef.partOf.list.button.create.utensil = Add Utensil
+chef.partOf.list.button.create.ingredient = Add ingredient
+
 any.partOf.form.label.quantity = Quantity
 any.partOf.form.label.unit = Unit
 any.partOf.form.label.artifact.name = Name of artifact
@@ -21,3 +24,9 @@ any.partOf.form.label.artifact.description = Description of artifact
 any.partOf.form.label.artifact.retailPrice = Retail price of artifact
 any.partOf.form.label.artifact.link = Link of artifact
 any.partOf.form.label.artifact.type = Type of artifact
+chef.partof.form.label.artifact = Select the artifact code
+
+chef.partOf.form.button.create = Add this artifact
+chef.partOf.form.button.delete = Delete this artifact
+
+chef.partOf.error.quantity.negative = Quantity must be positive

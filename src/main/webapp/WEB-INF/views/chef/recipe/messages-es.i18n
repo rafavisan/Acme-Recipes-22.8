@@ -10,6 +10,7 @@
 
 chef.recipe.list.label.heading = Cabecera
 chef.recipe.list.label.code = Código
+chef.recipe.list.button.create = Nueva receta
 
 chef.recipe.form.label.heading = Cabecera
 chef.recipe.form.label.code = Código
@@ -17,3 +18,15 @@ chef.recipe.form.label.description = Descrición
 chef.recipe.form.label.preparation-notes = Notas de preparación
 chef.recipe.form.label.link = Enlace
 chef.recipe.form.button.partOf = Encuentra los artefactos usados por esta receta
+chef.recipe.form.button.create = Crear receta
+chef.recipe.form.button.update = Actualizar receta
+chef.recipe.form.button.delete = Eliminar receta
+chef.recipe.form.button.publish = Publicar receta
+
+chef.recipe.error.heading.a-lot-of-words = Cabecera por encima de 101 caracteres
+chef.recipe.error.heading.spam-threshold = Cabecera con un valor de spam por encima del umbral
+chef.recipe.error.code.repeated = Este código ya está en uso
+chef.recipe.error.description.a-lot-of-words = Descrición por encima de 256 caracteres
+chef.recipe.error.description.spam-threshold = Descrición con un valor de spam por encima del umbral
+chef.recipe.error.preparationNotes.a-lot-of-words = Notas de preparación por encima de 256 caracteres
+chef.recipe.error.preparationNotes.spam-threshold = Notas de preparación con un valor de spam por encima del umbral

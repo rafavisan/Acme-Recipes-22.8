@@ -53,5 +53,7 @@ public class ChefPartOfArtifactListService implements AbstractListService<Chef, 
 	@Override
 	public void unbind(Request<PartOf> request, Collection<PartOf> list, Model model) {
 		model.setAttribute("cameFromArtifact", false);
+		final int masterId = request.getModel().getInteger("masterId");
+		model.setAttribute("artifactId",masterId);
 	}
 }

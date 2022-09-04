@@ -28,3 +28,8 @@
 	</jstl:choose>
 	
 </acme:list>
+<jstl:if test="${cameFromArtifact == false}">
+	<jstl:if test="${publish == false}"></jstl:if>
+	<acme:button code="chef.partOf.list.button.create.ingredient" action="/chef/part-of/add-ingredient?masterId=${artifactId}"/>
+	<acme:button code="chef.partOf.list.button.create.utensil" action="/chef/part-of/add-utensil?masterId=${artifactId}"/>
+</jstl:if>

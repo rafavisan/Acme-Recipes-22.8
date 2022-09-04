@@ -19,3 +19,5 @@
 	<acme:list-column code="chef.recipe.list.label.heading" path="heading" width="70%"/>
 	<acme:list-column code="chef.recipe.list.label.code" path="code" width="30%"/>
 </acme:list>
+
+<acme:button code="chef.recipe.list.button.create" action="/chef/recipe/create"/>
