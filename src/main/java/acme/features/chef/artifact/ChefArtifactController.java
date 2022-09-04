@@ -26,14 +26,19 @@ public class ChefArtifactController extends AbstractController<Chef, Artifact> {
 	@Autowired 
 	protected ChefIngredientCreateService createIngredientService;
 	
+	@Autowired 
+	protected ChefUtensilCreateService createUtensilService;
+	
 	@Autowired
 	protected ChefArtifactUpdateService updateArtifactService;
 	
 	@Autowired
 	protected ChefArtifactDeleteService deleteArtifactService;
 	
-	protected @Autowired
-	ChefArtifactPublishService publishArtifactService;
+	@Autowired
+	protected ChefArtifactPublishService publishArtifactService;
+	
+	
 	
 	
 
@@ -42,6 +47,7 @@ public class ChefArtifactController extends AbstractController<Chef, Artifact> {
 
 	@PostConstruct
 	protected void initialise() {
+		super.addCommand("create-utensil", "create", this.createUtensilService);
 		super.addCommand("list-ingredient","list", this.listIngredientService);
 		super.addCommand("list-utensil","list", this.listUtensilService);
 		super.addCommand("show", this.showArtifactService);
