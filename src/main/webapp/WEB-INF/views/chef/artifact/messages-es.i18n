@@ -30,3 +30,5 @@ chef.artifact.retailPrice.not-able-currency = Moneda no aceptada
 chef.artifact.retailPrice.null = El precio de venta es obligatorio
 chef.artifact.code.repeated = Este código ya existe
 chef.artifact.code.repeated.retailPrice.non-negative = El precio de venta debe ser positivo
+chef.artifact.error.name.spam-threshold = Nombre por encima del umbral del spam
+chef.artifact.error.description.spam-threshold = Descripción por encima del umbral del spam

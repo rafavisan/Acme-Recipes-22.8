@@ -35,4 +35,7 @@ public interface ChefArtifactRepository extends AbstractRepository {
 
 	@Query("select p from PartOf p where p.artifact = :artifact")
 	Collection<PartOf> findAllPartoOfByArtifact(Artifact artifact);
+
+	@Query("select s from SystemSettings s")
+	SystemSettings findAllSpanTuples();
 }
