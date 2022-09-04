@@ -13,6 +13,9 @@ public interface ChefMemorandumRepository extends AbstractRepository {
 
 	@Query("select m from Memorandum m where m.id = :id")
 	Memorandum findOneMemorandumById(int id);
+	
+	@Query("select m from Memorandum m")
+	Collection<Memorandum> findAllMemoranda();
 
 	@Query("select m from Memorandum m where m.fineDish.chef.id = :chef")
 	Collection<Memorandum> findManyMemoranda(int chef);

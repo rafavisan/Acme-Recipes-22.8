@@ -8,8 +8,14 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-
 authenticated.epicure.list.label.code= Código
 authenticated.epicure.list.label.instantiationDate = Fecha de Creación
 authenticated.epicure.list.label.link = Enlace
+epicure.memorandum.form.label.link = Enlace
 authenticated.epicure.form.label.report = Informe
+epicure.memorandum.form.label.report = Informe
+
+epicure.memorandum.form.label.fine-dish= Comida
+
+epicure.memorandum.list.label.create= Crear Memoria
+epicure.memorandum.form.button.create = Crear Memoria

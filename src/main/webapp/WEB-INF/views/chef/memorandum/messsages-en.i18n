@@ -11,4 +11,11 @@
 authenticated.chef.list.label.code= Code
 authenticated.chef.list.label.instantiationDate = Instantiation Date
 authenticated.chef.list.label.link = Link
+authenticated.chef.form.label.link = Link
 authenticated.chef.form.label.report = Report
+chef.memorandum.form.label.report = Report
+
+chef.memorandum.form.label.fine-dish= Fine Dish
+
+chef.memorandum.list.label.create = Create Memorandum
+chef.memorandum.form.button.create = Create Memorandum
