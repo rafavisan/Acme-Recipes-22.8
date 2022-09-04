@@ -19,3 +19,14 @@ any.artifact.form.label.code = Código
 any.artifact.form.label.description = Descripción
 any.artifact.form.label.retail-price = Precio de venta
 any.artifact.form.label.link = Link
+
+any.arifact.list.button.create = Crear
+chef.artifact.form.button.create = Crear
+chef.artifact.form.button.update = Actualizar
+chef.artifact.form.button.delete = Eliminar
+chef.artifact.form.button.publish = Publicar
+
+chef.artifact.retailPrice.not-able-currency = Moneda no aceptada
+chef.artifact.retailPrice.null = El precio de venta es obligatorio
+chef.artifact.code.repeated = Este código ya existe
+chef.artifact.code.repeated.retailPrice.non-negative = El precio de venta debe ser positivo

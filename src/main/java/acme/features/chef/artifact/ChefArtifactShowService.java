@@ -40,7 +40,7 @@ public class ChefArtifactShowService implements AbstractShowService<Chef, Artifa
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "name", "code", "description", "retailPrice", "link");
+		request.unbind(entity, model, "name", "code", "description", "isPublished", "retailPrice", "link");
 	}
 
 	@Override

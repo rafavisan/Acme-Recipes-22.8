@@ -18,7 +18,16 @@
 <acme:list>
 	<acme:list-column code="any.artifact.list.label.name" path="name" width="20%"/>
 	<acme:list-column code="any.artifact.list.label.code" path="code" width="20%"/>
-	<acme:list-column code="any.artifact.list.label.description" path="description" width="40%"/>
+	<acme:list-column code="any.artifact.list.label.code" path="isPublished" width="10%"/>
+	<acme:list-column code="any.artifact.list.label.description" path="description" width="30%"/>
 	<acme:list-column code="any.artifact.list.label.retail-price" path="retailPrice" width="10%"/>
 	<acme:list-column code="any.artifact.list.label.link" path="link" width="10%"/>
 </acme:list>
+<jstl:choose>
+	<jstl:when test="${isIngredient}">
+		<acme:button code="any.arifact.list.button.create" action="/chef/artifact/create-ingredient"/>
+	</jstl:when>
+	<jstl:otherwise>
+		<acme:button code="any.arifact.list.button.create" action="/chef/artifact/create-utensil"/>
+	</jstl:otherwise>
+</jstl:choose>
