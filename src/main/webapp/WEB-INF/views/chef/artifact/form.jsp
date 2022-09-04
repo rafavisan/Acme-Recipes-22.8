@@ -21,7 +21,7 @@
 
 <acme:form>
 	<acme:input-textbox code="any.artifact.form.label.name" path="name"/>	
-	<acme:input-textbox code="any.artifact.form.label.code" path="code"/>
+	<acme:input-textbox code="any.artifact.form.label.code" placeholder="AAA-000" path="code"/>
 	<acme:input-textbox code="any.artifact.form.label.description" path="description"/>
 	<acme:input-textbox code="any.artifact.form.label.retail-price" path="retailPrice"/>
 	<acme:input-textbox code="any.artifact.form.label.link" path="link"/>
