@@ -8,7 +8,8 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-administrator.systemSettings.list.label.spamThreshold = Umbral de spam
-administrator.systemSettings.list.label.defaultCurrency = Moneda por defecto
-administrator.systemSettings.list.label.acceptedCurrencies = Monedas aceptadas
-administrator.systemSettings.list.label.spamTuples = Tuplas de spam
+administrator.systemSettings.form.label.spamThreshold = Umbral de spam
+administrator.systemSettings.form.label.defaultCurrency = Moneda por defecto
+administrator.systemSettings.form.label.acceptedCurrencies = Monedas aceptadas
+administrator.systemSettings.form.label.spamTuples = Tuplas de spam
+administrator.systemSettings.form.button.update = Actualizar
