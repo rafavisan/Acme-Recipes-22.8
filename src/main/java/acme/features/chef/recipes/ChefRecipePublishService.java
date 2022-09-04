@@ -52,7 +52,8 @@ public class ChefRecipePublishService implements AbstractUpdateService<Chef, Rec
 		//---Code
 		if(!errors.hasErrors("code")) {
 			Optional<Recipe> existingCode = this.repository.findRecipeByCode(entity.getCode());
-			errors.state(request, existingCode.isPresent() || existingCode.get().getId() == entity.getId(), "code", "chef.recipe.error.code.repeated");
+			if(existingCode.isPresent())
+				errors.state(request, existingCode.get().getId() == entity.getId(), "code", "chef.recipe.error.code.repeated");
 		}
 		//---description
 		if(!errors.hasErrors("description")) {

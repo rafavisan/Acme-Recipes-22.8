@@ -75,7 +75,8 @@ public class ChefRecipeCreateService implements AbstractCreateService<Chef, Reci
 		//---Code
 		if(!errors.hasErrors("code")) {
 			Optional<Recipe> existingCode = this.repository.findRecipeByCode(entity.getCode());
-			errors.state(request, existingCode.isPresent() || existingCode.get().getId() == entity.getId(), "code", "chef.recipe.error.code.repeated");
+			if(existingCode.isPresent())
+				errors.state(request, existingCode.get().getId() == entity.getId(), "code", "chef.recipe.error.code.repeated");
 		}
 		//---description
 		if(!errors.hasErrors("description")) {
@@ -128,17 +129,19 @@ public class ChefRecipeCreateService implements AbstractCreateService<Chef, Reci
 			for(int o = 0; o<nWord; o++) {
 				boolean b = false;
 				int aux = nWord-spamTerm.length+1;
-				for(int p = 0; p<spamTerm.length; p++) {
-					b = true;
-					
-					if(!spamTerm[p].equals(text[o+p])) {
-						b=false;
-						break;
+				if(aux>0) {
+					for(int p = 0; p<spamTerm.length; p++) {
+						b = true;
+						
+						if(!spamTerm[p].equals(text[o+p])) {
+							b=false;
+							break;
+						}
 					}
-				}
-				if(b) {
-					Double spamTermWeight = Double.parseDouble(spamTuple[1]);
-					spamValue += spamTermWeight/aux;
+					if(b) {
+						Double spamTermWeight = Double.parseDouble(spamTuple[1]);
+						spamValue += spamTermWeight/aux;
+					}
 				}
 			}
 		}
