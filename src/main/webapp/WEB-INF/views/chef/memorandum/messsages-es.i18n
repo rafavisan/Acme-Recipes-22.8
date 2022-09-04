@@ -12,4 +12,11 @@
 authenticated.chef.list.label.code= Código
 authenticated.chef.list.label.instantiationDate = Fecha de Creación
 authenticated.chef.list.label.link = Enlace
+chef.memorandum.form.label.link = Enlace
 authenticated.chef.form.label.report = Informe
+chef.memorandum.form.label.report = Informe
+
+chef.memorandum.form.label.fine-dish= Comida
+
+chef.memorandum.list.label.create= Crear Memoria
+chef.memorandum.form.button.create = Crear Memoria

@@ -11,4 +11,11 @@
 authenticated.epicure.list.label.code= Code
 authenticated.epicure.list.label.instantiationDate = Instantiation Date
 authenticated.epicure.list.label.link = Link
+authenticated.epicure.form.label.link = Link
 authenticated.epicure.form.label.report = Report
+epicure.memorandum.form.label.report = Report
+
+epicure.memorandum.form.label.fine-dish= Fine Dish
+
+epicure.memorandum.list.label.create = Create Memorandum
+epicure.memorandum.form.button.create = Create Memorandum

@@ -21,3 +21,5 @@
 	<acme:list-column code="authenticated.epicure.list.label.link" path="link" width="30%"/>
 
 </acme:list> 
+
+<acme:button code="epicure.memorandum.list.label.create" action="/epicure/memorandum/create"/>

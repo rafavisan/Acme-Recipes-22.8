@@ -19,6 +19,9 @@ public class EpicureMemorandumController extends AbstractController<Epicure, Mem
 
 	@Autowired
 	protected EpicureMemorandumShowService	showService;
+	
+	@Autowired
+	protected EpicureMemorandumCreateService	createService;
 
 	// Constructors -----------------------------------------------------------
 
@@ -27,6 +30,7 @@ public class EpicureMemorandumController extends AbstractController<Epicure, Mem
 	protected void initialise() {
 		super.addCommand("list", this.listService);
 		super.addCommand("show", this.showService);
+		super.addCommand("create", this.createService);
 	}
 
 }

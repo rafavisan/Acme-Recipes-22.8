@@ -21,3 +21,5 @@
 	<acme:list-column code="authenticated.chef.list.label.link" path="link" width="30%"/>
 
 </acme:list> 
+
+<acme:button code="chef.memorandum.list.label.create" action="/chef/memorandum/create"/>

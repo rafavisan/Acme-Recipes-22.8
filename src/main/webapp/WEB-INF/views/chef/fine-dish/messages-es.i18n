@@ -15,7 +15,7 @@ chef.fine-dish.form.label.budget = Presupuesto
 chef.fine-dish.form.label.initialDate = Fecha inicial
 chef.fine-dish.form.label.finishDate = Fecha final
 chef.fine-dish.form.label.url = Url
-chef.fine-dish.form.label.epicure = Epicure
+chef.fine-dish.form.label.epicure = Sivarita
 
 chef.fine-dish.list.label.code = Código
 chef.fine-dish.list.label.request = Petición
