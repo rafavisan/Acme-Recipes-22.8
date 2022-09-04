@@ -48,6 +48,15 @@ public class ChefUtensilListService implements AbstractListService<Chef, Artifac
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "name", "code", "description", "retailPrice", "link");
+		request.unbind(entity, model, "name", "code", "description", "isPublished", "retailPrice", "link");
+	}
+	
+	@Override
+	public void unbind(final Request<Artifact> request, final Collection<Artifact> entity, final Model model) {
+		assert request != null;
+		assert entity != null;
+		assert model != null;
+		
+		model.setAttribute("isIngredient", false);		
 	}
 }

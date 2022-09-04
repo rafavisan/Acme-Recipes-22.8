@@ -19,3 +19,16 @@ any.artifact.form.label.code = Code
 any.artifact.form.label.description = Description
 any.artifact.form.label.retail-price = Retail price
 any.artifact.form.label.link = Link
+
+any.arifact.list.button.create = Create
+chef.artifact.form.button.create = Create
+chef.artifact.form.button.update = Update
+chef.artifact.form.button.delete = Delete
+chef.artifact.form.button.publish = Publish
+
+chef.artifact.retailPrice.not-able-currency = Currency not accepted
+chef.artifact.retailPrice.null = The retail price is required
+chef.artifact.code.repeated = This code already exists
+chef.artifact.code.repeated.retailPrice.non-negative = The retail price must be positive
+chef.artifact.error.name.spam-threshold = Name above spam Threshold
+chef.artifact.error.description.spam-threshold = Description above spam Threshold
