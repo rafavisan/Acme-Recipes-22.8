@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import acme.entities.bulletin.Bulletin;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
+import acme.framework.roles.Administrator;
 import acme.framework.roles.Authenticated;
 import acme.framework.services.AbstractListService;
 
@@ -57,4 +58,12 @@ public class AuthenticatedBulletinListService implements AbstractListService<Aut
 		request.unbind(entity, model, "heading", "text", "link");
 	}
 
+	@Override
+	public void unbind(Request<Bulletin> request, Collection<Bulletin> list, Model model) {
+		boolean admin = false;
+		if(request.getPrincipal().hasRole(Administrator.class))
+		admin = true;
+		model.setAttribute("isAdmin", admin);
+	}
+	
 }

@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.entities.bulletin.Bulletin;
+import acme.entities.systemSetting.SystemSettings;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
@@ -20,4 +21,7 @@ public interface AuthenticatedBulletinRepository extends AbstractRepository {
 	
 	@Query("select b from Bulletin b where b.instantiationMoment = :date")
 	Bulletin findBulletinToPatch(Date date);
+
+	@Query("select s from SystemSettings s")
+	SystemSettings findAllSpanTuples();
 }

@@ -21,3 +21,7 @@
 	<acme:list-column code="authenticated.bulletin.list.label.link" path="link" width="20%"/>
 	
 </acme:list>
+<jstl:if test="${isAdmin==true}">
+	<acme:button code="administrator.bulletin.label.create"  action="/administrator/bulletin/create"/>
+</jstl:if>
+
