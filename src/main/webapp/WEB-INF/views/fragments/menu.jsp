@@ -83,10 +83,6 @@
 
 		<acme:menu-option code="master.menu.user-account" access="isAuthenticated()">
 			<acme:menu-suboption code="master.menu.user-account.general-data" action="/authenticated/user-account/update"/>
-			<acme:menu-suboption code="master.menu.user-account.become-provider" action="/authenticated/provider/create" access="!hasRole('Chef')"/>
-			<acme:menu-suboption code="master.menu.user-account.provider" action="/authenticated/provider/update" access="hasRole('Chef')"/>
-			<acme:menu-suboption code="master.menu.user-account.become-consumer" action="/authenticated/consumer/create" access="!hasRole('Epicure')"/>
-			<acme:menu-suboption code="master.menu.user-account.consumer" action="/authenticated/consumer/update" access="hasRole('Epicure')"/>
 			
 			<acme:menu-suboption code="master.menu.user-account.become-chef" action="/authenticated/chef/create" access="!hasRole('Chef')"/>
 			<acme:menu-suboption code="master.menu.user-account.chef" action="/authenticated/chef/update" access="hasRole('Chef')"/>
