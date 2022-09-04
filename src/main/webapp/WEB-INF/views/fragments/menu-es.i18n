@@ -99,3 +99,10 @@ master.menu.chef.recipes = Recetas
 master.menu.epicure = Sivarita
 master.menu.epicure.memorandum = Memoria
 master.menu.epicure.epicure-dashboard = Panel del sivarita
+
+
+master.menu.user-account.become-chef = Convertirse en Chef
+master.menu.user-account.chef = Chef
+master.menu.user-account.become-epicure = Convertirse en Sivarita
+master.menu.user-account.epicure = Sivarita
+
