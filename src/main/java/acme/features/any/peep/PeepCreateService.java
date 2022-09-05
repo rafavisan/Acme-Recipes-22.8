@@ -52,6 +52,7 @@ public class PeepCreateService implements AbstractCreateService<Any, Peep>{
 	
 		request.bind(entity, errors, "heading", "writer", "text", "email");
 		entity.setInstantiationMoment(instantiationMoment);
+		
 	}
 
 	@Override
@@ -95,6 +96,7 @@ public class PeepCreateService implements AbstractCreateService<Any, Peep>{
 
 		request.unbind(entity, model, "heading", "writer", "text", "email");
 		model.setAttribute("confirm", "false");
+		model.setAttribute("isNew", true);
 	}
 
 	@Override
