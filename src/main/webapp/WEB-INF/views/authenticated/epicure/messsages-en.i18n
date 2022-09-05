@@ -11,5 +11,5 @@
 authenticated.epicure.form.label.organisation = Organisation:
 authenticated.epicure.form.label.assertion = Assertion:
 authenticated.epicure.form.label.url = URL:
-authenticated.epicure.form.button.create = Register:
-authenticated.epicure.form.button.update = Update:
+authenticated.epicure.form.button.create = Register
+authenticated.epicure.form.button.update = Update
