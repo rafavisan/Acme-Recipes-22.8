@@ -24,9 +24,12 @@
 	<acme:input-textbox code="any.artifact.form.label.code" placeholder="AAA-000" path="code"/>
 	<acme:input-textbox code="any.artifact.form.label.description" path="description"/>
 	<acme:input-textbox code="any.artifact.form.label.retail-price" path="retailPrice"/>
+	<jstl:if test="${command == 'show'}">
+	<acme:input-money code="any.artifact.form.label.change" path="change" readonly="true"/>
+	</jstl:if>
 	<acme:input-textbox code="any.artifact.form.label.link" path="link"/>
 	<jstl:choose>
-		<jstl:when test="${isNew}">
+		<jstl:when test="${command == 'create-ingredient' || command == 'create-utensil'}">
 			<jstl:choose>
 				<jstl:when test="${isIngredient}">
 					<acme:submit code="chef.artifact.form.button.create"

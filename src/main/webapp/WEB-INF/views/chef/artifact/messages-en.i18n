@@ -19,6 +19,7 @@ any.artifact.form.label.code = Code
 any.artifact.form.label.description = Description
 any.artifact.form.label.retail-price = Retail price
 any.artifact.form.label.link = Link
+any.artifact.form.label.change = Money exchange
 
 any.arifact.list.button.create = Create
 chef.artifact.form.button.create = Create
