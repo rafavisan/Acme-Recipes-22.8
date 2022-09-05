@@ -20,9 +20,9 @@
 		<acme:form>
 			<acme:input-textbox code="epicure.fine-dish.form.label.code" path="code"/>	
 			<acme:input-textbox code="epicure.fine-dish.form.label.request" path="request"/>	
-			<acme:input-textbox code="epicure.fine-dish.form.label.budget" path="budget"/>
-			<acme:input-textbox code="epicure.fine-dish.form.label.initialDate" path="initialDate"/>
-			<acme:input-textbox code="epicure.fine-dish.form.label.finishDate" path="finishDate"/>
+			<acme:input-money code="epicure.fine-dish.form.label.budget" path="budget"/>
+			<acme:input-moment code="epicure.fine-dish.form.label.initialDate" path="initialDate"/>
+			<acme:input-moment code="epicure.fine-dish.form.label.finishDate" path="finishDate"/>
 			<acme:input-textbox code="epicure.fine-dish.form.label.url" path="url"/>
 			<acme:input-select code="epicure.fine-dish.form.label.select.chef" path="chefs">
 				<jstl:forEach items="${chefs}" var="chef">
@@ -45,9 +45,12 @@
 	<acme:input-textbox readonly="true" code="epicure.fine-dish.form.label.status" path="status"/>	
 	<acme:input-textbox code="epicure.fine-dish.form.label.code" path="code"/>	
 	<acme:input-textarea code="epicure.fine-dish.form.label.request" path="request"/>
-	<acme:input-textbox code="epicure.fine-dish.form.label.budget" path="budget"/>
-	<acme:input-textbox code="epicure.fine-dish.form.label.initialDate" path="initialDate"/>
-	<acme:input-textbox code="epicure.fine-dish.form.label.finishDate" path="finishDate"/>
+	<acme:input-money code="epicure.fine-dish.form.label.budget" path="budget"/>
+	<jstl:if test="${command == 'show'}">
+	<acme:input-money code="any.artifact.form.label.change" path="change" readonly="true"/>
+	</jstl:if>
+	<acme:input-moment code="epicure.fine-dish.form.label.initialDate" path="initialDate"/>
+	<acme:input-moment code="epicure.fine-dish.form.label.finishDate" path="finishDate"/>
 	<acme:input-textbox code="epicure.fine-dish.form.label.url" path="url"/>
 	<acme:button code="epicure.fine-dish.form.label.chef" action="/any/user-account/show?id=${chefId}"/>
 

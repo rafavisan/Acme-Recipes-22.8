@@ -22,6 +22,9 @@
 			<acme:input-textbox code="chef.fine-dish.form.label.code" path="code" readonly="true"/>	
 			<acme:input-textbox code="chef.fine-dish.form.label.request" path="request" readonly="true"/>	
 			<acme:input-textbox code="chef.fine-dish.form.label.budget" path="budget" readonly="true"/>
+			<jstl:if test="${command == 'show'}">
+			<acme:input-money code="any.artifact.form.label.change" path="change" readonly="true"/>
+			</jstl:if>
 			<acme:input-textbox code="chef.fine-dish.form.label.initialDate" path="initialDate" readonly="true"/>
 			<acme:input-textbox code="chef.fine-dish.form.label.finishDate" path="finishDate" readonly="true"/>
 			<acme:input-textbox code="chef.fine-dish.form.label.url" path="url" readonly="true"/>

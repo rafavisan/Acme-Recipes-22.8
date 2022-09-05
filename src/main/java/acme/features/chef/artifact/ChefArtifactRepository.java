@@ -47,6 +47,4 @@ public interface ChefArtifactRepository extends AbstractRepository {
 	@Query("select s from SystemSettings s")
 	SystemSettings findConfiguration();
 
-//	@Query( "insert into MoneyExchange m values :change")
-//	void save(MoneyExchange change);
 }

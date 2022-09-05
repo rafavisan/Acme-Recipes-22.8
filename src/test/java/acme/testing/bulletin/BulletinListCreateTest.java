@@ -15,17 +15,13 @@ package acme.testing.bulletin;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
-import org.springframework.beans.factory.annotation.Autowired;
 
-import acme.features.authenticated.bulletin.AuthenticatedBulletinRepository;
 import acme.testing.TestHarness;
 
 public class BulletinListCreateTest extends TestHarness {
 
 	// Lifecycle management ---------------------------------------------------
 	
-	@Autowired
-	private AuthenticatedBulletinRepository repository;
 	
 	@ParameterizedTest
 	@CsvFileSource(resources = "/bulletin/create-positive.csv", encoding="utf-8", numLinesToSkip=1)

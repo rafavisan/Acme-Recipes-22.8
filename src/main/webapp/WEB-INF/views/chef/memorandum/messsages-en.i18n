@@ -14,8 +14,10 @@ authenticated.chef.list.label.link = Link
 authenticated.chef.form.label.link = Link
 authenticated.chef.form.label.report = Report
 chef.memorandum.form.label.report = Report
+chef.memorandum.confirmation = Confirmation
 
 chef.memorandum.form.label.fine-dish= Fine Dish
+chef.memorandum.form.label.link = Link
 
 chef.memorandum.list.label.create = Create Memorandum
 chef.memorandum.form.button.create = Create Memorandum

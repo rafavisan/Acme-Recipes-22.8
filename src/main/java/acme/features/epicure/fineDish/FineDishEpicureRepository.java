@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import acme.entities.fineDish.FineDish;
 import acme.entities.systemSetting.SystemSettings;
+import acme.forms.MoneyExchange;
 import acme.framework.repositories.AbstractRepository;
 import acme.roles.Chef;
 import acme.roles.Epicure;
@@ -41,5 +42,11 @@ public interface FineDishEpicureRepository extends AbstractRepository{
 	
 	@Query("select chef from Chef chef")
 	List<Chef> findAllChefs();
+
+	@Query("select s from SystemSettings s")
+	SystemSettings findConfiguration();
+	
+	@Query("select me from MoneyExchange me where me.source.currency = :currency and me.source.amount = :amount")
+    MoneyExchange findMoneyExchageByCurrencyAndAmount(String currency, Double amount);
 
 }
