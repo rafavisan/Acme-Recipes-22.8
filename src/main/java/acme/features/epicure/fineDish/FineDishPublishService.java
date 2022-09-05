@@ -1,12 +1,16 @@
 package acme.features.epicure.fineDish;
 
+import java.util.Calendar;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.fineDish.FineDish;
+import acme.entities.systemSetting.SystemSettings;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
+import acme.framework.datatypes.Money;
 import acme.framework.services.AbstractUpdateService;
 import acme.roles.Epicure;
 
@@ -65,6 +69,40 @@ public class FineDishPublishService implements AbstractUpdateService<Epicure, Fi
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		
+		Calendar d=Calendar.getInstance();
+		d.add(Calendar.MONTH, 1);
+		
+		if (!errors.hasErrors("initialDate")) {
+
+
+			errors.state(request, entity.getInitialDate().after(d.getTime()), "initialDate",
+					"epicure.finedish.error.initialDate");
+		}
+		
+		Calendar initialDate = Calendar.getInstance();
+		initialDate.setTime(entity.getInitialDate());
+		initialDate.add(Calendar.MONTH, 1);
+		
+		if (!errors.hasErrors("finishDate")) {
+			
+
+			errors.state(request, entity.getFinishDate().after(initialDate.getTime()), "finishDate",
+					"epicure.finedish.error.finishDate");
+		}
+		
+		Money money=entity.getBudget();
+		final SystemSettings c = this.repository.findSystemSetting();
+		
+		if (!errors.hasErrors("budget")) {
+
+
+			errors.state(request, money.getAmount()>=0., "budget",
+					"epicure.finedish.error.budget");
+			
+			errors.state(request, c.getAcceptedCurrencies().contains(money.getCurrency()) ,
+					  "budget", "epicure.finedish.budget.not-able-currency");
+		}
 		
 	}
 

@@ -120,7 +120,6 @@ public class FineDishUpdateService implements AbstractUpdateService<Epicure, Fin
 					  "budget", "epicure.finedish.budget.not-able-currency");
 		}
 		
-		
 	}
 
 	@Override

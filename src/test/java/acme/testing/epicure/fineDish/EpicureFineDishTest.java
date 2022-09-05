@@ -14,7 +14,7 @@ public class EpicureFineDishTest extends TestHarness{
 	@Order(10)
 	public void positive(final int recordIndex, final String code, final String request, final String budget,
 		final String initialDate, final String finishDate, final String url) {
-		super.signIn("epicure1", "epicure1");
+		super.signIn("epicure3", "epicure3");
 		super.clickOnMenu("Epicure", "Fine Dish");
 		super.checkListingExists();
 		

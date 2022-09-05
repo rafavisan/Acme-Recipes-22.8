@@ -31,3 +31,4 @@ epicure.finedish.error.initialDate = Como mínimo debe ser un mes después de cr
 epicure.finedish.error.finishDate = Como mínimo debe ser un mes después de empezar
 epicure.finedish.error.budget = La cantidad debe ser positiva
 epicure.finedish.budget.not-able-currency = Moneda no aceptada
+epicure.finedish.error.request.spam-threshold = Petición por encima del umbral de spam

@@ -31,3 +31,4 @@ epicure.finedish.error.initialDate = At least it must be a month after creating 
 epicure.finedish.error.finishDate = At least it must be a month after starting 
 epicure.finedish.error.budget = Quantity must be positive 
 epicure.finedish.budget.not-able-currency = Currency not accepted
+epicure.finedish.error.request.spam-threshold = Request above spam threshold
