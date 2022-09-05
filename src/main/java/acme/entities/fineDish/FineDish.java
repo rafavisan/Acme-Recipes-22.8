@@ -60,6 +60,9 @@ public class FineDish extends AbstractEntity{
 	@URL
 	protected String url;
 	
+	@NotNull
+	protected boolean isPublish;
+	
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------

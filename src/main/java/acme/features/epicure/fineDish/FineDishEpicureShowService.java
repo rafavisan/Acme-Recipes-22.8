@@ -40,7 +40,7 @@ public class FineDishEpicureShowService implements AbstractShowService<Epicure, 
 				assert entity != null;
 				assert model != null;
 
-				request.unbind(entity, model, "status", "code", "request", "budget", "initialDate", "finishDate", "url" ,"chef", "epicure");
+				request.unbind(entity, model, "status", "code", "request", "budget", "initialDate", "finishDate", "url", "isPublish" ,"chef", "epicure");
 				model.setAttribute("chefId", entity.getChef().getUserAccount().getId());
 				model.setAttribute("isNew", false);
 			}

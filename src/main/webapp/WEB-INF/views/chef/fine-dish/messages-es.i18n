@@ -20,3 +20,6 @@ chef.fine-dish.form.label.epicure = Sivarita
 chef.fine-dish.list.label.code = Código
 chef.fine-dish.list.label.request = Petición
 chef.fine-dish.list.label.budget = Presupuesto
+
+chef.fine-dish.form.button.updateStatus.accept = Aceptar
+chef.fine-dish.form.button.updateStatus.deny = Denegar
