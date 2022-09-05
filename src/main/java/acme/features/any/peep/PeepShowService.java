@@ -1,6 +1,5 @@
 package acme.features.any.peep;
 
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,8 +8,6 @@ import org.springframework.stereotype.Service;
 import acme.entities.peep.Peep;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.entities.AbstractEntity;
-import acme.framework.entities.Principal;
 import acme.framework.roles.Any;
 import acme.framework.services.AbstractShowService;
 
