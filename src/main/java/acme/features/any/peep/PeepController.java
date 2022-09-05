@@ -16,6 +16,9 @@ public class PeepController extends AbstractController<Any, Peep>{
 	
 	@Autowired
 	protected PeepListService	listService;
+	
+	@Autowired
+	protected PeepShowService	showService;
 
 	
 	@Autowired
@@ -25,6 +28,7 @@ public class PeepController extends AbstractController<Any, Peep>{
 	@PostConstruct
 	protected void initialise() {
 		super.addCommand("list", this.listService);
+		super.addCommand("show", this.showService);
 		super.addCommand("create", this.createService);
 	}
 
