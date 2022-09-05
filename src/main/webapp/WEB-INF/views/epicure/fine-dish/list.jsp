@@ -21,5 +21,7 @@
 	<acme:list-column code="epicure.fine-dish.list.label.request" path="request" width="100%"/>
 </acme:list>
 
+<acme:button code="epicure.fine-dish.list.button.create" action="/epicure/fine-dish/create"/>
+
 
 

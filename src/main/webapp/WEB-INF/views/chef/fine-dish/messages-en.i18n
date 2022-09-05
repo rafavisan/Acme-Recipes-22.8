@@ -20,3 +20,6 @@ chef.fine-dish.form.label.epicure = Epicure
 chef.fine-dish.list.label.code = Code
 chef.fine-dish.list.label.request = Request
 chef.fine-dish.list.label.budget = Budget
+
+chef.fine-dish.form.button.updateStatus.accept = Accept
+chef.fine-dish.form.button.updateStatus.deny = Deny

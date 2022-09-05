@@ -15,19 +15,47 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
-		
-		<acme:form readonly="true">
-			<acme:input-textbox code="epicure.fine-dish.form.label.status" path="status"/>	
+<jstl:choose>
+<jstl:when test="${isNew == true}">	
+		<acme:form>
 			<acme:input-textbox code="epicure.fine-dish.form.label.code" path="code"/>	
 			<acme:input-textbox code="epicure.fine-dish.form.label.request" path="request"/>	
 			<acme:input-textbox code="epicure.fine-dish.form.label.budget" path="budget"/>
 			<acme:input-textbox code="epicure.fine-dish.form.label.initialDate" path="initialDate"/>
 			<acme:input-textbox code="epicure.fine-dish.form.label.finishDate" path="finishDate"/>
 			<acme:input-textbox code="epicure.fine-dish.form.label.url" path="url"/>
-			<acme:button code="epicure.fine-dish.form.label.chef" action="/any/user-account/show?id=${chefId}"/>
-		</acme:form>
+			<acme:input-select code="epicure.fine-dish.form.label.select.chef" path="chefs">
+				<jstl:forEach items="${chefs}" var="chef">
+					<acme:input-option code="${chef.getUserAccount().getUsername()}" value="${chef.getId()}" />
+				</jstl:forEach>
+			</acme:input-select>
+		
+		<acme:submit code="epicure.fine-dish.form.button.create" action="/epicure/fine-dish/create"/>
 		
 
 
 
+</acme:form>
 
+</jstl:when>
+
+
+<jstl:otherwise>	
+<acme:form >
+	<acme:input-textbox readonly="true" code="epicure.fine-dish.form.label.status" path="status"/>	
+	<acme:input-textbox code="epicure.fine-dish.form.label.code" path="code"/>	
+	<acme:input-textarea code="epicure.fine-dish.form.label.request" path="request"/>
+	<acme:input-textbox code="epicure.fine-dish.form.label.budget" path="budget"/>
+	<acme:input-textbox code="epicure.fine-dish.form.label.initialDate" path="initialDate"/>
+	<acme:input-textbox code="epicure.fine-dish.form.label.finishDate" path="finishDate"/>
+	<acme:input-textbox code="epicure.fine-dish.form.label.url" path="url"/>
+	<acme:button code="epicure.fine-dish.form.label.chef" action="/any/user-account/show?id=${chefId}"/>
+
+<jstl:if test="${isPublish == false}">
+<acme:submit code="epicure.fine-dish.form.button.update" action="/epicure/fine-dish/update"/>
+<acme:submit code="epicure.fine-dish.form.button.delete" action="/epicure/fine-dish/delete"/>
+<acme:submit code="epicure.fine-dish.form.button.publish" action="/epicure/fine-dish/publish" />
+</jstl:if>
+</acme:form>
+	</jstl:otherwise>
+</jstl:choose>

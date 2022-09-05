@@ -15,8 +15,19 @@ epicure.fine-dish.form.label.budget = Budget
 epicure.fine-dish.form.label.initialDate = Initial date
 epicure.fine-dish.form.label.finishDate = Finish date
 epicure.fine-dish.form.label.url = Url
+epicure.fine-dish.form.label.select.chef = Chef
 epicure.fine-dish.form.label.chef = Chef
+epicure.fine-dish.form.button.create = Create
+epicure.fine-dish.form.button.update = Update
+epicure.fine-dish.form.button.delete = Delete
+epicure.fine-dish.form.button.publish = Publish
 
 epicure.fine-dish.list.label.code = Code
 epicure.fine-dish.list.label.request = Request
 epicure.fine-dish.list.label.budget = Budget
+epicure.fine-dish.list.button.create = Create
+
+epicure.finedish.error.initialDate = At least it must be a month after creating it
+epicure.finedish.error.finishDate = At least it must be a month after starting 
+epicure.finedish.error.budget = Quantity must be positive 
+epicure.finedish.budget.not-able-currency = Currency not accepted
