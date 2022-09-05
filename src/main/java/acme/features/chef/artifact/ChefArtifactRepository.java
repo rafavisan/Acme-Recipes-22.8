@@ -5,6 +5,7 @@ import java.util.Collection;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import acme.forms.MoneyExchange;
 import acme.entities.artifact.Artifact;
 import acme.entities.artifact.ArtifactType;
 import acme.entities.partOf.PartOf;
@@ -38,4 +39,14 @@ public interface ChefArtifactRepository extends AbstractRepository {
 
 	@Query("select s from SystemSettings s")
 	SystemSettings findAllSpanTuples();
+
+	
+	@Query("select me from MoneyExchange me where me.source.currency = :currency and me.source.amount = :amount")
+    MoneyExchange findMoneyExchageByCurrencyAndAmount(String currency, Double amount);
+
+	@Query("select s from SystemSettings s")
+	SystemSettings findConfiguration();
+
+//	@Query( "insert into MoneyExchange m values :change")
+//	void save(MoneyExchange change);
 }
