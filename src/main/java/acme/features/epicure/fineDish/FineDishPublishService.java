@@ -22,17 +22,14 @@ public class FineDishPublishService implements AbstractUpdateService<Epicure, Fi
 	protected FineDishEpicureRepository repository;
 	
 	@Override
-	public boolean authorise(Request<FineDish> request) {
-		assert request != null;
-
-		boolean result = true;
+	public boolean authorise(final Request<FineDish> request) {
+		assert request != null;		
 		
-		
-		return result;
+		return true;
 	}
 
 	@Override
-	public void bind(Request<FineDish> request, FineDish entity, Errors errors) {
+	public void bind(final Request<FineDish> request, final FineDish entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
@@ -42,7 +39,7 @@ public class FineDishPublishService implements AbstractUpdateService<Epicure, Fi
 	}
 
 	@Override
-	public void unbind(Request<FineDish> request, FineDish entity, Model model) {
+	public void unbind(final Request<FineDish> request, final FineDish entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
@@ -52,25 +49,25 @@ public class FineDishPublishService implements AbstractUpdateService<Epicure, Fi
 	}
 
 	@Override
-	public FineDish findOne(Request<FineDish> request) {
+	public FineDish findOne(final Request<FineDish> request) {
 		assert request != null;
 
 		FineDish result;
 		int id;
 
 		id = request.getModel().getInteger("id");
-		result = repository.findOneFineDishById(id);
+		result = this.repository.findOneFineDishById(id);
 
 		return result;
 	}
 
 	@Override
-	public void validate(Request<FineDish> request, FineDish entity, Errors errors) {
+	public void validate(final Request<FineDish> request, final FineDish entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
 		
-		Calendar d=Calendar.getInstance();
+		final Calendar d=Calendar.getInstance();
 		d.add(Calendar.MONTH, 1);
 		
 		if (!errors.hasErrors("initialDate")) {
@@ -80,7 +77,7 @@ public class FineDishPublishService implements AbstractUpdateService<Epicure, Fi
 					"epicure.finedish.error.initialDate");
 		}
 		
-		Calendar initialDate = Calendar.getInstance();
+		final Calendar initialDate = Calendar.getInstance();
 		initialDate.setTime(entity.getInitialDate());
 		initialDate.add(Calendar.MONTH, 1);
 		
@@ -91,7 +88,7 @@ public class FineDishPublishService implements AbstractUpdateService<Epicure, Fi
 					"epicure.finedish.error.finishDate");
 		}
 		
-		Money money=entity.getBudget();
+		final Money money=entity.getBudget();
 		final SystemSettings c = this.repository.findSystemSetting();
 		
 		if (!errors.hasErrors("budget")) {
@@ -107,7 +104,7 @@ public class FineDishPublishService implements AbstractUpdateService<Epicure, Fi
 	}
 
 	@Override
-	public void update(Request<FineDish> request, FineDish entity) {
+	public void update(final Request<FineDish> request, final FineDish entity) {
 		assert request != null;
 		assert entity != null;
 		

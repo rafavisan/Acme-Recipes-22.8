@@ -22,10 +22,7 @@ public class FineDishDeleteService implements AbstractDeleteService<Epicure, Fin
 	public boolean authorise(final Request<FineDish> request) {
 		assert request != null;
 		
-		boolean result=true;
-
-		
-		return result;
+		return true;
 	}
 
 	@Override

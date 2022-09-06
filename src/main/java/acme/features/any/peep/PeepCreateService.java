@@ -67,23 +67,23 @@ public class PeepCreateService implements AbstractCreateService<Any, Peep>{
 		errors.state(request, isConfirmed, "confirm", "any.peep.form.error.must-confirm");
 		
 		if(!errors.hasErrors("heading")) {
-			String[] text = entity.getHeading().toLowerCase().replaceAll("\n", " ").split("\\s+");
-			Double spamValue = checkSpam(text);
-			Double threshold = this.repository.findAllSpanTuples().getSpamThreshold();
+			final String[] text = entity.getHeading().toLowerCase().replace("\n", " ").split("\\s+");
+			final Double spamValue = this.checkSpam(text);
+			final Double threshold = this.repository.findAllSpanTuples().getSpamThreshold();
 			errors.state(request, spamValue<threshold, "heading", "any.peep.error.heading.spam-threshold");
 		}
 
 		if(!errors.hasErrors("writer")) {
-			String[] text = entity.getWriter().toLowerCase().replaceAll("\n", " ").split("\\s+");
-			Double spamValue = checkSpam(text);
-			Double threshold = this.repository.findAllSpanTuples().getSpamThreshold();
+			final String[] text = entity.getWriter().toLowerCase().replace("\n", " ").split("\\s+");
+			final Double spamValue = this.checkSpam(text);
+			final Double threshold = this.repository.findAllSpanTuples().getSpamThreshold();
 			errors.state(request, spamValue<threshold, "writer", "any.peep.error.writer.spam-threshold");
 		}
 		
 		if(!errors.hasErrors("text")) {
-			String[] text = entity.getText().toLowerCase().replaceAll("\n", " ").split("\\s+");
-			Double spamValue = checkSpam(text);
-			Double threshold = this.repository.findAllSpanTuples().getSpamThreshold();
+			final String[] text = entity.getText().toLowerCase().replace("\n", " ").split("\\s+");
+			final Double spamValue = this.checkSpam(text);
+			final Double threshold = this.repository.findAllSpanTuples().getSpamThreshold();
 			errors.state(request, spamValue<threshold, "text", "any.peep.error.text.spam-threshold");
 		}
 	}
@@ -107,20 +107,20 @@ public class PeepCreateService implements AbstractCreateService<Any, Peep>{
 		this.repository.save(entity);
 	}
 
-	public Double checkSpam(String[] text) {
+	public Double checkSpam(final String[] text) {
 		//--Initial data
-		SystemSettings ss = this.repository.findAllSpanTuples();
-		String[] strongWords = ss.getSpamTuples().toLowerCase().replaceAll("\\(", "").replaceAll(", ", ",").split("\\),");;
+		final SystemSettings ss = this.repository.findAllSpanTuples();
+		final String[] strongWords = ss.getSpamTuples().toLowerCase().replace("\\(", "").replace(", ", ",").split("\\),");;
 		Integer nWord = 0;
 		Double spamValue= 0.;
 		nWord = text.length;
 		//--Method
 		for(int i = 0; i<strongWords.length;i++) {
-			String[] spamTuple = strongWords[i].toLowerCase().split(",");
-			String[] spamTerm = spamTuple[0].split(" ");
+			final String[] spamTuple = strongWords[i].toLowerCase().split(",");
+			final String[] spamTerm = spamTuple[0].split(" ");
 			for(int o = 0; o<nWord; o++) {
 				boolean b = false;
-				int aux = nWord-spamTerm.length+1;
+				final int aux = nWord-spamTerm.length+1;
 				for(int p = 0; p<spamTerm.length; p++) {
 					b = true;
 					
@@ -130,7 +130,7 @@ public class PeepCreateService implements AbstractCreateService<Any, Peep>{
 					}
 				}
 				if(b) {
-					Double spamTermWeight = Double.parseDouble(spamTuple[1]);
+					final Double spamTermWeight = Double.parseDouble(spamTuple[1]);
 					spamValue += spamTermWeight/aux;
 				}
 			}
