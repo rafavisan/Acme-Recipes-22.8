@@ -39,10 +39,11 @@ table {
 	<h3><acme:message
 				code="administrator.dashboard.total" />: ${totalArtifact.get(type)}</h3>
 	<table>
+	<caption>Accepted Currencies</caption>
 		<tr>
-			<th></th>
+			<th id="Blank"></th>
 			<jstl:forEach var="currency" items="${acceptedCurrencies}">
-				<th>${currency}</th>
+				<th id="Blank">${currency}</th>
 			</jstl:forEach>
 		</tr>
 		<tr>
@@ -80,10 +81,11 @@ table {
 	<acme:message code="administrator.dashboard.title.FineDish" />
 </h2>
 <table>
+<caption>Fine Dish Statuses</caption>
 	<tr>
-		<th></th>
+		<th id="Blank"></th>
 		<jstl:forEach var="status" items="${fineDishStatuses}">
-			<th>${status}</th>
+			<th id="Blank">${status}</th>
 		</jstl:forEach>
 	</tr>
 	<tr>

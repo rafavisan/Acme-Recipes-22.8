@@ -59,10 +59,12 @@ public class AuthenticatedBulletinListService implements AbstractListService<Aut
 	}
 
 	@Override
-	public void unbind(Request<Bulletin> request, Collection<Bulletin> list, Model model) {
+	public void unbind(final Request<Bulletin> request, final Collection<Bulletin> list, final Model model) {
 		boolean admin = false;
-		if(request.getPrincipal().hasRole(Administrator.class))
-		admin = true;
+		if(request.getPrincipal().hasRole(Administrator.class)) {
+			admin = true;
+		}
+		
 		model.setAttribute("isAdmin", admin);
 	}
 	
