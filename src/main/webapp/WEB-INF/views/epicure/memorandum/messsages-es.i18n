@@ -14,7 +14,8 @@ authenticated.epicure.list.label.link = Enlace
 epicure.memorandum.form.label.link = Enlace
 authenticated.epicure.form.label.report = Informe
 epicure.memorandum.form.label.report = Informe
-
+epicure.memorandum.form.label.link = Enlace
+epicure.memorandum.confirmation = Confirmación
 epicure.memorandum.form.label.fine-dish= Comida
 
 epicure.memorandum.list.label.create= Crear Memoria

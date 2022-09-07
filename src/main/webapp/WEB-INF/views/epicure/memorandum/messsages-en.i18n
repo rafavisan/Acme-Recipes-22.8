@@ -14,8 +14,10 @@ authenticated.epicure.list.label.link = Link
 authenticated.epicure.form.label.link = Link
 authenticated.epicure.form.label.report = Report
 epicure.memorandum.form.label.report = Report
-
+epicure.memorandum.form.label.link = Link
+epicure.memorandum.confirmation = Confirmation
 epicure.memorandum.form.label.fine-dish= Fine Dish
+
 
 epicure.memorandum.list.label.create = Create Memorandum
 epicure.memorandum.form.button.create = Create Memorandum
