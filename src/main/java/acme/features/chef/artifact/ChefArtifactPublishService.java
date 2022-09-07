@@ -10,6 +10,7 @@ import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractUpdateService;
 import acme.roles.Chef;
+import acme.spamFilter.SpamFilter;
 
 @Service
 public class ChefArtifactPublishService implements AbstractUpdateService<Chef, Artifact> {
@@ -52,17 +53,13 @@ public class ChefArtifactPublishService implements AbstractUpdateService<Chef, A
 		errors.state(request, entity.getRetailPrice().getAmount() > 0, "retailPrice", "chef.artifact.code.repeated.retailPrice.non-negative");
 		}
 		errors.state(request, artifact == null, "code", "chef.artifact.code.repeated");
+
+		SpamFilter spamFilter = new SpamFilter(s.getSpamTuplesFormatted(), s.getSpamThreshold());
 		if(!errors.hasErrors("name")) {
-			final String[] text = entity.getName().toLowerCase().replace("\n", " ").split("\\s+");
-			final Double spamValue = this.checkSpam(text);
-			final Double threshold = this.repository.findAllSpanTuples().getSpamThreshold();
-			errors.state(request, spamValue<threshold, "name", "chef.artifact.error.name.spam-threshold");
+			errors.state(request, spamFilter.checkIsNotSpam(entity.getName()), "name", "chef.artifact.error.name.spam-threshold");
 		}
 		if(!errors.hasErrors("description")) {
-			final String[] text = entity.getDescription().toLowerCase().replace("\n", " ").split("\\s+");
-			final Double spamValue = this.checkSpam(text);
-			final Double threshold = this.repository.findAllSpanTuples().getSpamThreshold();
-			errors.state(request, spamValue<threshold, "description", "chef.artifact.error.description.spam-threshold");
+			errors.state(request, spamFilter.checkIsNotSpam(entity.getDescription()), "description", "chef.artifact.error.description.spam-threshold");
 		}
 	}
 
@@ -106,38 +103,4 @@ public class ChefArtifactPublishService implements AbstractUpdateService<Chef, A
 		entity.setPublished(true);
 		this.repository.save(entity);
 	}
-	
-	public Double checkSpam(final String[] text) {
-		//--Initial data
-		final SystemSettings ss = this.repository.findAllSpanTuples();
-		final String[] strongWords = ss.getSpamTuples().toLowerCase().replace("\\(", "").replace(", ", ",").split("\\),");;
-		Integer nWord = 0;
-		Double spamValue= 0.;
-		nWord = text.length;
-		//--Method
-		for(int i = 0; i<strongWords.length;i++) {
-			final String[] spamTuple = strongWords[i].toLowerCase().split(",");
-			final String[] spamTerm = spamTuple[0].split(" ");
-			for(int o = 0; o<nWord; o++) {
-				boolean b = false;
-				final int aux = nWord-spamTerm.length+1;
-				if(aux>0) {
-					for(int p = 0; p<spamTerm.length; p++) {
-						b = true;
-						
-						if(!spamTerm[p].equals(text[o+p])) {
-							b=false;
-							break;
-						}
-					}
-					if(b) {
-						final Double spamTermWeight = Double.parseDouble(spamTuple[1]);
-						spamValue += spamTermWeight/aux;
-					}
-				}
-			}
-		}
-		return spamValue;
-	}
-
 }
