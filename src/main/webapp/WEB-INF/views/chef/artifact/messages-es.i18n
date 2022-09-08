@@ -33,3 +33,4 @@ chef.artifact.code.repeated = Este código ya existe
 chef.artifact.code.repeated.retailPrice.non-negative = El precio de venta debe ser positivo
 chef.artifact.error.name.spam-threshold = Nombre por encima del umbral del spam
 chef.artifact.error.description.spam-threshold = Descripción por encima del umbral del spam
+chef.artifact.code.repeated = El código no cumple con el patrón

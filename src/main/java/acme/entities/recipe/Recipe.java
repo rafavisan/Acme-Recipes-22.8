@@ -24,7 +24,7 @@ public class Recipe extends AbstractEntity {
 	protected static final long	serialVersionUID	= 1L;
 	
 	@Column(unique=true)
-	@Pattern(regexp = "^([A-Z]{2}:)?[A-Z]{3}-[0-9]{3}$",  message = "default.error.conversion")
+	@Pattern(regexp = "^([A-Z]{2}:)?[A-Z]{3}-[0-9]{3}$")
 	protected String code;
 	
 	@NotBlank
