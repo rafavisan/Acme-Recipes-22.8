@@ -1,5 +1,8 @@
 package acme.entities.systemSetting;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
 
@@ -30,4 +33,16 @@ public class SystemSettings extends AbstractEntity{
 		
 		@NotBlank
 		protected String spamTuples;
+		
+		public Map<String, Double> getSpamTuplesFormatted() {
+			Map<String, Double> spamTuplesFormatted = new HashMap<>();
+			final String[] strongWords = spamTuples.substring(1,spamTuples.length()-1).toLowerCase().split("\\), \\(");
+	        for(int i =0; i<strongWords.length;i++) {
+	        	String[] tuple = strongWords[i].split(", ");
+	        	String word = tuple[0];
+	        	Double weight = Double.parseDouble(tuple[1]);
+	            spamTuplesFormatted.put(word, weight);
+	        }
+			return spamTuplesFormatted;
+		}
 }

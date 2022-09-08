@@ -1,4 +1,6 @@
 package acme.features.administrator.bulletin;
+import static org.mockito.ArgumentMatchers.endsWith;
+
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,7 @@ import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
 import acme.framework.roles.Administrator;
 import acme.framework.services.AbstractCreateService;
+import acme.spamFilter.SpamFilter;
 
 @Service
 public class AdministratorBulletinCreateService implements AbstractCreateService<Administrator, Bulletin> {
@@ -61,20 +64,17 @@ public class AdministratorBulletinCreateService implements AbstractCreateService
 		
 		boolean confirmation;
 
+		SystemSettings s = this.repository.findAllSpanTuples();
+		SpamFilter spamFilter = new SpamFilter(s.getSpamTuplesFormatted(), s.getSpamThreshold());
+		
 		confirmation = request.getModel().getBoolean("confirmation");
 		errors.state(request, confirmation, "confirmation", "administrator.bulletin.form.label.confirmation.message");
 		
 		if(!errors.hasErrors("heading")) {
-			final String[] text = entity.getHeading().toLowerCase().replace("\n", " ").split("\\s+");
-			final Double spamValue = this.checkSpam(text);
-			final Double threshold = this.repository.findAllSpanTuples().getSpamThreshold();
-			errors.state(request, spamValue<threshold, "heading", "chef.bulletin.error.heading.spam-threshold");
+			errors.state(request, spamFilter.checkIsNotSpam(entity.getHeading()), "heading", "chef.bulletin.error.heading.spam-threshold");
 		}
 		if(!errors.hasErrors("text")) {
-			final String[] text = entity.getText().toLowerCase().replace("\n", " ").split("\\s+");
-			final Double spamValue = this.checkSpam(text);
-			final Double threshold = this.repository.findAllSpanTuples().getSpamThreshold();
-			errors.state(request, spamValue<threshold, "text", "chef.bulletin.error.text.spam-threshold");
+			errors.state(request, spamFilter.checkIsNotSpam(entity.getText()), "text", "chef.bulletin.error.text.spam-threshold");
 		}
 	}
 
@@ -95,38 +95,4 @@ public class AdministratorBulletinCreateService implements AbstractCreateService
 
 		this.repository.save(entity);
 	}
-
-	public Double checkSpam(final String[] text) {
-		//--Initial data
-		final SystemSettings ss = this.repository.findAllSpanTuples();
-		final String[] strongWords = ss.getSpamTuples().toLowerCase().replace("\\(", "").replace(", ", ",").split("\\),");;
-		Integer nWord = 0;
-		Double spamValue= 0.;
-		nWord = text.length;
-		//--Method
-		for(int i = 0; i<strongWords.length;i++) {
-			final String[] spamTuple = strongWords[i].toLowerCase().split(",");
-			final String[] spamTerm = spamTuple[0].split(" ");
-			for(int o = 0; o<nWord; o++) {
-				boolean b = false;
-				final int aux = nWord-spamTerm.length+1;
-				if(aux>0) {
-					for(int p = 0; p<spamTerm.length; p++) {
-						b = true;
-						
-						if(!spamTerm[p].equals(text[o+p])) {
-							b=false;
-							break;
-						}
-					}
-					if(b) {
-						final Double spamTermWeight = Double.parseDouble(spamTuple[1]);
-						spamValue += spamTermWeight/aux;
-					}
-				}
-			}
-		}
-		return spamValue;
-	}
-	
 }
