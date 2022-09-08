@@ -26,13 +26,14 @@ public class ChefPimpamUpdateTest extends TestHarness{
 		super.fillInputBoxIn("link", link);
 		super.clickOnSubmit("Create");
 
+		super.checkNotErrorsExist();
 
 		super.signOut();
 	}
 	
 	@ParameterizedTest
 	@CsvFileSource(resources = "/chef/pimpam/update.csv", encoding = "utf-8", numLinesToSkip = 1)
-	@Order(10)
+	@Order(20)
 	public void update(final int recordIndex, final String title, final String description,
 		final String startPeriod, final String finishPeriod, final String budget, final String link) {
 		super.signIn("chef1", "chef1");
@@ -45,6 +46,8 @@ public class ChefPimpamUpdateTest extends TestHarness{
 		super.fillInputBoxIn("budget", budget);
 		super.fillInputBoxIn("link", link);
 		super.clickOnSubmit("Update");
+		
+		super.checkErrorsExist();
 
 		super.signOut();
 	}

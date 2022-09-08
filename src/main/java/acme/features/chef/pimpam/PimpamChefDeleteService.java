@@ -31,8 +31,8 @@ public class PimpamChefDeleteService implements AbstractDeleteService<Chef, Pimp
 		assert entity != null;
 		assert errors != null;
 		
-		request.bind(entity, errors, "code", "instantiationMoment", "title", "description",
-				"startPeriod", "finishPeriod", "budget", "link");
+		request.bind(entity, errors,"code", "instantiationMoment", "title", "description" ,"startPeriod",
+			"finishPeriod", "budget", "link");
 	}
 
 	@Override
@@ -41,8 +41,11 @@ public class PimpamChefDeleteService implements AbstractDeleteService<Chef, Pimp
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "code", "instantiationMoment", "title", "description",
-			"startPeriod", "finishPeriod", "budget", "link", "isPublish", "artifact");
+		request.unbind(entity, model,"code", "instantiationMoment", "title", "description" ,"startPeriod",
+			"finishPeriod", "budget", "link");
+		
+		model.setAttribute("artifactId", entity.getArtifact().getId());
+		model.setAttribute("artifactPublish", entity.getArtifact().isPublished());
 		
 		
 	}

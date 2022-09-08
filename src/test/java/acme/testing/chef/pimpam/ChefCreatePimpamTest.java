@@ -26,6 +26,7 @@ public class ChefCreatePimpamTest extends TestHarness{
 		super.fillInputBoxIn("link", link);
 		super.clickOnSubmit("Create");
 
+		super.checkNotErrorsExist();
 
 		super.signOut();
 	}

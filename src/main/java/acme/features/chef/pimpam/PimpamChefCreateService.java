@@ -109,13 +109,13 @@ public class PimpamChefCreateService implements AbstractCreateService<Chef, Pimp
 		
 		Calendar d=Calendar.getInstance();
 		d.setTime(entity.getInstantiationMoment());
-		d.add(Calendar.MONTH, -1);
+		d.add(Calendar.MONTH, 1);
 		
 		
 		if (!errors.hasErrors("startPeriod")) {
 
 
-			errors.state(request, entity.getStartPeriod().before(d.getTime()), "startPeriod",
+			errors.state(request, entity.getStartPeriod().after(d.getTime()), "startPeriod",
 					"chef.pimpam.error.month.startPeriod");
 		}
 		

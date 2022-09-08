@@ -21,7 +21,7 @@ public class ChefPimpamDeleteTest extends TestHarness{
 		super.checkFormExists();
 		super.clickOnSubmit("Delete");
 
-		
+		super.checkNotErrorsExist();
 
 		super.signOut();
 	}
