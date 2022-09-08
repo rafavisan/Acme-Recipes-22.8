@@ -73,6 +73,7 @@
       <acme:menu-separator/>
       <acme:menu-suboption code="master.menu.chef.fine-dish" action="/chef/fine-dish/list"/>
       <acme:menu-suboption code="master.menu.chef.memorandum" action="/chef/memorandum/list"/>
+      <acme:menu-suboption code="master.menu.chef.pimpam" action="/chef/pimpam/list"/>
 		</acme:menu-option>
 
 	</acme:menu-left>
