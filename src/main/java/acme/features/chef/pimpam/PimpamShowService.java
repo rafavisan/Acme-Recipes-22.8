@@ -49,7 +49,7 @@ public class PimpamShowService implements AbstractShowService<Chef, Pimpam>{
 			}
 
 			@Override
-			public Pimpam findOne(final Request<Pimpam> request) {
+			public Pimpam findOne(final Request<Pimpam> request) { 
 				assert request != null;
 
 				Pimpam result;
