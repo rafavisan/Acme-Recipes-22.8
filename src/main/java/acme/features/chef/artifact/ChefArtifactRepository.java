@@ -16,8 +16,8 @@ import acme.roles.Chef;
 @Repository
 public interface ChefArtifactRepository extends AbstractRepository {
 
-	@Query("select a from Artifact a where a.type = :artifactType and a.chef.id = :chefId")
-	Collection<Artifact> findManyByArtifactTypeAndChef(ArtifactType artifactType, Integer chefId);
+	@Query("select a from Artifact a where a.type = :artifactType and a.chef.id = :artifactId")
+	Collection<Artifact> findManyByArtifactTypeAndChef(ArtifactType artifactType, Integer artifactId);
 
 	@Query("select c from Chef c where c.id = :id")
 	Chef findOneChefByChefId(int id);
