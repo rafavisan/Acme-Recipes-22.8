@@ -1,10 +1,14 @@
 package acme.features.administrator.administratorDashboard;
 
+import java.util.Collection;
+
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import acme.entities.artifact.Artifact;
 import acme.entities.artifact.ArtifactType;
 import acme.entities.fineDish.StatusType;
+import acme.entities.pimpam.Pimpam;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
@@ -42,5 +46,25 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 
 	@Query("select min(f.budget.amount) from FineDish f where f.status = :status")
 	Double calcMinimumFineDishBudgetByStatus(StatusType status);
+	
+	//PIMPAM
+	
+	@Query("select avg(f.budget.amount) from Pimpam f where f.budget.currency = :currency")
+	Double calcAveragePimpamBudgetByCurrency(String currency);
+
+	@Query("select stddev(f.budget.amount) from Pimpam f where f.budget.currency = :currency")
+	Double calcDeviationPimpamBudgetByCurrency(String currency);
+
+	@Query("select max(f.budget.amount) from Pimpam f where f.budget.currency = :currency")
+	Double calcMaximumPimpamBudgetByCurrency(String currency);
+
+	@Query("select min(f.budget.amount) from Pimpam f where f.budget.currency = :currency")
+	Double calcMinimumPimpamBudgetByCurrency(String currency);
+	
+	@Query("select c from Pimpam c")
+	Collection<Pimpam> findAllPimpam();
+	
+	@Query("select a from Artifact a ")
+	Collection<Artifact> findAllArtifact();
 
 }

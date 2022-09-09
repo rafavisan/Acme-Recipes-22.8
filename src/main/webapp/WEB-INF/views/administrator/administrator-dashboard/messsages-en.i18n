@@ -22,3 +22,9 @@ administrator.dashboard.averageFineDishBudget = Average budget
 administrator.dashboard.deviationFineDishBudget = Deviation budget
 administrator.dashboard.maximumFineDishBudget = Maximum budget
 administrator.dashboard.minimumFineDishBudget = Minimum budget
+
+administrator.dashboard.averagePimpamBudget = Average budget
+administrator.dashboard.deviationPimpamBudget = Deviation budget
+administrator.dashboard.maximumPimpamBudget = Maximum budget
+administrator.dashboard.minimumPimpamBudget = Minimum budget
+administrator.dashboard.form.label.ratio-of-artifacts = Ratio

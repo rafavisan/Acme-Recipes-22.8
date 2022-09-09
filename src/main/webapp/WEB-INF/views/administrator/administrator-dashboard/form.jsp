@@ -77,6 +77,9 @@ table {
 	</table>
 </jstl:forEach>
 
+
+
+
 <h2>
 	<acme:message code="administrator.dashboard.title.FineDish" />
 </h2>
@@ -121,6 +124,61 @@ table {
 				code="administrator.dashboard.minimumFineDishBudget" /></td>
 		<jstl:forEach var="status" items="${fineDishStatuses}">
 			<td>${minimumFineDishBudget.get(status)}</td>
+		</jstl:forEach>
+	</tr>
+</table>
+
+
+
+<h2>
+		
+			Pimpam 
+	</h2>
+<table>
+<caption>Ratio</caption> 
+	<tr>
+		<th scope="row"><acme:message
+				code="administrator.dashboard.form.label.ratio-of-artifacts" />
+		</th>
+		<td>${ratioOfArtifactsWithPimpam}</td>
+	</tr>
+</table>
+	
+<table>
+<caption>Accepted Currencies</caption>
+		<tr>
+			<th id="Blank"></th>
+			<jstl:forEach var="currency" items="${acceptedCurrencies}">
+				<th id="Blank">${currency}</th>
+			</jstl:forEach>
+		</tr>
+		<tr>
+<tr>
+		<td><acme:message
+				code="administrator.dashboard.averagePimpamBudget" /></td>
+		<jstl:forEach var="currency" items="${acceptedCurrencies}">
+			<td>${averagePimpamBudget.get(currency)}</td>
+		</jstl:forEach>
+	</tr>
+	<tr>
+		<td><acme:message
+				code="administrator.dashboard.deviationPimpamBudget" /></td>
+		<jstl:forEach var="currency" items="${acceptedCurrencies}">
+			<td>${deviationPimpamBudget.get(currency)}</td>
+		</jstl:forEach>
+	</tr>
+	<tr>
+		<td><acme:message
+				code="administrator.dashboard.maximumPimpamBudget" /></td>
+		<jstl:forEach var="currency" items="${acceptedCurrencies}">
+			<td>${maximumPimpamBudget.get(currency)}</td>
+		</jstl:forEach>
+	</tr>
+	<tr>
+		<td><acme:message
+				code="administrator.dashboard.minimumPimpamBudget" /></td>
+		<jstl:forEach var="currency" items="${acceptedCurrencies}">
+			<td>${minimumPimpamBudget.get(currency)}</td>
 		</jstl:forEach>
 	</tr>
 </table>

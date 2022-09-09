@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.persistence.Entity;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotBlank;
 
 import acme.framework.entities.AbstractEntity;
@@ -34,6 +35,7 @@ public class SystemSettings extends AbstractEntity{
 		@NotBlank
 		protected String spamTuples;
 		
+		@Transient
 		public Map<String, Double> getSpamTuplesFormatted() {
 			Map<String, Double> spamTuplesFormatted = new HashMap<>();
 			final String[] strongWords = spamTuples.substring(1,spamTuples.length()-1).toLowerCase().split("\\), \\(");

@@ -39,6 +39,17 @@ public class AdministratorDashboard {
 	
 	protected Map<StatusType, Double>					minimumFineDishBudget;
 	
+	//PIMPAM
+	protected Double								ratioOfArtifactsWithPimpam;
+	
+	protected Map<String, Double>					averagePimpamBudget;
+	
+	protected Map<String, Double>					deviationPimpamBudget;
+	
+	protected Map<String, Double>					maximumPimpamBudget;
+	
+	protected Map<String, Double>					minimumPimpamBudget;
+	
 	// Derived attributes -----------------------------------------------------
 	
 	// Relationships ----------------------------------------------------------
